@@ -1,0 +1,982 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="house.CSS/style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand bg-white border-bottom py-3 shadow sticky-top">
+      <div class="container">
+        <a href="" class="navbar-brand p-0">
+          <span class="fs-2 text-primary tracking-tight logo-text">tript<span class="text-warning">o</span></span>
+        </a>
+        <div class="d-flex align-items-center gap-4 ms-auto">
+          <a href="" class="text-decoration-none d-flex align-items-center gap-2">
+            <img src="https://flagcdn.com/w40/us.png" class="rounded-1 object-fit-cover flag-img">
+            <span class="fw-bold text-primary small">USD</span>
+          </a>
+          <a href="" class="text-primary fs-5 d-flex align-items-center text-decoration-none">
+            <i class="fa-solid fa-headset"></i>
+          </a>
+          <a href="" class="d-block text-decoration-none">
+            <img src="images.REWAA/b60d4de8d5188cec925a9f154dcee647500bae18.jpg" class="rounded-circle object-fit-cover profile-img">
+          </a>
+
+        </div>
+      </div>
+    </nav>
+
+ <section class="bg-white">
+  <div class="container my-5 w-100">
+
+    <!-- Header of tabs -->
+
+    <div class="d-flex justify-content-between align-items-start mb-3">
+      <div>
+        <h2 class="fw-bold mb-1">Entire rental unit in Versailles</h2>
+        <p class="text-secondary small mb-0">Barcelona, Spain</p>
+      </div>
+      <div class="d-flex gap-2">
+        <button onclick="toggleHeart(this)" class="btn btn-light rounded-circle p-2 shadow-sm fs-5 d-flex justify-content-center align-items-center icon-btn"><i class="fa-regular fa-heart"></i></button>
+        <button class="btn btn-light rounded-circle p-2 shadow-sm fs-5 d-flex justify-content-center align-items-center icon-btn"><i class="fa-solid fa-share-nodes"></i></button>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div>
+      <div class="nav nav-underline mb-4" id="nav-tab" role="tablist">
+        <button class="nav-link active" id="nav-overview-tab" data-bs-toggle="tab" data-bs-target="#nav-overview" type="button" role="tab" aria-controls="nav-overview" aria-selected="true">Overview</button>
+        <button class="nav-link" id="nav-amenities-tab" data-bs-toggle="tab" data-bs-target="#nav-amenities" type="button" role="tab" aria-controls="nav-amenities" aria-selected="false">Amenities</button>
+        <button class="nav-link" id="nav-location-tab" data-bs-toggle="tab" data-bs-target="#nav-location" type="button" role="tab" aria-controls="nav-location" aria-selected="false">Location</button>
+        <button class="nav-link" id="nav-calendar-tab" data-bs-toggle="tab" data-bs-target="#nav-calendar" type="button" role="tab" aria-controls="nav-calendar" aria-selected="false">Calendar</button>
+        <button class="nav-link" id="nav-reviews-tab" data-bs-toggle="tab" data-bs-target="#nav-reviews" type="button" role="tab" aria-controls="nav-reviews" aria-selected="false">Reviews</button>
+      </div>
+    </div>
+    <hr class="hr-style">
+
+    <div class="tab-content" id="nav-tabContent">
+
+      <!-- 1. Overview Tab -->
+
+      <div class="tab-pane show active" id="nav-overview" role="tabpanel" aria-labelledby="nav-overview-tab" tabindex="0">
+        <div class="row g-3">
+          <!-- Main Image -->
+          <div class="col-md-6">
+            <div class="position-relative h-100">
+              <img src="images.REWAA/231d5027b6d4f411d7fa146c294aa2d6cedb8681.jpg" class="w-100 img-main rounded-4 object-fit-cover">
+              <!-- Host Badge -->
+              <div class="position-absolute bottom-0 start-0 m-3 p-2 px-3 bg-white rounded-pill shadow-sm d-flex align-items-center gap-2">
+                <img src="images.REWAA/4a20c9902674e0ca0c7eefed1477687623ca2246.jpg" class="badge1 rounded-circle object-fit-cover">
+                <div>
+                  <span class="text-muted d-block host-label">Host</span>
+                  <span class="fw-semibold small">Selena Doberman</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Images Column -->
+          <div class="col-md-6">
+            <div class="row g-3">
+              <div class="col-6">
+                <img src="images.REWAA/7acf9d280857dae969516a8b9d17fbb106d77bc7.jpg" class="w-100 img-sub rounded-4 object-fit-cover">
+              </div>
+              <div class="col-6">
+                <img src="images.REWAA/cd14b1f39a85c07cfc2c943ee8458c3c8231c94a.jpg" class="w-100 img-sub rounded-4 object-fit-cover">
+              </div>
+              <div class="col-6">
+                <img src="images.REWAA/6dab9b36e541d24f68d469592f052f13c9a7c4a2.jpg" class="w-100 img-sub rounded-4 object-fit-cover">
+              </div>
+              <div class="col-6 position-relative">
+                <img src="images.REWAA/1856a280d4f8d8a65c00909456b508c9b4146724.jpg" class="w-100 img-sub rounded-4 object-fit-cover">
+                <span class="position-absolute bottom-0 end-0 m-3 badge bg-dark bg-opacity-75 px-3 py-2 rounded-3 fw-bold d-flex align-items-center gap-1">
+                  <i class="fa-regular fa-images"></i> 10+ </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Amenities Tab -->
+
+      <div class="tab-pane" id="nav-amenities" role="tabpanel" aria-labelledby="nav-amenities-tab" tabindex="0">
+        <div class="row g-5 pt-3">
+          <!-- Left Column -->
+         <div class="col-lg-7">
+  
+  <!-- Description Section -->
+  <div class="mb-5">
+    <h3 class="fw-bold text-dark mb-3">Description</h3>
+    <p class="text-secondary small mb-3"><span class="fw-bold text-dark">Hotel size</span> 200 rooms , Arranged over 6 floors</p>
+    <ul class="fw-bold text-dark mb-4">Barcelonia elegance with 6-star service
+      <li class="text-secondary small fw-normal ">Simply elegant in all respects, this beautiful Parisian property offers a wonderful location that enhances your stay. Enjoy spacious rooms with great amenities and 6-star service from a superb... </li>
+    </ul>
+    <div class="text-secondary mb-3" id="more-content"></div> 
+    
+    <button type="button" id="show-amenities-btn" onclick="showDescription(this)" class="btn btn-outline-primary rounded-pill px-4 btn-sm fw-medium">Show More</button>
+  </div>
+
+  <!-- Amenities Section -->
+   
+  <div>
+    <h3 class="fw-bold text-dark mb-4">Amenities</h3>
+    <div class="row g-4 mb-4" id="amenities-container">
+      <div class="col-6 d-flex align-items-center gap-3">
+        <i class="fa-solid fa-kitchen-set fs-5"></i>
+        <span class="fw-medium text-dark">Kitchen</span>
+      </div>
+      <div class="col-6 d-flex align-items-center gap-3">
+        <i class="fa-solid fa-wifi fs-5"></i>
+        <span class="fw-medium text-dark">Free Wireless Internet</span>
+      </div>
+      <div class="col-6 d-flex align-items-center gap-3">
+        <i class="fa-solid fa-hands-bubbles fs-5"></i>
+        <span class="fw-medium text-dark">Washing Machine</span>
+      </div>
+      <div class="col-6 d-flex align-items-center gap-3">
+        <i class="fa-solid fa-person-swimming fs-5"></i>
+        <span class="fw-medium text-dark">Pool</span>
+      </div>
+      <div class="col-6 d-flex align-items-center gap-3">
+        <i class="fa-solid fa-tv fs-5"></i>
+        <span class="fw-medium text-dark">Television</span>
+      </div>
+      <div class="col-6 d-flex align-items-center gap-3">
+        <i class="fa-solid fa-burger fs-5"></i>
+        <span class="fw-medium text-dark">Barbecue</span>
+      </div>
+
+
+      <!-- EXTRA CONTENT -->
+
+
+      <div class="col-6 d-flex align-items-center gap-3 extra-amenity d-none">
+       <i class="fa-solid fa-snowflake fs-5"></i>
+       <span class="fw-medium text-dark">Air Conditioning</span>
+      </div>
+      <div class="col-6 d-flex align-items-center gap-3 extra-amenity d-none">
+       <i class="fa-solid fa-car fs-5"></i>
+       <span class="fw-medium text-dark">Free Parking</span>
+      </div>
+     <div class="col-6 d-flex align-items-center gap-3 extra-amenity d-none">
+       <i class="fa-solid fa-square-parking fs-5"></i>
+       <span class="fw-medium text-dark">Elevator</span>
+    </div>
+    <div class="col-6 d-flex align-items-center gap-3 extra-amenity d-none">
+       <i class="fa-solid fa-dumbbell fs-5"></i>
+       <span class="fw-medium text-dark">Gym</span>
+     </div>
+    </div>
+    <button type="button" id="show-more-amenities" onclick="showAmenities(this)" class="btn btn-outline-primary rounded-pill px-4 btn-sm fw-medium">Show All 10 Amenities</button>
+  </div>
+
+</div>
+
+          <!-- Right Column -->
+          <div class="col-lg-5">
+            <div class="card border-0 shadow-lg rounded-4 p-4 booking-card">
+              
+              <div class="border rounded-4 p-3 mb-4">
+                <div class="row g-0 border-bottom pb-3 mb-3">
+                  <div class="col-6 border-end pe-3">
+                    <div class="d-flex align-items-center gap-2 mb-1">
+                      <i class="fa-regular fa-calendar text-secondary"></i>
+                      <span class="small text-secondary fw-medium">Check-in</span>
+                    </div>
+                    <div class="fw-semibold text-dark text-center">07/16/2025</div>
+                  </div>
+                  <div class="col-6 ps-3">
+                    <div class="d-flex align-items-center gap-2 mb-1">
+                      <i class="fa-regular fa-calendar text-secondary"></i>
+                      <span class="small text-secondary fw-medium">Check-out</span>
+                    </div>
+                    <div class="fw-semibold text-dark text-center">07/24/2025</div>
+                  </div>
+                </div>
+                <div>
+                  <div class="fw-semibold text-dark mb-1">Guests</div>
+                  <div class="text-secondary small">2 adults</div>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <h6 class="fw-semibold text-dark mb-3">Details:</h6>
+                <div class="d-flex justify-content-between mb-2">
+                  <span class="text-secondary">Capacity:</span>
+                  <span class="fw-bold text-dark">10 Persons</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                  <span class="text-secondary">For 5 persons <small class="text-muted">(per night)</small>:</span>
+                  <span class="fw-bold text-dark">$100</span>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <span class="text-secondary">For each additional person:</span>
+                  <span class="fw-bold text-dark">$10</span>
+                </div>
+              </div>
+
+              <hr class="my-3 opacity-25">
+
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <span class="fw-bold text-dark fs-5">Total Price:</span>
+                <span class="fw-bold text-dark fs-4">$500</span>
+              </div>
+
+              <a href="Booking Details.html" class="btn btn-primary w-100 py-3 rounded-3 fw-bold fs-6">Reserve</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!--Location -->
+
+<div class="tab-pane" id="nav-location" role="tabpanel" aria-labelledby="nav-location-tab" tabindex="0">
+  <div class="pt-3">
+    <h4 class="fw-bold text-dark mb-3">Location</h4>
+    <div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47895.83648057201!2d2.154007!3d41.390205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a49816718e30e5%3A0x44b0fb3d4f4b965c!2sBarcelona%2C%20Spain!5e0!3m2!1sen!2seg!4v1700000000000!5m2!1sen!2seg" ></iframe>
+    </div>
+  </div>
+</div>
+
+
+<!-- calander -->
+
+    <div class="tab-pane" id="nav-calendar" role="tabpanel" aria-labelledby="nav-calendar-tab" tabindex="0">
+      <div class="container mt-4">
+       <h2 class="fw-bold text-dark mb-3">Calander</h2>
+      <input class="p-2 mb-5 " type="text" name="daterange" value="01/01/2018 - 01/15/2018" />
+
+      </div>
+    </div>
+
+
+       <!--  Reviews Tab -->
+
+      <div class="tab-pane" id="nav-reviews" role="tabpanel" aria-labelledby="nav-reviews-tab" tabindex="0">
+        <div class="pt-3">
+          <h3 class="fw-bold text-dark mb-1">Reviews</h3>
+          <div class="d-flex align-items-center gap-2 mb-4">
+            <span class="badge bg-primary bg-opacity-10 text-primary fw-bold px-2 py-1 rounded-2">5.0</span>
+            <span class="fw-bold text-primary small">Excellent</span>
+            <span class="text-muted small">1,260 reviews</span>
+          </div>
+
+          <!-- Rating  -->
+          <div class="row g-4 mb-5 align-items-center">
+            <div class="col-md-2 border-end pe-4">
+              <span class="fw-bold text-dark small d-block mb-2">Overall Rating</span>
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <span class="small text-muted rating-num">5</span>
+                <div class="progress w-100 progress-rate"><div class="progress-bar bg-secondary"></div></div>
+              </div>
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <span class="small text-muted rating-num">4</span>
+                <div class="progress w-100 progress-rate"><div class="progress-bar2 bg-secondary"></div></div>
+              </div>
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <span class="small text-muted rating-num">3</span>
+                <div class="progress w-100 progress-rate"></div>
+              </div>
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <span class="small text-muted rating-num">2</span>
+                <div class="progress w-100 progress-rate"></div>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <span class="small text-muted rating-num">1</span>
+                <div class="progress w-100 progress-rate"></div>
+              </div>
+            </div>
+
+            <div class="col-md-10">
+              <div class="row g-3 text-center">
+                <div class="col border-end">
+                  <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+                    <i class="fa-regular fa-building text-dark fs-5"></i>
+                    <span class="fw-semibold text-dark small">Amenities</span>
+                  </div>
+                  <span class="fw-bold text-dark fs-6">5.0</span>
+                </div>
+                <div class="col border-end">
+                  <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+                    <i class="fa-solid fa-spray-can text-dark fs-5"></i>
+                    <span class="fw-semibold text-dark small">Cleanliness</span>
+                  </div>
+                  <span class="fw-bold text-dark fs-6">5.0</span>
+                </div>
+                <div class="col border-end">
+                  <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+                    <i class="fa-regular fa-comments text-dark fs-5"></i>
+                    <span class="fw-semibold text-dark small">Communication</span>
+                  </div>
+                  <span class="fw-bold text-dark fs-6">5.0</span>
+                </div>
+                <div class="col border-end">
+                  <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+                    <i class="fa-regular fa-circle-check text-dark fs-5"></i>
+                    <span class="fw-semibold text-dark small">Location</span>
+                  </div>
+                  <span class="fw-bold text-dark fs-6">5.0</span>
+                </div>
+                <div class="col">
+                  <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+                    <i class="fa-solid fa-dollar-sign text-dark fs-5"></i>
+                    <span class="fw-semibold text-dark small">Value</span>
+                  </div>
+                  <span class="fw-bold text-dark fs-6">5.0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Reviews cards -->
+
+          <div class="row g-3 mb-4">
+            <div class="col-md-4">
+              <div class="border rounded-4 p-4 h-100 bg-white">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="images.REWAA/68f745dba856b6b662be44fe9811d743f5c48004.jpg" class="rounded-circle avatar-img">
+                    <div>
+                      <h6 class="fw-bold mb-0 text-dark">July Kaly</h6>
+                      <small class="text-muted review-date">12 Mar 2025</small>
+                    </div>
+                  </div>
+                  <span class="badge bg-primary bg-opacity-10 text-primary fw-bold">5.0</span>
+                </div>
+                <p class="text-secondary small mb-3">The truth of the stay with Simo was very comfortable, he welcomed us but we did not see him again the rest of the days. The apartment was.. </p>
+                <a href="" class="btn btn-link text-secondary p-0 small fw-medium text-decoration-none">Show More</a>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="border rounded-4 p-4 h-100 bg-white">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="images.REWAA/Avatar Place holder.png" class="rounded-circle avatar-img">
+                    <div>
+                      <h6 class="fw-bold mb-0 text-dark">John Wick</h6>
+                      <small class="text-muted review-date">12 Mar 2025</small>
+                    </div>
+                  </div>
+                  <span class="badge bg-primary bg-opacity-10 text-primary fw-bold">5.0</span>
+                </div>
+                <p class="text-secondary small mb-3">Léonor is very responsive, and the accommodation perfectly matches our expectations. Highly recommended</p>
+                <a href="" class="btn btn-link text-secondary p-0 small fw-medium text-decoration-none">Show More</a>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="border rounded-4 p-4 h-100 bg-white">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="images.REWAA/1627f3a870e9b56d751d07f53392d7a84aa55817.jpg" class="rounded-circle avatar-img">
+                    <div>
+                      <h6 class="fw-bold mb-0 text-dark">July Kaly</h6>
+                      <small class="text-muted review-date">12 Mar 2025</small>
+                    </div>
+                  </div>
+                  <span class="badge bg-primary bg-opacity-10 text-primary fw-bold">5.0</span>
+                </div>
+                <p class="text-secondary small mb-3">Simo is very attentive and kind, the apartment was nice, the bed comfortable and you were slightly close to a metro station.</p>
+                <a href="" class="btn btn-link text-secondary p-0 small fw-medium text-decoration-none">Show More</a>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Extra 3 Reviews -->
+    <div class="row g-3 mb-4 d-none" id="extra-reviews">
+      <div class="col-md-4">
+        <div class="border rounded-4 p-4 h-100 bg-white">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="d-flex align-items-center gap-3">
+              <img src="images.REWAA/Avatar Place holder.png" class="rounded-circle avatar-img">
+              <div>
+                <h6 class="fw-bold mb-0 text-dark">Sarah Smith</h6>
+                <small class="text-muted review-date">15 Mar 2025</small>
+              </div>
+            </div>
+            <span class="badge bg-primary bg-opacity-10 text-primary fw-bold">5.0</span>
+          </div>
+          <p class="text-secondary small mb-3">Great host, the place was sparkling clean and close to everything we needed during our trip!</p>
+          <a href="" class="btn btn-link text-secondary p-0 small fw-medium text-decoration-none">Show More</a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="border rounded-4 p-4 h-100 bg-white">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="d-flex align-items-center gap-3">
+              <img src="images.REWAA/68f745dba856b6b662be44fe9811d743f5c48004.jpg" class="rounded-circle avatar-img">
+              <div>
+                <h6 class="fw-bold mb-0 text-dark">Alex Turner</h6>
+                <small class="text-muted review-date">18 Mar 2025</small>
+              </div>
+            </div>
+            <span class="badge bg-primary bg-opacity-10 text-primary fw-bold">5.0</span>
+          </div>
+          <p class="text-secondary small mb-3">Amazing experience! The location is perfect and communication was super smooth throughout our stay.</p>
+          <a href="" class="btn btn-link text-secondary p-0 small fw-medium text-decoration-none">Show More</a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="border rounded-4 p-4 h-100 bg-white">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="d-flex align-items-center gap-3">
+              <img src="images.REWAA/1627f3a870e9b56d751d07f53392d7a84aa55817.jpg" class="rounded-circle avatar-img">
+              <div>
+                <h6 class="fw-bold mb-0 text-dark">Emily Watson</h6>
+                <small class="text-muted review-date">20 Mar 2025</small>
+              </div>
+            </div>
+            <span class="badge bg-primary bg-opacity-10 text-primary fw-bold">5.0</span>
+          </div>
+          <p class="text-secondary small mb-3">Very comfortable stay! Beautiful apartment with all the necessary amenities. Would definitely return.</p>
+          <a href="" class="btn btn-link text-secondary p-0 small fw-medium text-decoration-none">Show More</a>
+        </div>
+      </div>
+    </div>
+
+
+          <button id="reviews-btn" onclick="showMoreReviews(this)" class="btn btn-outline-primary rounded-pill px-4 py-2 small fw-semibold">Show All Reviews</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- policies -->
+
+<section>
+<div class="container">
+<div class="mb-5">
+  <h4 class="fw-bold text-dark mb-1">Policies</h4>
+  <p class="text-secondary small mb-4">
+    <span class="fw-semibold text-dark opacity-75">Lazur Hotel Apartments</span> takes special requests - add in the next step!
+  </p>
+
+  <div class="border rounded-4 bg-white overflow-hidden shadow-sm text-align-center policies-card">
+    
+    <div class="row g-0 p-3 align-items-center">
+      <div class="col-md-4 d-flex align-items-center gap-3">
+        <i class="fa-regular fa-clock text-dark fs-5"></i>
+        <span class="fw-bold text-dark">Check-in</span>
+      </div>
+      <div class="col-md-8 text-secondary small">
+        <div class="fw-semibold text-dark">From 15:00 to 18:00</div>
+        <div>You'll need to let the property know in advance what time you'll arrive.</div>
+      </div>
+    </div>
+
+    <hr class="policy-hr ">
+
+    <div class="row g-0 p-3 align-items-center">
+      <div class="col-md-4 d-flex align-items-center gap-3">
+        <i class="fa-regular fa-clock text-dark fs-5"></i>
+        <span class="fw-bold text-dark">Check-out</span>
+      </div>
+      <div class="col-md-8 text-secondary small">
+        <div class="fw-semibold text-dark">From 8:00 to 11:00</div>
+      </div>
+    </div>
+
+    <hr class="policy-hr">
+
+    <div class="row g-0 p-3 align-items-center">
+      <div class="col-md-4 d-flex align-items-center gap-3">
+        <i class="fa-regular fa-file-lines text-dark fs-5"></i>
+        <span class="fw-bold text-dark">Cancellation/prepayment</span>
+      </div>
+      <div class="col-md-8 text-secondary small">
+       <span> Cancellation and prepayment policies vary according to accommodation type. Please check what condition may apply to each option when making your selection.</span>
+      </div>
+    </div>
+
+    <hr class="policy-hr">
+
+    <div class="row g-0 p-3 align-items-center">
+      <div class="col-md-4 d-flex align-items-center gap-3">
+        <i class="fa-solid fa-people-roof text-dark fs-5"></i>
+        <span class="fw-bold text-dark">Children and beds</span>
+      </div>
+      <div class="col-md-8 text-secondary small">
+       <span> Child policies: children of any age are welcome. To see correct prices and occupancy information, please add the number of children in your group and their ages to your search. Cot and extra bed policies: Cots and extra beds are not available at this property.</span>
+      </div>
+    </div>
+
+    <hr class="policy-hr">
+
+    <div class="row g-0 p-3 align-items-center">
+      <div class="col-md-4 d-flex align-items-center gap-3">
+        <i class="fa-regular fa-user text-dark fs-5"></i>
+        <span class="fw-bold text-dark">No age restriction</span>
+      </div>
+      <div class="col-md-8 text-secondary small">
+        <span> of all ages are welcome. </span>
+      </div>
+    </div>
+
+    <hr class="policy-hr">
+
+    <div class="row g-0 p-3 align-items-center">
+      <div class="col-md-4 d-flex align-items-center gap-3">
+        <i class="fa-regular fa-moon text-dark fs-5"></i>
+        <span class="fw-bold text-dark">Quiet hours</span>
+      </div>
+      <div class="col-md-8 text-secondary small">
+       <span> Guests must be quiet between 22:00 and 10:00.</span>
+      </div>
+    </div>
+
+    <hr class="policy-hr">
+
+    <div class="row g-0 p-3 align-items-center">
+      <div class="col-md-4 d-flex align-items-center gap-3">
+        <i class="fa-solid fa-ban-smoking text-dark fs-5"></i>
+        <span class="fw-bold text-dark">Smoking</span>
+      </div>
+      <div class="col-md-8 text-secondary small">
+        <span> not allowed.</span>
+      </div>
+    </div>
+
+    <hr class="policy-hr">
+
+    <div class="row g-0 p-3 align-items-center">
+      <div class="col-md-4 d-flex align-items-center gap-3">
+        <i class="fa-solid fa-paw text-dark fs-5"></i>
+        <span class="fw-bold text-dark">Pets</span>
+      </div>
+      <div class="col-md-8 text-secondary small">
+        <span>Pets are not allowed. </span>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+</section>
+
+
+
+<!-- 4 cards -->
+<section class="bg-body-secondary bg-opacity-75">
+  <div class="container py-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h3 class="fw-bold text-dark m-0 text-end">12 Most Popular Things to Do Nearby</h3>
+      <div id="custom-owl-nav" class="d-flex gap-2"></div>
+    </div>
+
+    <!-- Carousel -->
+    <div class="owl-carousel owl-theme custom-carousel">
+      
+      <!-- Card 1 -->
+      <div class="item">
+        <a href="hotel.html" class="card border-0 bg-transparent h-100 text-end text-decoration-none">
+          <div class="hotel-img-wrap position-relative overflow-hidden rounded-4 mb-3">
+            <img src="images.REWAA/e1bf8e088ad55a490de74fafa8abbcc7aeb5b553.jpg" class="w-100 h-100 object-fit-cover">
+            <span class="badge-tag badge-explore position-absolute top-0 end-0 m-3 rounded-pill px-3 py-2 d-inline-flex align-items-center gap-1 shadow">
+              <i class="fa-solid fa-compass"></i> Explore 
+            </span>
+            <span class="badge-tag badge-distance position-absolute top-0 start-0 m-3 rounded-pill px-3 py-2 shadow"> 600 m away </span>
+          </div>
+          <div class="card-body p-0">
+            <h6 class="fw-bold text-dark mb-2">Sagrada Familia Tour</h6>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="text-secondary small">Per Person</span>
+              <div>
+                <span class="text-decoration-line-through text-muted small ms-1">$50</span>
+                <span class="fw-bold text-dark fs-6">$42</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="item">
+        <div class="card border-0 bg-transparent h-100 text-end">
+          <div class="hotel-img-wrap position-relative overflow-hidden rounded-4 mb-3">
+            <img src="images.REWAA/217410a3483fde8a073c9ee7cfac310fef9d061b.jpg" class="w-100 h-100 object-fit-cover">
+            <span class="badge-tag badge-show position-absolute top-0 end-0 m-3 rounded-pill px-3 py-2 d-inline-flex align-items-center gap-1 shadow">
+              <i class="fa-solid fa-masks-theater"></i> Show 
+            </span>
+            <span class="badge-tag badge-distance position-absolute top-0 start-0 m-3 rounded-pill px-3 py-2 shadow"> 800 m away </span>
+          </div>
+          <div class="card-body p-0">
+            <h6 class="fw-bold text-dark mb-2">Flamenco Show</h6>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="text-secondary small">Per Person</span>
+              <span class="fw-bold text-dark fs-6">$35</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="item">
+        <div class="card border-0 bg-transparent h-100 text-end">
+          <div class="hotel-img-wrap position-relative overflow-hidden rounded-4 mb-3">
+            <img src="images.REWAA/d43f71758d9af793c69260245b12acca304ec5c7.jpg" class="w-100 h-100 object-fit-cover">
+            <span class="badge-tag badge-explore position-absolute top-0 end-0 m-3 rounded-pill px-3 py-2 d-inline-flex align-items-center gap-1 shadow">
+              <i class="fa-solid fa-landmark"></i> Museum 
+            </span>
+            <span class="badge-tag badge-distance position-absolute top-0 start-0 m-3 rounded-pill px-3 py-2 shadow"> 1.3 km away </span>
+          </div>
+          <div class="card-body p-0">
+            <h6 class="fw-bold text-dark mb-2">Palau de la Música Tour</h6>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="text-secondary small">Per Person</span>
+              <div>
+                <span class="text-decoration-line-through text-muted small ms-1">$59</span>
+                <span class="fw-bold text-dark fs-6">$45</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="item">
+        <div class="card border-0 bg-transparent h-100 text-end">
+          <div class="hotel-img-wrap position-relative overflow-hidden rounded-4 mb-3">
+            <img src="images.REWAA/4523f82569f86600d34203e95d1dd63662be2493.jpg" class="w-100 h-100 object-fit-cover">
+            <span class="badge-tag badge-food position-absolute top-0 end-0 m-3 rounded-pill px-3 py-2 d-inline-flex align-items-center gap-1 shadow">
+              <i class="fa-solid fa-utensils"></i> Food 
+            </span>
+            <span class="badge-tag badge-distance position-absolute top-0 start-0 m-3 rounded-pill px-3 py-2 shadow"> 500 m away </span>
+          </div>
+          <div class="card-body p-0">
+            <h6 class="fw-bold text-dark mb-2">Tapas & Wine Tasting</h6>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="text-secondary small">Per Person</span>
+              <span class="fw-bold text-dark fs-6">$39</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- apartments -->
+ 
+  <section class="apartments-section py-5">
+  <div class="container">
+    
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h3 class="fw-bold text-dark m-0">Similar Apartments in Barcelona</h3>
+      <div class="d-flex gap-2">
+        <button class="slider-btn rounded-circle d-flex align-items-center justify-content-center border-0 bg-white shadow-sm" aria-label="Previous">
+          <i class="fa-solid fa-chevron-left text-secondary small"></i>
+        </button>
+        <button class="slider-btn rounded-circle d-flex align-items-center justify-content-center border-0 bg-white shadow-sm" aria-label="Next">
+          <i class="fa-solid fa-chevron-right text-secondary small"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      
+      <!-- Apartment Card 1 -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card apartment-card h-100 border-0 rounded-4 overflow-hidden shadow">
+          <div class="apartment-img-wrap overflow-hidden">
+            <img src="images.REWAA/161664a284c8c8a9f30b179ab92d998f9c206b7a.jpg" class="w-100 h-100 object-fit-cover">
+          </div>
+          <div class="card-body p-3 d-flex flex-column">
+            <h6 class="fw-bold text-dark mb-1">Casa Sol Apartment</h6>
+            <p class="text-secondary small mb-3">
+              <i class="fa-solid fa-location-dot me-1"></i> Barcelona, Spain
+            </p>
+
+            <div class="note-box rounded-3 p-2 mb-3">
+              <p class="small text-dark m-0">Sunny terrace is a guest favorite.</p>
+            </div>
+
+            <ul class="list-unstyled text-secondary small d-flex flex-column gap-2 mb-4">
+              <li><i class="fa-solid fa-soap me-2"></i> Washing Machine</li>
+              <li><i class="fa-solid fa-wifi me-2"></i> Free Wi-Fi</li>
+              <li><i class="fa-solid fa-border-all me-2"></i> Private Balcony</li>
+            </ul>
+
+            <div class="mt-auto pt-3 border-top">
+              <div class="d-flex justify-content-between align-items-end">
+                <div class="d-flex align-items-center gap-1">
+                  <span class="rating-badge rounded-1 px-1 fw-bold text-primary small">4.5</span>
+                  <span class="fw-bold text-dark small ms-1">Very Good</span>
+                  <span class="text-muted extra-small">140 reviews</span>
+                </div>
+              </div>
+              <div class="text-end mt-2">
+                <span class="text-secondary extra-small d-block">$310 nightly</span>
+                <div>
+                  <span class="text-decoration-line-through text-muted small me-1">$1,070</span>
+                  <span class="fw-bold text-dark fs-6">$856 total</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Apartment Card 2 -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card apartment-card h-100 border-0 rounded-4 overflow-hidden shadow">
+          <div class="apartment-img-wrap overflow-hidden">
+            <img src="images.REWAA/7187963f29dd8b233bc02899530d4929ce207558.jpg" class="w-100 h-100 object-fit-cover">
+          </div>
+          <div class="card-body p-3 d-flex flex-column">
+            <h6 class="fw-bold text-dark mb-1">La Rambla Suites</h6>
+            <p class="text-secondary small mb-3">
+              <i class="fa-solid fa-location-dot me-1"></i> Barcelona, Spain
+            </p>
+
+            <div class="note-box rounded-3 p-2 mb-3">
+              <p class="small text-dark m-0">Located steps away from La Rambla.</p>
+            </div>
+
+            <ul class="list-unstyled text-secondary small d-flex flex-column gap-2 mb-4">
+              <li><i class="fa-solid fa-utensils me-2"></i> Kitchen</li>
+              <li><i class="fa-solid fa-couch me-2"></i> Living Area</li>
+              <li><i class="fa-solid fa-snowflake me-2"></i> Air Conditioner</li>
+            </ul>
+
+            <div class="mt-auto pt-3 border-top">
+              <div class="d-flex justify-content-between align-items-end">
+                <div class="d-flex align-items-center gap-1">
+                  <span class="rating-badge rounded-1 px-1 fw-bold text-primary small">3.8</span>
+                  <span class="fw-bold text-dark small ms-1">Good</span>
+                  <span class="text-muted extra-small">125 reviews</span>
+                </div>
+              </div>
+              <div class="text-end mt-2">
+                <span class="text-secondary extra-small d-block">$298 nightly</span>
+                <div>
+                  <span class="text-decoration-line-through text-muted small me-1">$1,050</span>
+                  <span class="fw-bold text-dark fs-6">$840 total</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Apartment Card 3 -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card apartment-card h-100 border-0 rounded-4 overflow-hidden shadow">
+          <div class="apartment-img-wrap overflow-hidden">
+            <img src="images.REWAA/c27b17a73e2ebc1b544a8a3b27b0fab6d3b8845e.png" class="w-100 h-100 object-fit-cover">
+          </div>
+          <div class="card-body p-3 d-flex flex-column">
+            <h6 class="fw-bold text-dark mb-1">Borne Vintage Loft</h6>
+            <p class="text-secondary small mb-3">
+              <i class="fa-solid fa-location-dot me-1"></i> Barcelona, Spain
+            </p>
+
+            <div class="note-box rounded-3 p-2 mb-3">
+              <p class="small text-dark m-0">Charming and full of character.</p>
+            </div>
+
+            <ul class="list-unstyled text-secondary small d-flex flex-column gap-2 mb-4">
+              <li><i class="fa-solid fa-key me-2"></i> Self Check-in</li>
+              <li><i class="fa-solid fa-fire me-2"></i> Barbecue</li>
+              <li><i class="fa-solid fa-wifi me-2"></i> Free Wi-Fi</li>
+            </ul>
+
+            <div class="mt-auto pt-3 border-top">
+              <div class="d-flex justify-content-between align-items-end">
+                <div class="d-flex align-items-center gap-1">
+                  <span class="rating-badge rounded-1 px-1 fw-bold text-primary small">4.2</span>
+                  <span class="fw-bold text-dark small ms-1">Very Good</span>
+                  <span class="text-muted extra-small">110 reviews</span>
+                </div>
+              </div>
+              <div class="text-end mt-2">
+                <span class="text-secondary extra-small d-block">$289 nightly</span>
+                <div>
+                  <span class="text-decoration-line-through text-muted small me-1">$990</span>
+                  <span class="fw-bold text-dark fs-6">$792 total</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Apartment Card 4 -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card apartment-card h-100 border-0 rounded-4 overflow-hidden shadow">
+          <div class="apartment-img-wrap overflow-hidden">
+            <img src="images.REWAA/f67cb7f052c7f3bf308f13e14aa80f644755d1fd.jpg" class="w-100 h-100 object-fit-cover">
+          </div>
+          <div class="card-body p-3 d-flex flex-column">
+            <h6 class="fw-bold text-dark mb-1">Eixample Designer Flat</h6>
+            <p class="text-secondary small mb-3">
+              <i class="fa-solid fa-location-dot me-1"></i> Barcelona, Spain
+            </p>
+
+            <div class="note-box rounded-3 p-2 mb-3">
+              <p class="small text-dark m-0">Loved for its modern design.</p>
+            </div>
+
+            <ul class="list-unstyled text-secondary small d-flex flex-column gap-2 mb-4">
+              <li><i class="fa-solid fa-key me-2"></i> Self Check-in</li>
+              <li><i class="fa-solid fa-hot-tub-person me-2"></i> Hot Tub</li>
+              <li><i class="fa-solid fa-square-parking me-2"></i> Paid Parking</li>
+            </ul>
+
+            <div class="mt-auto pt-3 border-top">
+              <div class="d-flex justify-content-between align-items-end">
+                <div class="d-flex align-items-center gap-1">
+                  <span class="rating-badge rounded-1 px-1 fw-bold text-primary small">4.9</span>
+                  <span class="fw-bold text-dark small ms-1">Very Good</span>
+                  <span class="text-muted extra-small">95 reviews</span>
+                </div>
+              </div>
+              <div class="text-end mt-2">
+                <span class="text-secondary extra-small d-block">$325 nightly</span>
+                <div>
+                  <span class="text-decoration-line-through text-muted small me-1">$1,180</span>
+                  <span class="fw-bold text-dark fs-6">$944 total</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<footer class="footer-dark text-white pt-5 pb-4 mt-5">
+      <div class="container">
+        <div class="row g-4 pb-4">
+          
+          <div class="col-12 col-lg-4">
+            <a href="#" class="text-decoration-none d-inline-block mb-3">
+              <span class="fs-3 fw-bold text-white">tript<span class="text-secondary">o</span></span>
+            </a>
+            <p class="text-white small mb-4 pe-lg-4 lh-base w-75">
+              We help you find and book the perfect stay from cozy guesthouses to top hotels-with ease, trust, and the best deals.
+            </p>
+            
+            <h6 class="fw-bold small mb-3 text-primary">Download Our App</h6>
+            <div class="d-flex flex-wrap gap-2">
+              <a href="#" class="btn btn-outline-secondary border-secondary text-white btn-sm px-3 py-2 d-flex align-items-center gap-2 rounded-3 text-start">
+                <i class="fa-brands fa-apple fs-4"></i>
+                <div class="lh-1">
+                  <span class="d-block text-uppercase text-white">Download on the</span>
+                  <span class="fw-bold small">App Store</span>
+                </div>
+              </a>
+              <a href="" class="btn btn-outline-secondary border-secondary text-white btn-sm px-3 py-2 d-flex align-items-center gap-2 rounded-3 text-start">
+                <i class="fa-brands fa-google-play fs-5"></i>
+                <div class="lh-1">
+                  <span class="d-block text-uppercase text-white">GET IT ON</span>
+                  <span class="fw-bold small">Google Play</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-6 col-sm-4 col-lg-2">
+            <h6 class="fw-bold small mb-3 text-primary">Explore</h6>
+            <ul class="list-unstyled text-secondary small d-flex flex-column gap-2 mb-0">
+              <li><a href="" class="text-white text-decoration-none">Trending Destinations</a></li>
+              <li><a href="" class="text-white text-decoration-none">Summer Hotspots</a></li>
+              <li><a href="" class="text-white text-decoration-none">Winter Getaways</a></li>
+              <li><a href="" class="text-white text-decoration-none">Weekend Deals</a></li>
+              <li><a href="" class="text-white text-decoration-none">Family-Friendly Stays</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-sm-4 col-lg-2">
+            <h6 class="fw-bold small mb-3 text-primary">Property Types</h6>
+            <ul class="list-unstyled text-secondary small d-flex flex-column gap-2 mb-0">
+              <li><a href="" class="text-white text-decoration-none">Hotels</a></li>
+              <li><a href="" class="text-white text-decoration-none">Apartments</a></li>
+              <li><a href="" class="text-white text-decoration-none">Villas</a></li>
+              <li><a href="" class="text-white text-decoration-none">Cabins</a></li>
+              <li><a href="" class="text-white text-decoration-none">Glamping</a></li>
+              <li><a href="" class="text-white text-decoration-none">Domes</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-sm-4 col-lg-2">
+            <h6 class="fw-bold small mb-3 text-primary">Support</h6>
+            <ul class="list-unstyled text-secondary small d-flex flex-column gap-2 mb-0">
+              <li><a href="helpCenter.html" class="text-white text-decoration-none">Help Centre</a></li>
+              <li><a href="" class="text-white text-decoration-none">Live Chat Support</a></li>
+              <li><a href="" class="text-white text-decoration-none">FAQs</a></li>
+              <li><a href="" class="text-white text-decoration-none">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-2">
+            <h6 class="fw-bold small mb-3 text-primary">Get In Touch</h6>
+            <p class="text-white small mb-2">+1 (800) 123-456</p>
+            <p class="text-white small mb-3">support@tripto.com</p>
+            
+            <div class="d-flex gap-2">
+              <a href="" class="social-btn rounded-circle d-flex align-items-center justify-content-center text-decoration-none">
+                <i class="fa-brands fa-facebook-f text-white small"></i>
+              </a>
+              <a href="" class="social-btn rounded-circle d-flex align-items-center justify-content-center text-decoration-none">
+                <i class="fa-brands fa-instagram text-white small"></i>
+              </a>
+              <a href="" class="social-btn rounded-circle d-flex align-items-center justify-content-center text-decoration-none">
+                <i class="fa-brands fa-youtube text-white small"></i>
+              </a>
+              <a href="" class="social-btn rounded-circle d-flex align-items-center justify-content-center text-decoration-none">
+                <i class="fa-brands fa-twitter text-white small"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <hr class="border-secondary opacity-25 my-4">
+
+        <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 text-secondary small">
+          <div>
+            © 2025 Tripto. All rights reserved.
+          </div>
+          
+          <div class="d-flex align-items-center gap-2 flex-wrap justify-content-center">
+            <span class="badge bg-white text-dark px-2 py-1 fw-bold fs-6"><i class="fa-brands fa-cc-visa"></i></span>
+            <span class="badge bg-white text-primary px-2 py-1 fw-bold fs-6"><i class="fa-brands fa-cc-diners-club"></i></span>
+            <span class="badge bg-white text-danger px-2 py-1 fw-bold fs-6"><i class="fa-brands fa-cc-mastercard"></i></span>
+            <span class="badge bg-white text-primary px-2 py-1 fw-bold fs-6"><i class="fa-brands fa-stripe"></i></span>
+            <span class="badge bg-white text-primary px-2 py-1 fw-bold fs-6"><i class="fa-brands fa-paypal"></i></span>
+            <span class="badge bg-white text-dark px-2 py-1 fw-bold fs-6"><i class="fa-brands fa-google-pay"></i></span>
+            <span class="badge bg-white text-dark px-2 py-1 fw-bold fs-6"><i class="fa-brands fa-apple-pay"></i></span>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="house.js/script.js"></script>
+  </body>
+</html>
