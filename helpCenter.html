@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="hotel.CSS/style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand bg-white border-bottom py-3 shadow sticky-top">
+      <div class="container">
+        <a href="" class="navbar-brand p-0">
+          <span class="fs-2 text-primary tracking-tight logo-text">tript<span class="text-warning">o</span></span>
+        </a>
+        <div class="d-flex align-items-center gap-4 ms-auto">
+          <a href="" class="text-decoration-none d-flex align-items-center gap-2">
+            <img src="https://flagcdn.com/w40/us.png" class="rounded-1 object-fit-cover flag-img">
+            <span class="fw-bold text-primary small">USD</span>
+          </a>
+          <a href="#" class="text-primary fs-5 d-flex align-items-center text-decoration-none">
+            <i class="fa-solid fa-headset"></i>
+          </a>
+          <a href="" class="d-block text-decoration-none">
+            <img src="images.REWAA/b60d4de8d5188cec925a9f154dcee647500bae18.jpg" class="rounded-circle object-fit-cover profile-img">
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <section>
+      <div class="container py-4">
+        <div class="mb-5">
+          <h2 class="fw-bold mb-2">Help Center</h2>
+          <p class="text-secondary mb-3">Hi, Traveler</p>
+          
+        <form id="searchForm" class="row g-2 col-12 col-md-8">
+          <div class="col-9">
+           <input id="searchInput" type="text" class="form-control rounded-3 ps-3 w-100 h-100" placeholder="Ask">
+           <small class="text-danger extra-small"></small>
+          </div>
+  
+         <div class="col-3">
+            <button class="btn btn-primary w-100 rounded-3 d-flex align-items-center justify-content-center gap-2 fw-semibold small py-2" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i> Search </button>
+         </div>
+       </form>
+        </div>
+
+        <h5 class="fw-bold mb-3">Explore help articles</h5>
+
+        <div class="row g-4 align-items-start">
+          
+          <!-- Tabs -->
+          <div class="col-12 col-md-4 col-lg-3">
+            <div class="nav flex-column nav-pills gap-2" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              
+              <button class="nav-link text-start rounded-3 border border-secondary-subtle d-flex align-items-center justify-content-between text-dark bg-white" id="v-pills-stays-tab" data-bs-toggle="pill" data-bs-target="#v-pills-stays" type="button" role="tab" aria-controls="v-pills-stays" aria-selected="true">
+                <span><i class="fa-solid fa-city me-2 text-secondary"></i> Stays</span>
+                <i class="fa-solid fa-chevron-right small text-muted"></i>
+              </button>
+
+              <button class="nav-link text-start rounded-3 border border-secondary-subtle d-flex align-items-center justify-content-between text-dark bg-white" id="v-pills-loyalty-tab" data-bs-toggle="pill" data-bs-target="#v-pills-loyalty" type="button" role="tab" aria-controls="v-pills-loyalty" aria-selected="false">
+                <span><i class="fa-solid fa-award me-2 text-secondary"></i> Loyalty & Rewards</span>
+                <i class="fa-solid fa-chevron-right small text-muted"></i>
+              </button>
+
+              <button class="nav-link text-start rounded-3 border border-secondary-subtle d-flex align-items-center justify-content-between text-dark bg-white" id="v-pills-security-tab" data-bs-toggle="pill" data-bs-target="#v-pills-security" type="button" role="tab" aria-controls="v-pills-security" aria-selected="false">
+                <span><i class="fa-solid fa-shield-halved me-2 text-secondary"></i> Security</span>
+                <i class="fa-solid fa-chevron-right small text-muted"></i>
+              </button>
+
+              <button class="nav-link text-start rounded-3 border border-secondary-subtle d-flex align-items-center justify-content-between text-dark bg-white" id="v-pills-things-tab" data-bs-toggle="pill" data-bs-target="#v-pills-things" type="button" role="tab" aria-controls="v-pills-things" aria-selected="false">
+                <span><i class="fa-solid fa-wand-magic-sparkles me-2 text-secondary"></i> Things to do</span>
+                <i class="fa-solid fa-chevron-right small text-muted"></i>
+              </button>
+
+              <button class="nav-link text-start rounded-3 border border-secondary-subtle d-flex align-items-center justify-content-between text-dark bg-white" id="v-pills-refunds-tab" data-bs-toggle="pill" data-bs-target="#v-pills-refunds" type="button" role="tab" aria-controls="v-pills-refunds" aria-selected="false">
+                <span><i class="fa-solid fa-money-check-dollar me-2 text-secondary"></i> Refunds & Charges</span>
+                <i class="fa-solid fa-chevron-right small text-muted"></i>
+              </button>
+
+              <button class="nav-link text-start rounded-3 border border-secondary-subtle d-flex align-items-center justify-content-between text-dark bg-white" id="v-pills-privacy-tab" data-bs-toggle="pill" data-bs-target="#v-pills-privacy" type="button" role="tab" aria-controls="v-pills-privacy" aria-selected="false">
+                <span><i class="fa-solid fa-lock me-2 text-secondary"></i> Privacy</span>
+                <i class="fa-solid fa-chevron-right small text-muted"></i>
+              </button>
+
+              <button class="nav-link text-start rounded-3 border border-secondary-subtle d-flex align-items-center justify-content-between text-dark bg-white active" id="v-pills-account-tab" data-bs-toggle="pill" data-bs-target="#v-pills-account" type="button" role="tab" aria-controls="v-pills-account" aria-selected="false">
+                <span><i class="fa-regular fa-user me-2 text-secondary"></i> Account</span>
+                <i class="fa-solid fa-chevron-right small text-muted"></i>
+              </button>
+
+              <button class="nav-link text-start rounded-3 border border-secondary-subtle d-flex align-items-center justify-content-between text-dark bg-white" id="v-pills-alerts-tab" data-bs-toggle="pill" data-bs-target="#v-pills-alerts" type="button" role="tab" aria-controls="v-pills-alerts" aria-selected="false">
+                <span><i class="fa-solid fa-triangle-exclamation me-2 text-secondary"></i> Travel Alerts</span>
+                <i class="fa-solid fa-chevron-right small text-muted"></i>
+              </button>
+
+            </div>
+          </div>
+
+          <!-- Main Tabs -->
+          <div class="col-12 col-md-8 col-lg-9">
+            <div class="tab-content" id="v-pills-tabContent">
+              
+              <div class="tab-pane fade" id="v-pills-stays" role="tabpanel" aria-labelledby="v-pills-stays-tab" tabindex="0"></div>
+
+              <div class="tab-pane fade" id="v-pills-loyalty" role="tabpanel" aria-labelledby="v-pills-loyalty-tab" tabindex="0"> </div>
+
+              <div class="tab-pane fade" id="v-pills-security" role="tabpanel" aria-labelledby="v-pills-security-tab" tabindex="0"></div>
+
+              <div class="tab-pane fade" id="v-pills-things" role="tabpanel" aria-labelledby="v-pills-things-tab" tabindex="0"></div>
+
+              <div class="tab-pane fade" id="v-pills-refunds" role="tabpanel" aria-labelledby="v-pills-refunds-tab" tabindex="0"></div>
+
+              <div class="tab-pane fade" id="v-pills-privacy" role="tabpanel" aria-labelledby="v-pills-privacy-tab" tabindex="0"></div>
+
+              <!-- Account Tab -->
+              <div class="tab-pane fade show active" id="v-pills-account" role="tabpanel" aria-labelledby="v-pills-account-tab" tabindex="0">
+                <h4 class="fw-bold text-dark mb-4 d-flex align-items-center gap-2">
+                  <i class="fa-solid fa-chevron-left text-primary fs-6"></i> Account articles </h4>
+
+                <div class="row g-3">
+                  <div class="col-12 col-md-6">
+                    <a href="accountContent.html" class="text-decoration-none text-dark d-flex align-items-center justify-content-between p-3 border border-secondary-subtle rounded-3 bg-white">
+                      <span class="small fw-semibold">International travel documents</span>
+                      <i class="fa-solid fa-chevron-right text-muted small"></i>
+                    </a>
+                  </div>
+
+                  <div class="col-12 col-md-6">
+                    <a href="#" class="text-decoration-none text-dark d-flex align-items-center justify-content-between p-3 border border-secondary-subtle rounded-3 bg-white">
+                      <span class="small fw-semibold">Unsubscribe from marketing emails, SMS and...</span>
+                      <i class="fa-solid fa-chevron-right text-muted small"></i>
+                    </a>
+                  </div>
+
+                  <div class="col-12 col-md-6">
+                    <a href="#" class="text-decoration-none text-dark d-flex align-items-center justify-content-between p-3 border border-secondary-subtle rounded-3 bg-white">
+                      <span class="small fw-semibold">Correct or update your account information</span>
+                      <i class="fa-solid fa-chevron-right text-muted small"></i>
+                    </a>
+                  </div>
+
+                  <div class="col-12 col-md-6">
+                    <a href="#" class="text-decoration-none text-dark d-flex align-items-center justify-content-between p-3 border border-secondary-subtle rounded-3 bg-white">
+                      <span class="small fw-semibold">Manage your account and travel details</span>
+                      <i class="fa-solid fa-chevron-right text-muted small"></i>
+                    </a>
+                  </div>
+
+                  <div class="col-12 col-md-6">
+                    <a href="#" class="text-decoration-none text-dark d-flex align-items-center justify-content-between p-3 border border-secondary-subtle rounded-3 bg-white">
+                      <span class="small fw-semibold">Sign in to your account</span>
+                      <i class="fa-solid fa-chevron-right text-muted small"></i>
+                    </a>
+                  </div>
+
+                  <div class="col-12 col-md-6">
+                    <a href="#" class="text-decoration-none text-dark d-flex align-items-center justify-content-between p-3 border border-secondary-subtle rounded-3 bg-white">
+                      <span class="small fw-semibold">Delete your account</span>
+                      <i class="fa-solid fa-chevron-right text-muted small"></i>
+                    </a>
+                  </div>
+
+                  <div class="col-12 col-md-6">
+                    <a href="#" class="text-decoration-none text-dark d-flex align-items-center justify-content-between p-3 border border-secondary-subtle rounded-3 bg-white">
+                      <span class="small fw-semibold">Customs requirements</span>
+                      <i class="fa-solid fa-chevron-right text-muted small"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="v-pills-alerts" role="tabpanel" aria-labelledby="v-pills-alerts-tab" tabindex="0"></div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+   <footer class="footer-dark text-white pt-5 pb-4 mt-5">
+  <div class="container">
+    <div class="row g-4 pb-4">
+
+      <div class="col-6 col-sm-6 col-lg-3">
+        <h6 class="fw-bold mb-3 custom-title text-primary">Explore</h6>
+        <ul class="list-unstyled small d-flex flex-column gap-2 mb-0">
+          <li><a href="" class="text-white text-decoration-none">Trending Destinations</a></li>
+          <li><a href="" class="text-white text-decoration-none">Summer Hotspots</a></li>
+          <li><a href="" class="text-white text-decoration-none">Winter Getaways</a></li>
+          <li><a href="" class="text-white text-decoration-none">Weekend Deals</a></li>
+          <li><a href="" class="text-white text-decoration-none">Family-Friendly Stays</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-sm-6 col-lg-3">
+        <h6 class="fw-bold mb-3 custom-title text-primary">Property Types</h6>
+        <ul class="list-unstyled text-secondary small d-flex flex-column gap-2 mb-0">
+          <li><a href="" class="text-white text-decoration-none">Hotels</a></li>
+          <li><a href="" class="text-white text-decoration-none">Apartments</a></li>
+          <li><a href="" class="text-white text-decoration-none">Villas</a></li>
+          <li><a href="" class="text-white text-decoration-none">Cabins</a></li>
+          <li><a href="" class="text-white text-decoration-none">Glamping</a></li>
+          <li><a href="" class="text-white text-decoration-none">Domes</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-sm-6 col-lg-3">
+        <h6 class="fw-bold mb-3 custom-title text-primary">Support</h6>
+        <ul class="list-unstyled text-secondary small d-flex flex-column gap-2 mb-0">
+          <li><a href="helpCenter.html" class="text-white text-decoration-none">Help Centre</a></li>
+          <li><a href="" class="text-white text-decoration-none">Live Chat Support</a></li>
+          <li><a href="" class="text-white text-decoration-none">FAQs</a></li>
+          <li><a href="" class="text-white text-decoration-none">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-sm-6 col-lg-3">
+        <h6 class="fw-bold mb-3 custom-title text-primary">Get In Touch</h6>
+        <p class="text-white text-decoration-none mb-2">+1 (800) 123-456</p>
+        <p class="text-white text-decoration-none mb-3">support@tripto.com</p>
+        
+        <div class="d-flex gap-2">
+          <a href="" class="social-btn rounded-2 d-flex align-items-center justify-content-center text-decoration-none">
+            <i class="fa-brands fa-facebook-f text-white small"></i>
+          </a>
+          <a href="" class="social-btn rounded-2 d-flex align-items-center justify-content-center text-decoration-none">
+            <i class="fa-brands fa-instagram text-white small"></i>
+          </a>
+          <a href="" class="social-btn rounded-2 d-flex align-items-center justify-content-center text-decoration-none">
+            <i class="fa-brands fa-youtube text-white small"></i>
+          </a>
+          <a href="" class="social-btn rounded-2 d-flex align-items-center justify-content-center text-decoration-none">
+            <i class="fa-brands fa-twitter text-white small"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary opacity-25 my-4">
+
+    <div class="d-flex justify-content-center text-secondary small">
+      © 2025 Tripto. All rights reserved.
+    </div>
+
+  </div>
+</footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="helpCenter.JS/script.js"></script>
+  </body>
+</html>
