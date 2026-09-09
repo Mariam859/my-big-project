@@ -1,0 +1,201 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #1f2937;
+}
+
+
+/* Navbar */
+
+.navbar {
+    padding: 14px 0;
+}
+
+
+/* Steps */
+
+.booking-steps {
+    width: 85%;
+    margin: auto;
+}
+
+.step {
+    text-align: center;
+}
+
+.step span {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #ddd;
+    color: #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-weight: bold;
+}
+
+.step.done span,
+.step.active span {
+    background: #075cff;
+    color: white;
+}
+
+.step p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.line {
+    height: 1px;
+    background: #777;
+    flex: 1;
+    margin: 0 20px;
+}
+
+
+/* Main */
+
+.booking-container {
+    max-width: 1200px;
+}
+
+
+/* Titles */
+
+.section-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #4b5563;
+    margin-bottom: 20px;
+}
+
+.sub-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #4b5563;
+}
+
+
+/* Inputs */
+
+.form-control {
+    height: 48px;
+    border-radius: 9px;
+}
+
+.form-control:focus {
+    border-color: #075cff;
+    box-shadow: none;
+}
+
+
+/* Payment options */
+
+.payment-option {
+    padding: 8px 0;
+}
+
+.payment-option .form-check-input {
+    margin-top: 5px;
+}
+
+.payment-option .form-check-label {
+    margin-left: 8px;
+}
+
+
+/* Payment methods */
+
+.payment-method {
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.payment-method.active {
+    border: 2px solid #0d6efd;
+    box-shadow: 0 0 0 1px #0d6efd;
+}
+
+.payment-method img {
+    width: 55px;
+    height: 30px;
+    object-fit: contain;
+}
+
+
+/* Payment Colors */
+
+.visa {
+    color: #1a1f71;
+}
+
+.diners {
+    color: #0079be;
+}
+
+.mastercard {
+    color: #eb001b;
+}
+
+.stripe {
+    color: hsl(288, 84%, 37%);
+}
+
+.paypal {
+    color: #003087;
+}
+
+.google {
+    color: #2c9374;
+}
+
+.apple {
+    color: #000;
+}
+
+/* Card */
+
+.summary {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.summary img {
+    object-fit: cover;
+}
+
+
+/* Required */
+
+.form-label span {
+    color: red;
+}
+
+
+.btn-primary {
+    background: #075cff;
+    border: none;
+}
+
+
+.btn-primary:hover {
+    background: #064bd8;
+}
+
+
+@media (max-width: 768px) {
+
+    .booking-steps {
+        width: 100%;
+    }
+
+    .line {
+        margin: 0 5px;
+    }
+
+}

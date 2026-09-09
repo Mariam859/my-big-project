@@ -1,0 +1,321 @@
+body{
+
+    font-family: Arial, sans-serif;
+    color:#1f2937;
+    background:white;
+
+}
+
+
+/* Navbar */
+
+.navbar{
+
+    padding:15px 0;
+
+}
+
+
+
+/* Steps */
+
+.booking-steps{
+
+    width:85%;
+    margin:auto;
+
+}
+
+
+.step{
+
+    text-align:center;
+
+}
+
+
+.step span{
+
+    width:38px;
+    height:38px;
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin:auto;
+
+    background:#ddd;
+    color:#555;
+
+    font-weight:bold;
+
+}
+
+
+
+.step.done span,
+.step.active span{
+
+    background:#075cff;
+    color:white;
+
+}
+
+
+
+.step p{
+
+    margin-top:10px;
+    font-size:14px;
+    color:#4b5563;
+
+}
+
+
+
+.line{
+
+    height:1px;
+    background:#555;
+
+    flex:1;
+
+    margin:0 20px;
+
+}
+
+
+
+
+
+/* Container */
+
+.booking-container{
+
+    max-width:1200px;
+
+}
+
+
+
+
+
+/* Titles */
+
+h2{
+
+    font-size:22px;
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+
+h5{
+
+    font-weight:600;
+
+    margin-top:20px;
+
+}
+
+
+
+/* Text */
+
+p{
+
+    font-size:14px;
+
+}
+
+
+
+
+/* Inputs */
+
+
+.form-control{
+
+    height:48px;
+
+    border-radius:10px;
+
+    border:1px solid #ddd;
+
+}
+
+
+
+.form-control:focus{
+
+    box-shadow:none;
+
+    border-color:#075cff;
+
+}
+
+
+
+
+
+/* Summary */
+
+
+.summary{
+
+    border-radius:12px;
+
+    border:1px solid #ddd;
+
+    position:sticky;
+
+    top:20px;
+
+}
+
+
+
+.summary img{
+
+    object-fit:cover;
+
+}
+
+
+
+.summary h5{
+
+    margin-top:0;
+
+}
+
+
+
+.summary hr{
+
+    margin:20px 0;
+
+}
+
+
+
+.summary p{
+
+    color:#6b7280;
+
+}
+
+
+
+
+
+.badge{
+
+    border-radius:20px;
+
+}
+
+
+
+
+
+/* Textarea */
+
+textarea{
+
+    resize:none;
+
+}
+
+
+
+
+
+/* Insurance */
+
+.insurance{
+
+    color:#6b7280;
+
+    font-size:14px;
+
+}
+
+
+
+
+/* Button */
+
+
+.btn-primary{
+
+    background:#075cff;
+
+    border:none;
+
+    border-radius:10px;
+
+}
+
+
+
+.btn-primary:hover{
+
+    background:#064bd8;
+
+}
+
+
+
+
+
+@media(max-width:992px){
+
+
+.booking-steps{
+
+    width:100%;
+
+}
+
+
+.summary{
+
+    position:static;
+
+}
+
+
+}
+/* ================= ADD NEW GUEST ================= */
+
+let addGuest = document.getElementById("addGuest");
+
+let guest2Section = document.getElementById("guest2Section");
+
+let deleteGuest2 = document.getElementById("deleteGuest2");
+
+
+addGuest.addEventListener("click", function(){
+
+    guest2Section.classList.remove("d-none");
+
+    addGuest.style.display = "none";
+
+});
+
+
+
+/* ================= DELETE GUEST 2 ================= */
+
+deleteGuest2.addEventListener("click", function(){
+
+    guest2Section.classList.add("d-none");
+
+    addGuest.style.display = "inline";
+
+});
