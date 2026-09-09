@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Tripto - Booking Hotel , apartments, villas and unique stays worldwide.">
-  <title>Tripto-Booking Hotel</title>
+  <meta name="description" content="Tripto - Booking Hotel, apartments, villas and unique stays worldwide.">
+  <title>Tripto - Booking Hotel</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap">
@@ -17,146 +19,145 @@
 
 <body>
   <!-- navbar -->
-  <nav class="navbar navbar-expand-lg bg-white position-fixed top-0 start-0 w-100 shadow-sm z-3 py-2">
+  <nav class="navbar navbar-expand-lg bg-white sticky-top shadow-sm py-2">
   <div class="container d-flex justify-content-between align-items-center">
-    <a class="navbar-brand d-flex align-items-center m-0 p-0" href="#">
-      <img src="Logo.png" alt="Tripto" class="d-block">
+    <a class="navbar-brand d-flex align-items-center m-0 p-0" href="index.html">
+      <img src="Logo.png" alt="Tripto" class="d-block" style="height: 30px;">
     </a>
     <div class="d-flex align-items-center gap-3">
       <div class="d-flex align-items-center gap-1 cursor-pointer">
         <img src="https://flagcdn.com/w40/eg.png" alt="Egypt" width="20" height="14" class="rounded-1">
-        <span class="fw-semibold small ms-1" style="color: #0057FF;">EGP</span>
+        <span class="fw-semibold small ms-1 text-brand">EGP</span>
       </div>
-      <a href="#" class="d-flex align-items-center text-decoration-none" style="color: #0057FF;">
-        <i class="bi bi-headset fs-5"></i>
+      <a href="helpCenter.html" class="d-flex align-items-center text-decoration-none text-brand">
+        <i class="fa-solid fa-headset fs-5"></i>
       </a>
-      <button id="loginBtn" class="btn btn-tripto rounded-pill px-4 py-2 fw-semibold border-0" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+      <button id="loginBtn" class="btn btn-primary rounded-pill px-4 py-2 fw-semibold border-0" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
 
-      <!-- Signed-in state -->
       <div id="accountMenu" class="dropdown d-none">
         <button class="btn border-0 p-0 d-flex align-items-center gap-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80" alt="Your account" class="nav-avatar">
-          <i class="bi bi-chevron-down text-muted small"></i>
+          <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80" alt="Your account"
+               class="rounded-circle object-fit-cover border border-2 border-primary" width="38" height="38">
+          <i class="fa-solid fa-chevron-down text-muted small"></i>
         </button>
         <ul class="dropdown-menu dropdown-menu-end shadow border-0 rounded-4 p-2 mt-2">
           <li><span class="dropdown-item-text small text-muted" id="accountEmail">you@example.com</span></li>
           <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item rounded-3" href="#"><i class="bi bi-person me-2"></i>Profile</a></li>
-          <li><a class="dropdown-item rounded-3" href="#"><i class="bi bi-suitcase me-2"></i>My bookings</a></li>
-          <li><a class="dropdown-item rounded-3" href="#"><i class="bi bi-heart me-2"></i>Wishlist</a></li>
+          <li><a class="dropdown-item rounded-3" href="accountContent.html"><i class="fa-solid fa-user me-2"></i>Profile</a></li>
+          <li><a class="dropdown-item rounded-3" href="accountContent.html"><i class="fa-solid fa-suitcase me-2"></i>My bookings</a></li>
+          <li><a class="dropdown-item rounded-3" href="pages/wishlist.html"><i class="fa-regular fa-heart me-2"></i>Wishlist</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item rounded-3 text-danger" href="#" onclick="logout(); return false;"><i class="fa-solid fa-right-from-bracket me-2"></i>Log out</a></li>
         </ul>
       </div>
     </div>
   </div>
 </nav>
-   
-<!-- Hero Sectio  -->
-<div class="container pt-2">
-  
-  <section class="hero rounded-4 text-center text-white position-relative d-flex flex-column align-items-center justify-content-center">
-    <h1 class="hero-title text-white mb-2">Your Trip Starts Here</h1>
-    <p class="hero-subtitle mb-4">Find unique stays across hotels, villas, and more.</p>
+
+<!-- hero  -->
+<div class="container pt-2" id="home">
+  <section class="bg-cover rounded-4 text-center text-white position-relative d-flex flex-column align-items-center justify-content-center px-3"
+           style="min-height: 420px; padding-bottom: 90px;
+                  background-image: linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80');">
+    <h1 class="hero-title fw-semibold text-white mb-2">Your Trip Starts Here</h1>
+    <p class="hero-subtitle fw-semibold text-white mb-4">Find unique stays across hotels, villas, and more.</p>
   </section>
 
-  <!-- Search Box -->
-  <div class="container hero-float position-relative z-3 px-0">
+  <div class="container position-relative z-3 px-0" style="margin-top: -110px; max-width: 960px;">
 
     <div class="text-center position-relative z-2" style="margin-bottom: -18px;">
-      <div class="glass-capsule d-inline-flex gap-1 flex-wrap justify-content-center align-items-center p-1 rounded-pill shadow-sm" role="group" aria-label="Property type">
-        
-        <button type="button" class="btn glass-tab active rounded-pill fs-7 d-flex align-items-center gap-1 border-0">
-          <i class="bi bi-building"></i> Hotel
+      <div class="glass d-inline-flex gap-1 flex-wrap justify-content-center align-items-center p-1 rounded-pill shadow-sm">
+
+        <button type="button" class="btn glass-tab active rounded-pill px-3 py-1 fs-7 d-flex align-items-center gap-1 border-0">
+          <i class="fa-solid fa-building"></i> Hotel
         </button>
-        <button type="button" class="btn glass-tab rounded-pill fs-7 d-flex align-items-center gap-1 border-0">
-          <i class="bi bi-house"></i> House
+        <button type="button" class="btn glass-tab rounded-pill px-3 py-1 fs-7 d-flex align-items-center gap-1 border-0">
+          <i class="fa-solid fa-house"></i> House
         </button>
-        <button type="button" class="btn glass-tab rounded-pill fs-7 d-flex align-items-center gap-1 border-0">
-          <i class="bi bi-display"></i> Guest House
+        <button type="button" class="btn glass-tab rounded-pill px-3 py-1 fs-7 d-flex align-items-center gap-1 border-0">
+          <i class="fa-solid fa-desktop"></i> Guest House
         </button>
-        <button type="button" class="btn glass-tab rounded-pill fs-7 d-flex align-items-center gap-1 border-0">
-          <i class="bi bi-tree"></i> Cabins
+        <button type="button" class="btn glass-tab rounded-pill px-3 py-1 fs-7 d-flex align-items-center gap-1 border-0">
+          <i class="fa-solid fa-tree"></i> Cabins
         </button>
-        <button type="button" class="btn glass-tab rounded-pill fs-7 d-flex align-items-center gap-1 border-0">
-          <i class="bi bi-tent"></i> Glamping
+        <button type="button" class="btn glass-tab rounded-pill px-3 py-1 fs-7 d-flex align-items-center gap-1 border-0">
+          <i class="fa-solid fa-campground"></i> Glamping
         </button>
-        <button type="button" class="btn glass-tab rounded-pill fs-7 d-flex align-items-center gap-1 border-0">
-          <i class="bi bi-balloon"></i> Domes
+        <button type="button" class="btn glass-tab rounded-pill px-3 py-1 fs-7 d-flex align-items-center gap-1 border-0">
+          <i class="fa-solid fa-igloo"></i> Domes
         </button>
       </div>
     </div>
 
-    <!-- White Box  -->
     <form id="searchForm" class="bg-white shadow-lg rounded-4 p-3 p-md-4 position-relative z-1">
       <div class="row g-3 align-items-center">
 
-        <!-- Location -->
         <div class="col-12 col-md-3 border-end position-relative">
-          <div class="p-1 search-field cursor-pointer" id="locationSelectBtn" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false">
+          <div class="p-1 search-field cursor-pointer" id="locationSelectBtn">
             <label class="form-label mb-0 text-muted fw-bold d-block fs-8" for="locationInput">Location</label>
             <div class="d-flex align-items-center justify-content-between">
               <input type="text" class="form-control border-0 p-0 shadow-none fw-semibold bg-transparent" id="locationInput" placeholder="Where to?" style="font-size: 0.9rem;" readonly>
               <button class="btn btn-sm text-muted p-0 border-0 d-none" id="clearLocationBtn" type="button">
-                <i class="bi bi-x-circle-fill"></i>
+                <i class="fa-solid fa-circle-xmark"></i>
               </button>
             </div>
           </div>
-          <div class="tripto-dropdown shadow-lg border-0 rounded-4 p-3 mt-2 position-absolute start-0 bg-white"
-               id="locationDropdown" style="display: none;">
-            
-            <!-- Recent Searches Section -->
+
+          <div class="shadow-lg border-0 rounded-4 p-3 mt-2 position-absolute start-0 bg-white overflow-auto"
+               id="locationDropdown" style="display: none; width: 320px; max-width: calc(100vw - 3rem); max-height: 420px; z-index: 1050;">
+
             <div class="mb-3">
-              <small class="text-muted fw-bold d-block mb-2" style="font-size: 0.75rem;">Recent searches</small>
-              <div class="d-flex align-items-center gap-3 p-2 rounded-3 dropdown-item-custom cursor-pointer" role="button" tabindex="0" data-city="Barcelona, Spain">
-                <div class="bg-light rounded-3 p-2 text-primary d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
-                  <i class="bi bi-building fs-5"></i>
+              <small class="text-muted fw-bold d-block mb-2 label-tiny">Recent searches</small>
+              <div class="d-flex align-items-center gap-3 p-2 rounded-3 dropdown-item-custom cursor-pointer" onclick="pickCity(this)">
+                <div class="bg-light rounded-3 p-2 text-primary d-flex align-items-center justify-content-center city-icon">
+                  <i class="fa-solid fa-building fs-5"></i>
                 </div>
                 <div>
-                  <small class="text-muted d-block lh-1" style="font-size: 0.7rem;">Jul 14- 18 , 2 Guests</small>
+                  <small class="text-muted d-block lh-1 fs-8">Jul 14- 18 , 2 Guests</small>
                   <strong class="text-dark fs-7">Barcelona, Spain</strong>
                 </div>
               </div>
             </div>
 
-            <!-- Suggested Destination Section -->
             <div>
-              <small class="text-muted fw-bold d-block mb-2" style="font-size: 0.75rem;">Suggested destination</small>
-              
-              <div class="d-flex align-items-center gap-3 p-2 rounded-3 dropdown-item-custom cursor-pointer mb-1" role="button" tabindex="0" data-city="Nearby">
-                <div class="bg-light rounded-3 p-2 text-primary d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
-                  <i class="bi bi-geo-alt fs-5"></i>
+              <small class="text-muted fw-bold d-block mb-2 label-tiny">Suggested destination</small>
+
+              <div class="d-flex align-items-center gap-3 p-2 rounded-3 dropdown-item-custom cursor-pointer mb-1" onclick="pickCity(this)">
+                <div class="bg-light rounded-3 p-2 text-primary d-flex align-items-center justify-content-center city-icon">
+                  <i class="fa-solid fa-location-dot fs-5"></i>
                 </div>
                 <div>
-                  <small class="text-muted d-block lh-1" style="font-size: 0.7rem;">Find what's around you</small>
+                  <small class="text-muted d-block lh-1 fs-8">Find what's around you</small>
                   <strong class="text-dark fs-7">Nearby</strong>
                 </div>
               </div>
 
-              <div class="d-flex align-items-center gap-3 p-2 rounded-3 dropdown-item-custom cursor-pointer mb-1" role="button" tabindex="0" data-city="Tehran, Iran">
-                <div class="bg-light rounded-3 p-2 text-primary d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
-                  <i class="bi bi-building fs-5"></i>
+              <div class="d-flex align-items-center gap-3 p-2 rounded-3 dropdown-item-custom cursor-pointer mb-1" onclick="pickCity(this)">
+                <div class="bg-light rounded-3 p-2 text-primary d-flex align-items-center justify-content-center city-icon">
+                  <i class="fa-solid fa-building fs-5"></i>
                 </div>
                 <div>
-                  <small class="text-muted d-block lh-1" style="font-size: 0.7rem;">Best people you have ever seen</small>
+                  <small class="text-muted d-block lh-1 fs-8">Best people you have ever seen</small>
                   <strong class="text-dark fs-7">Tehran, Iran</strong>
                 </div>
               </div>
 
-              <div class="d-flex align-items-center gap-3 p-2 rounded-3 dropdown-item-custom cursor-pointer mb-1" role="button" tabindex="0" data-city="Paris, France">
-                <div class="bg-light rounded-3 p-2 text-primary d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
-                  <i class="bi bi-balloon-heart fs-5"></i>
+              <div class="d-flex align-items-center gap-3 p-2 rounded-3 dropdown-item-custom cursor-pointer mb-1" onclick="pickCity(this)">
+                <div class="bg-light rounded-3 p-2 text-primary d-flex align-items-center justify-content-center city-icon">
+                  <i class="fa-solid fa-heart fs-5"></i>
                 </div>
                 <div>
-                  <small class="text-muted d-block lh-1" style="font-size: 0.7rem;">Best romantic place</small>
+                  <small class="text-muted d-block lh-1 fs-8">Best romantic place</small>
                   <strong class="text-dark fs-7">Paris, France</strong>
                 </div>
               </div>
 
-              <div class="d-flex align-items-center gap-3 p-2 rounded-3 dropdown-item-custom cursor-pointer" role="button" tabindex="0" data-city="London, United Kingdom">
-                <div class="bg-light rounded-3 p-2 text-primary d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
-                  <i class="bi bi-sun fs-5"></i>
+              <div class="d-flex align-items-center gap-3 p-2 rounded-3 dropdown-item-custom cursor-pointer" onclick="pickCity(this)">
+                <div class="bg-light rounded-3 p-2 text-primary d-flex align-items-center justify-content-center city-icon">
+                  <i class="fa-solid fa-sun fs-5"></i>
                 </div>
                 <div>
-                  <small class="text-muted d-block lh-1" style="font-size: 0.7rem;">Summer Picks</small>
+                  <small class="text-muted d-block lh-1 fs-8">Summer Picks</small>
                   <strong class="text-dark fs-7">London, United Kingdom</strong>
                 </div>
               </div>
@@ -165,92 +166,83 @@
           </div>
         </div>
 
-        <!-- Check In -->
         <div class="col-6 col-md-2 border-end">
-          <label for="checkInInput" class="form-label fw-bold text-dark small mb-0 d-block" style="cursor: pointer;">Check In</label>
-          <input type="date" id="checkInInput" class="form-control border-0 p-0 shadow-none text-muted small bg-transparent" style="font-size: 0.85rem; cursor: pointer;">
+          <label for="checkInInput" class="form-label fw-bold text-dark small mb-0 d-block cursor-pointer">Check In</label>
+          <input type="date" id="checkInInput" class="form-control border-0 p-0 shadow-none text-muted small bg-transparent date-input">
         </div>
 
-        <!-- Check Out-->
         <div class="col-6 col-md-2 border-end">
-          <label for="checkOutInput" class="form-label fw-bold text-dark small mb-0 d-block" style="cursor: pointer;">Check Out</label>
-          <input type="date" id="checkOutInput" class="form-control border-0 p-0 shadow-none text-muted small bg-transparent" style="font-size: 0.85rem; cursor: pointer;">
+          <label for="checkOutInput" class="form-label fw-bold text-dark small mb-0 d-block cursor-pointer">Check Out</label>
+          <input type="date" id="checkOutInput" class="form-control border-0 p-0 shadow-none text-muted small bg-transparent date-input">
         </div>
 
-        <!--  Rooms and Guests -->
         <div class="col-12 col-md-3 border-end position-relative">
-          <div class="p-1 search-field cursor-pointer" id="guestsSelectBtn" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false">
+          <div class="p-1 search-field cursor-pointer" id="guestsSelectBtn">
             <label class="form-label fw-bold text-dark small mb-0 d-block">Rooms and Guests</label>
             <p class="text-muted text-nowrap mb-0 fs-8" id="guestsSummary">1 room, 1 adult, 0 children</p>
           </div>
 
-          <!-- Guests Selector Dropdown -->
-          <div class="tripto-dropdown tripto-dropdown--guests shadow-lg border-0 rounded-4 p-3 mt-2 position-absolute start-0 bg-white"
-               id="guestsDropdown" style="display: none;">
-            
-            <!-- Rooms Count -->
+          <div class="shadow-lg border-0 rounded-4 p-3 mt-2 position-absolute start-0 bg-white"
+               id="guestsDropdown" style="display: none; width: 280px; max-width: calc(100vw - 3rem); z-index: 1050;">
+
             <div class="d-flex align-items-center justify-content-between mb-3">
               <div>
                 <strong class="d-block fs-7 text-dark">Rooms</strong>
               </div>
               <div class="d-flex align-items-center gap-2">
-                <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle counter-btn" data-counter="rooms" data-step="-1" aria-label="Fewer rooms">&minus;</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle lh-1 d-inline-flex align-items-center justify-content-center count-btn" onclick="changeCount('rooms', -1)">&minus;</button>
                 <span id="roomsCount" class="fw-bold px-1">1</span>
-                <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle counter-btn" data-counter="rooms" data-step="1" aria-label="More rooms">+</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle lh-1 d-inline-flex align-items-center justify-content-center count-btn" onclick="changeCount('rooms', 1)">+</button>
               </div>
             </div>
 
-            <!-- Adults Count -->
             <div class="d-flex align-items-center justify-content-between mb-3">
               <div>
                 <strong class="d-block fs-7 text-dark">Adults</strong>
-                <small class="text-muted d-block" style="font-size: 0.7rem;">Ages 13 or above</small>
+                <small class="text-muted d-block fs-8">Ages 13 or above</small>
               </div>
               <div class="d-flex align-items-center gap-2">
-                <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle counter-btn" data-counter="adults" data-step="-1" aria-label="Fewer adults">&minus;</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle lh-1 d-inline-flex align-items-center justify-content-center count-btn" onclick="changeCount('adults', -1)">&minus;</button>
                 <span id="adultsCount" class="fw-bold px-1">1</span>
-                <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle counter-btn" data-counter="adults" data-step="1" aria-label="More adults">+</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle lh-1 d-inline-flex align-items-center justify-content-center count-btn" onclick="changeCount('adults', 1)">+</button>
               </div>
             </div>
 
-            <!-- Children Count -->
             <div class="d-flex align-items-center justify-content-between">
               <div>
                 <strong class="d-block fs-7 text-dark">Children</strong>
-                <small class="text-muted d-block" style="font-size: 0.7rem;">Ages 0 to 12</small>
+                <small class="text-muted d-block fs-8">Ages 0 to 12</small>
               </div>
               <div class="d-flex align-items-center gap-2">
-                <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle counter-btn" data-counter="children" data-step="-1" aria-label="Fewer children">&minus;</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle lh-1 d-inline-flex align-items-center justify-content-center count-btn" onclick="changeCount('children', -1)">&minus;</button>
                 <span id="childrenCount" class="fw-bold px-1">0</span>
-                <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle counter-btn" data-counter="children" data-step="1" aria-label="More children">+</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle lh-1 d-inline-flex align-items-center justify-content-center count-btn" onclick="changeCount('children', 1)">+</button>
               </div>
             </div>
 
           </div>
         </div>
 
-        <!-- 5. Search Button -->
         <div class="col-12 col-md-2">
-          <button type="submit" class="btn btn-tripto w-100 rounded-3 py-2 d-flex align-items-center justify-content-center gap-2 fw-semibold">
-            <i class="bi bi-search"></i> Search
+          <button type="submit" class="btn btn-primary w-100 rounded-3 py-2 d-flex align-items-center justify-content-center gap-2 fw-semibold">
+            <i class="fa-solid fa-magnifying-glass"></i> Search
           </button>
         </div>
       </div>
 
-      <p id="searchFeedback" class="small mb-0 mt-3 d-none" role="status" aria-live="polite"></p>
+      <p id="searchFeedback" class="small mb-0 mt-3 d-none"></p>
     </form>
   </div>
 </div>
 
-
-<!-- Trust Features Section -->
+  <!-- why tripto -->
+  <div id="why-tripto" class="anchor"></div>
 <section class="container my-5 py-4 position-relative z-0">
   <h2 class="text-center fw-bold mb-5 fs-2">Why Travellers Trust Tripto</h2>
-  
+
   <div class="row g-4 text-center justify-content-between align-items-start position-relative">
-    
-    <!-- Curved Line 1 -->
-    <div class="trust-connector trust-connector--1 d-none d-lg-block" aria-hidden="true">
+
+    <div class="position-absolute d-none d-lg-block pe-none" style="top: 20px; left: 23%; width: 20%;">
       <svg width="100%" height="70" viewBox="0 0 300 70" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M 10 55 C 100 75, 200 5, 290 15" stroke="#0057FF" stroke-width="1.8" stroke-dasharray="4 4"/>
         <circle cx="10" cy="55" r="3.5" fill="#0057FF" />
@@ -258,8 +250,7 @@
       </svg>
     </div>
 
-    <!-- Curved Line 2 -->
-    <div class="trust-connector trust-connector--2 d-none d-lg-block" aria-hidden="true">
+    <div class="position-absolute d-none d-lg-block pe-none" style="top: 20px; left: 57%; width: 20%;">
       <svg width="100%" height="70" viewBox="0 0 300 70" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M 10 55 C 100 75, 200 5, 290 15" stroke="#0057FF" stroke-width="1.8" stroke-dasharray="4 4"/>
         <circle cx="10" cy="55" r="3.5" fill="#0057FF" />
@@ -267,115 +258,108 @@
       </svg>
     </div>
 
-    <!-- Item 1 -->
     <div class="col-12 col-md-4 d-flex flex-column align-items-center">
-      <div class="trust-icon-tile mb-3">
-        <div class="trust-icon-badge">
-          <i class="bi bi-currency-dollar fs-4"></i>
+      <div class="rounded-4 d-flex align-items-center justify-content-center mb-3 trust-box">
+        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center trust-dot">
+          <i class="fa-solid fa-dollar-sign fs-4"></i>
         </div>
       </div>
       <h5 class="fw-bold text-dark">No hidden fees</h5>
       <p class="text-muted small px-3">Transparent pricing with no hidden fees.</p>
     </div>
 
-    <!-- Item 2 -->
     <div class="col-12 col-md-4 d-flex flex-column align-items-center">
-      <div class="trust-icon-tile mb-3">
-        <div class="trust-icon-badge">
-          <i class="bi bi-shield-check fs-4"></i>
+      <div class="rounded-4 d-flex align-items-center justify-content-center mb-3 trust-box">
+        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center trust-dot">
+          <i class="fa-solid fa-shield-halved fs-4"></i>
         </div>
       </div>
       <h5 class="fw-bold text-dark">Instant booking</h5>
       <p class="text-muted small px-3">Get confirmation right after you reserve.</p>
     </div>
 
-    <!-- Item 3 -->
     <div class="col-12 col-md-4 d-flex flex-column align-items-center">
-      <div class="trust-icon-tile mb-3">
-        <i class="bi bi-file-earmark-text-fill text-tripto fs-1"></i>
+      <div class="rounded-4 d-flex align-items-center justify-content-center mb-3 trust-box">
+        <i class="fa-solid fa-file-lines text-primary fs-1"></i>
       </div>
       <h5 class="fw-bold text-dark">Flexibility</h5>
       <p class="text-muted small px-3">Flexible options with free cancellation on many listings.</p>
     </div>
-
   </div>
 </section>
 
-<!-- Trending Section -->
-<section class="container my-5">
+  <!-- trending destinations -->
+  <div id="trending" class="anchor"></div>
+  <section class="container my-5">
   <h2 class="fw-bold mb-4">Trending Destinations</h2>
-  
-  <!-- Navigation Pills -->
+
   <ul class="nav nav-pills gap-2 mb-4 overflow-auto flex-nowrap pb-2 border-0" id="trendingTabs" role="tablist">
     <li class="nav-item" role="presentation">
       <button class="nav-link season-btn active btn border border-dark rounded-pill px-4" id="spring-tab" data-bs-toggle="pill" data-bs-target="#spring" type="button" role="tab">
-        <i class="bi bi-stars me-1"></i> Spring Picks
+        <i class="fa-solid fa-wand-magic-sparkles me-1"></i> Spring Picks
       </button>
     </li>
     <li class="nav-item" role="presentation">
       <button class="nav-link season-btn btn border border-dark rounded-pill px-4" id="summer-tab" data-bs-toggle="pill" data-bs-target="#summer" type="button" role="tab">
-        <i class="bi bi-sun me-1"></i> Summer Hotspot
+        <i class="fa-solid fa-sun me-1"></i> Summer Hotspot
       </button>
     </li>
     <li class="nav-item" role="presentation">
       <button class="nav-link season-btn btn border border-dark rounded-pill px-4" id="autumn-tab" data-bs-toggle="pill" data-bs-target="#autumn" type="button" role="tab">
-        <i class="bi bi-flower3 me-1"></i> Autumn Escape
+        <i class="fa-solid fa-leaf me-1"></i> Autumn Escape
       </button>
     </li>
     <li class="nav-item" role="presentation">
       <button class="nav-link season-btn btn border border-dark rounded-pill px-4" id="winter-tab" data-bs-toggle="pill" data-bs-target="#winter" type="button" role="tab">
-        <i class="bi bi-snow me-1"></i> Winter Getaway
+        <i class="fa-solid fa-snowflake me-1"></i> Winter Getaway
       </button>
     </li>
   </ul>
 
-  <!-- Tab Content -->
   <div class="tab-content" id="trendingTabsContent">
-    
-    <!-- 1. Spring Tab -->
     <div class="tab-pane fade show active" id="spring" role="tabpanel">
       <div class="row g-4">
-        
+
         <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card trending-card border-0 shadow-sm">
-            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80" alt="Paris">
-            <div class="trending-card-overlay">
-              <h5 class="fw-bold mb-1 trending-card-title">Paris, France</h5>
-              <p class="small mb-1 trending-card-text">From <span class="trending-card-price fw-bold">$128</span>/night</p>
-              <p class="small mb-0 trending-card-text" style="opacity: 0.85;">Romantic escapes, art, and cafés.</p>
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80" alt="Paris">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Paris, France</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$128</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Romantic escapes, art, and cafés.</p>
             </div>
           </div>
         </div>
 
         <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card trending-card border-0 shadow-sm">
-            <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=600&q=80" alt="Santorini">
-            <div class="trending-card-overlay">
-              <h5 class="fw-bold mb-1 trending-card-title">Santorini, Greece</h5>
-              <p class="small mb-1 trending-card-text">From <span class="trending-card-price fw-bold">$225</span>/night</p>
-              <p class="small mb-0 trending-card-text" style="opacity: 0.85;">Sunsets, sea views, and serenity.</p>
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=600&q=80" alt="Santorini">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Santorini, Greece</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$225</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Sunsets, sea views, and serenity.</p>
             </div>
           </div>
         </div>
 
         <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card trending-card border-0 shadow-sm">
-            <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80" alt="Bali">
-            <div class="trending-card-overlay">
-              <h5 class="fw-bold mb-1 trending-card-title">Bali, Indonesia</h5>
-              <p class="small mb-1 trending-card-text">From <span class="trending-card-price fw-bold">$26</span>/night</p>
-              <p class="small mb-0 trending-card-text" style="opacity: 0.85;">Beaches, nature, and calm vibes.</p>
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80" alt="Bali">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Bali, Indonesia</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$26</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Beaches, nature, and calm vibes.</p>
             </div>
           </div>
         </div>
 
         <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card trending-card border-0 shadow-sm">
-            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80" alt="Kyoto">
-            <div class="trending-card-overlay">
-              <h5 class="fw-bold mb-1 trending-card-title">Kyoto, Japan</h5>
-              <p class="small mb-1 trending-card-text">From <span class="trending-card-price fw-bold">$190</span>/night</p>
-              <p class="small mb-0 trending-card-text" style="opacity: 0.85;">Cherry blossoms and temples.</p>
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80" alt="Kyoto">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Kyoto, Japan</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$190</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Cherry blossoms and temples.</p>
             </div>
           </div>
         </div>
@@ -383,190 +367,180 @@
       </div>
     </div>
 
-    <!-- 2. Summer Tab -->
     <div class="tab-pane fade" id="summer" role="tabpanel">
       <div class="row g-4">
 
         <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card trending-card border-0 shadow-sm">
-            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Maldives">
-            <div class="trending-card-overlay">
-              <h5 class="fw-bold mb-1 trending-card-title">Maldives</h5>
-              <p class="small mb-1 trending-card-text">From <span class="trending-card-price fw-bold">$310</span>/night</p>
-              <p class="small mb-0 trending-card-text" style="opacity: 0.85;">Crystal waters and overwater bungalows.</p>
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Maldives">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Maldives</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$310</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Crystal waters and overwater bungalows.</p>
             </div>
           </div>
         </div>
 
         <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card trending-card border-0 shadow-sm">
-            <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&q=80" alt="Mykonos">
-            <div class="trending-card-overlay">
-              <h5 class="fw-bold mb-1 trending-card-title">Mykonos, Greece</h5>
-              <p class="small mb-1 trending-card-text">From <span class="trending-card-price fw-bold">$280</span>/night</p>
-              <p class="small mb-0 trending-card-text" style="opacity: 0.85;">Vibrant nightlife and white beaches.</p>
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&q=80" alt="Mykonos">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Mykonos, Greece</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$280</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Vibrant nightlife and white beaches.</p>
             </div>
           </div>
         </div>
 
         <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card trending-card border-0 shadow-sm">
-            <img src="https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=600&q=80" alt="Phuket">
-            <div class="trending-card-overlay">
-              <h5 class="fw-bold mb-1 trending-card-title">Phuket, Thailand</h5>
-              <p class="small mb-1 trending-card-text">From <span class="trending-card-price fw-bold">$45</span>/night</p>
-              <p class="small mb-0 trending-card-text" style="opacity: 0.85;">Tropical islands and beach parties.</p>
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=600&q=80" alt="Phuket">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Phuket, Thailand</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$45</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Tropical islands and beach parties.</p>
             </div>
           </div>
         </div>
 
         <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card trending-card border-0 shadow-sm">
-            <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=600&q=80" alt="Amalfi Coast">
-            <div class="trending-card-overlay">
-              <h5 class="fw-bold mb-1 trending-card-title">Amalfi Coast, Italy</h5>
-              <p class="small mb-1 trending-card-text">From <span class="trending-card-price fw-bold">$240</span>/night</p>
-              <p class="small mb-0 trending-card-text" style="opacity: 0.85;">Stunning cliffside villages and seafood.</p>
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=600&q=80" alt="Amalfi Coast">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Amalfi Coast, Italy</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$240</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Stunning cliffside villages and seafood.</p>
             </div>
           </div>
         </div>
-
       </div>
     </div>
 
-    <!-- 3. Autumn Tab -->
     <div class="tab-pane fade" id="autumn" role="tabpanel">
       <div class="row g-4">
 
         <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card trending-card border-0 shadow-sm">
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Vermont">
-            <div class="trending-card-overlay">
-              <h5 class="fw-bold mb-1 trending-card-title">Vermont, USA</h5>
-              <p class="small mb-1 trending-card-text">From <span class="trending-card-price fw-bold">$150</span>/night</p>
-              <p class="small mb-0 trending-card-text" style="opacity: 0.85;">Golden forests and scenic drives.</p>
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Vermont">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Vermont, USA</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$150</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Golden forests and scenic drives.</p>
             </div>
           </div>
         </div>
 
         <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card trending-card border-0 shadow-sm">
-            <img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=600&q=80" alt="Bavaria">
-            <div class="trending-card-overlay">
-              <h5 class="fw-bold mb-1 trending-card-title">Bavaria, Germany</h5>
-              <p class="small mb-1 trending-card-text">From <span class="trending-card-price fw-bold">$135</span>/night</p>
-              <p class="small mb-0 trending-card-text" style="opacity: 0.85;">Fairytale castles and autumn colors.</p>
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=600&q=80" alt="Bavaria">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Bavaria, Germany</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$135</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Fairytale castles and autumn colors.</p>
             </div>
           </div>
         </div>
 
         <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card trending-card border-0 shadow-sm">
-            <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=600&q=80" alt="Prague">
-            <div class="trending-card-overlay">
-              <h5 class="fw-bold mb-1 trending-card-title">Prague, Czechia</h5>
-              <p class="small mb-1 trending-card-text">From <span class="trending-card-price fw-bold">$110</span>/night</p>
-              <p class="small mb-0 trending-card-text" style="opacity: 0.85;">Historic bridges and cozy cafes.</p>
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=600&q=80" alt="Prague">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Prague, Czechia</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$110</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Historic bridges and cozy cafes.</p>
             </div>
           </div>
         </div>
 
         <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card trending-card border-0 shadow-sm">
-            <img src="https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&w=600&q=80" alt="Edinburgh">
-            <div class="trending-card-overlay">
-              <h5 class="fw-bold mb-1 trending-card-title">Edinburgh, Scotland</h5>
-              <p class="small mb-1 trending-card-text">From <span class="trending-card-price fw-bold">$160</span>/night</p>
-              <p class="small mb-0 trending-card-text" style="opacity: 0.85;">Gothic architecture and cozy pubs.</p>
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&w=600&q=80" alt="Edinburgh">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Edinburgh, Scotland</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$160</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Gothic architecture and cozy pubs.</p>
             </div>
           </div>
         </div>
-
       </div>
     </div>
 
-    <!-- 4. Winter Tab -->
     <div class="tab-pane fade" id="winter" role="tabpanel">
       <div class="row g-4">
 
         <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card trending-card border-0 shadow-sm">
-            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=600&q=80" alt="Zermatt">
-            <div class="trending-card-overlay">
-              <h5 class="fw-bold mb-1 trending-card-title">Zermatt, Switzerland</h5>
-              <p class="small mb-1 trending-card-text">From <span class="trending-card-price fw-bold">$350</span>/night</p>
-              <p class="small mb-0 trending-card-text" style="opacity: 0.85;">Skiing and Matterhorn mountain views.</p>
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=600&q=80" alt="Zermatt">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Zermatt, Switzerland</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$350</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Skiing and Matterhorn mountain views.</p>
             </div>
           </div>
         </div>
 
         <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card trending-card border-0 shadow-sm">
-            <img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=600&q=80" alt="Banff">
-            <div class="trending-card-overlay">
-              <h5 class="fw-bold mb-1 trending-card-title">Banff, Canada</h5>
-              <p class="small mb-1 trending-card-text">From <span class="trending-card-price fw-bold">$210</span>/night</p>
-              <p class="small mb-0 trending-card-text" style="opacity: 0.85;">Snowy peaks and frozen blue lakes.</p>
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=600&q=80" alt="Banff">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Banff, Canada</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$210</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Snowy peaks and frozen blue lakes.</p>
             </div>
           </div>
         </div>
 
         <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card trending-card border-0 shadow-sm">
-            <img src="https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?auto=format&fit=crop&w=600&q=80" alt="Tromsø">
-            <div class="trending-card-overlay">
-              <h5 class="fw-bold mb-1 trending-card-title">Tromsø, Norway</h5>
-              <p class="small mb-1 trending-card-text">From <span class="trending-card-price fw-bold">$230</span>/night</p>
-              <p class="small mb-0 trending-card-text" style="opacity: 0.85;">Northern lights and arctic adventures.</p>
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?auto=format&fit=crop&w=600&q=80" alt="Tromsø">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Tromsø, Norway</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$230</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Northern lights and arctic adventures.</p>
             </div>
           </div>
         </div>
 
         <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card trending-card border-0 shadow-sm">
-            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80" alt="Rovaniemi">
-            <div class="trending-card-overlay">
-              <h5 class="fw-bold mb-1 trending-card-title">Rovaniemi, Finland</h5>
-              <p class="small mb-1 trending-card-text">From <span class="trending-card-price fw-bold">$270</span>/night</p>
-              <p class="small mb-0 trending-card-text" style="opacity: 0.85;">Santa Claus village and glass igloos.</p>
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80" alt="Rovaniemi">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Rovaniemi, Finland</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$270</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Santa Claus village and glass igloos.</p>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
 </section>
 
-
-<section class="container my-5">
+  <!-- weekend deals -->
+  <div id="deals" class="anchor"></div>
+  <section class="container my-5">
   <div class="d-flex justify-content-between align-items-center mb-4">
     <h2 class="fw-bold m-0">Deals for the Weekend</h2>
-    <div class="d-flex gap-2">
-      <button type="button" class="btn btn-outline-secondary rounded-circle carousel-nav-btn deals-prev" aria-label="Previous deals">
-        <i class="bi bi-chevron-left"></i>
-      </button>
-      <button type="button" class="btn btn-outline-secondary rounded-circle carousel-nav-btn deals-next" aria-label="Next deals">
-        <i class="bi bi-chevron-right"></i>
-      </button>
-    </div>
   </div>
 
-  <div class="swiper tripto-swiper dealsSwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
+  <div class="deals-wrap">
+    <div class="owl-carousel owl-theme deals-carousel">
+
+      <div class="item">
         <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
-          <button type="button" class="wishlist-btn" aria-label="Save to wishlist" aria-pressed="false"><i class="bi bi-heart"></i></button>
-          <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=600&q=80" loading="lazy" class="card-img-top card-img-height" alt="Villa">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Villa">
           <div class="card-body d-flex flex-column justify-content-between p-3">
             <div>
               <div class="d-flex align-items-center gap-2 mb-2">
-                <span class="badge-rating">4.0</span>
+                <span class="badge bg-primary rounded-2">4.0</span>
                 <span class="fw-bold small">Very Good</span>
-                <span class="text-muted extra-small">(160 reviews)</span>
+                <span class="text-muted fs-8">(160 reviews)</span>
               </div>
               <h6 class="fw-bold mb-1">Seaside Serenity Villa</h6>
               <p class="text-muted small mb-2">Amalfi Coast, Italy</p>
-              <span class="badge-deal mb-3 d-inline-block">Getaway Deal</span>
+              <span class="badge rounded-2 mb-3 d-inline-block deal-badge">Getaway Deal</span>
             </div>
             <div class="text-end pt-2 border-top">
               <span class="text-decoration-line-through text-muted small me-1">$250</span>
@@ -576,20 +550,20 @@
         </div>
       </div>
 
-      <div class="swiper-slide">
+      <div class="item">
         <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
-          <button type="button" class="wishlist-btn" aria-label="Save to wishlist" aria-pressed="false"><i class="bi bi-heart"></i></button>
-          <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=600&q=80" loading="lazy" class="card-img-top card-img-height" alt="Bungalow">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Bungalow">
           <div class="card-body d-flex flex-column justify-content-between p-3">
             <div>
               <div class="d-flex align-items-center gap-2 mb-2">
-                <span class="badge-rating">3.8</span>
+                <span class="badge bg-primary rounded-2">3.8</span>
                 <span class="fw-bold small">Good</span>
-                <span class="text-muted extra-small">(210 reviews)</span>
+                <span class="text-muted fs-8">(210 reviews)</span>
               </div>
               <h6 class="fw-bold mb-1">Tropical Bungalow</h6>
               <p class="text-muted small mb-2">Phuket, Thailand</p>
-              <span class="badge-deal mb-3 d-inline-block">Getaway Deal</span>
+              <span class="badge rounded-2 mb-3 d-inline-block deal-badge">Getaway Deal</span>
             </div>
             <div class="text-end pt-2 border-top">
               <span class="text-decoration-line-through text-muted small me-1">$210</span>
@@ -599,20 +573,20 @@
         </div>
       </div>
 
-      <div class="swiper-slide">
+      <div class="item">
         <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
-          <button type="button" class="wishlist-btn" aria-label="Save to wishlist" aria-pressed="false"><i class="bi bi-heart"></i></button>
-          <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&q=80" loading="lazy" class="card-img-top card-img-height" alt="Suites">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Suites">
           <div class="card-body d-flex flex-column justify-content-between p-3">
             <div>
               <div class="d-flex align-items-center gap-2 mb-2">
-                <span class="badge-rating">4.9</span>
+                <span class="badge bg-primary rounded-2">4.9</span>
                 <span class="fw-bold small">Very Good</span>
-                <span class="text-muted extra-small">(185 reviews)</span>
+                <span class="text-muted fs-8">(185 reviews)</span>
               </div>
               <h6 class="fw-bold mb-1">Santorini Sunset Suites</h6>
               <p class="text-muted small mb-2">Santorini, Greece</p>
-              <span class="badge-deal mb-3 d-inline-block">Getaway Deal</span>
+              <span class="badge rounded-2 mb-3 d-inline-block deal-badge">Getaway Deal</span>
             </div>
             <div class="text-end pt-2 border-top">
               <span class="text-decoration-line-through text-muted small me-1">$300</span>
@@ -622,20 +596,20 @@
         </div>
       </div>
 
-      <div class="swiper-slide">
+      <div class="item">
         <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
-          <button type="button" class="wishlist-btn" aria-label="Save to wishlist" aria-pressed="false"><i class="bi bi-heart"></i></button>
-          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" loading="lazy" class="card-img-top card-img-height" alt="Resort">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Resort">
           <div class="card-body d-flex flex-column justify-content-between p-3">
             <div>
               <div class="d-flex align-items-center gap-2 mb-2">
-                <span class="badge-rating">4.6</span>
+                <span class="badge bg-primary rounded-2">4.6</span>
                 <span class="fw-bold small">Very Good</span>
-                <span class="text-muted extra-small">(142 reviews)</span>
+                <span class="text-muted fs-8">(142 reviews)</span>
               </div>
               <h6 class="fw-bold mb-1">Marbella Resort</h6>
               <p class="text-muted small mb-2">Marbella, Spain</p>
-              <span class="badge-deal mb-3 d-inline-block">Getaway Deal</span>
+              <span class="badge rounded-2 mb-3 d-inline-block deal-badge">Getaway Deal</span>
             </div>
             <div class="text-end pt-2 border-top">
               <span class="text-decoration-line-through text-muted small me-1">$280</span>
@@ -645,21 +619,20 @@
         </div>
       </div>
 
-
-      <div class="swiper-slide">
+      <div class="item">
         <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
-          <button type="button" class="wishlist-btn" aria-label="Save to wishlist" aria-pressed="false"><i class="bi bi-heart"></i></button>
-          <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80" loading="lazy" class="card-img-top card-img-height" alt="Cliffside Retreat" loading="lazy">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Cliffside Retreat">
           <div class="card-body d-flex flex-column justify-content-between p-3">
             <div>
               <div class="d-flex align-items-center gap-2 mb-2">
-                <span class="badge-rating">4.7</span>
+                <span class="badge bg-primary rounded-2">4.7</span>
                 <span class="fw-bold small">Excellent</span>
-                <span class="text-muted extra-small">(198 reviews)</span>
+                <span class="text-muted fs-8">(198 reviews)</span>
               </div>
               <h6 class="fw-bold mb-1">Cliffside Retreat</h6>
               <p class="text-muted small mb-2">Santorini, Greece</p>
-              <span class="badge-deal mb-3 d-inline-block">Getaway Deal</span>
+              <span class="badge rounded-2 mb-3 d-inline-block deal-badge">Getaway Deal</span>
             </div>
             <div class="text-end pt-2 border-top">
               <span class="text-decoration-line-through text-muted small me-1">$240</span>
@@ -669,20 +642,20 @@
         </div>
       </div>
 
-      <div class="swiper-slide">
+      <div class="item">
         <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
-          <button type="button" class="wishlist-btn" aria-label="Save to wishlist" aria-pressed="false"><i class="bi bi-heart"></i></button>
-          <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=600&q=80" loading="lazy" class="card-img-top card-img-height" alt="Alpine Chalet" loading="lazy">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Alpine Chalet">
           <div class="card-body d-flex flex-column justify-content-between p-3">
             <div>
               <div class="d-flex align-items-center gap-2 mb-2">
-                <span class="badge-rating">4.5</span>
+                <span class="badge bg-primary rounded-2">4.5</span>
                 <span class="fw-bold small">Very Good</span>
-                <span class="text-muted extra-small">(134 reviews)</span>
+                <span class="text-muted fs-8">(134 reviews)</span>
               </div>
               <h6 class="fw-bold mb-1">Alpine Timber Chalet</h6>
               <p class="text-muted small mb-2">Zermatt, Switzerland</p>
-              <span class="badge-deal mb-3 d-inline-block">Getaway Deal</span>
+              <span class="badge rounded-2 mb-3 d-inline-block deal-badge">Getaway Deal</span>
             </div>
             <div class="text-end pt-2 border-top">
               <span class="text-decoration-line-through text-muted small me-1">$320</span>
@@ -692,20 +665,20 @@
         </div>
       </div>
 
-      <div class="swiper-slide">
+      <div class="item">
         <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
-          <button type="button" class="wishlist-btn" aria-label="Save to wishlist" aria-pressed="false"><i class="bi bi-heart"></i></button>
-          <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=600&q=80" loading="lazy" class="card-img-top card-img-height" alt="Harbour View Hotel" loading="lazy">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Harbour View Hotel">
           <div class="card-body d-flex flex-column justify-content-between p-3">
             <div>
               <div class="d-flex align-items-center gap-2 mb-2">
-                <span class="badge-rating">4.8</span>
+                <span class="badge bg-primary rounded-2">4.8</span>
                 <span class="fw-bold small">Excellent</span>
-                <span class="text-muted extra-small">(276 reviews)</span>
+                <span class="text-muted fs-8">(276 reviews)</span>
               </div>
               <h6 class="fw-bold mb-1">Harbour View Hotel</h6>
               <p class="text-muted small mb-2">Lisbon, Portugal</p>
-              <span class="badge-deal mb-3 d-inline-block">Getaway Deal</span>
+              <span class="badge rounded-2 mb-3 d-inline-block deal-badge">Getaway Deal</span>
             </div>
             <div class="text-end pt-2 border-top">
               <span class="text-decoration-line-through text-muted small me-1">$210</span>
@@ -715,20 +688,20 @@
         </div>
       </div>
 
-      <div class="swiper-slide">
+      <div class="item">
         <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
-          <button type="button" class="wishlist-btn" aria-label="Save to wishlist" aria-pressed="false"><i class="bi bi-heart"></i></button>
-          <img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&w=600&q=80" loading="lazy" class="card-img-top card-img-height" alt="Desert Dome Camp" loading="lazy">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Desert Dome Camp">
           <div class="card-body d-flex flex-column justify-content-between p-3">
             <div>
               <div class="d-flex align-items-center gap-2 mb-2">
-                <span class="badge-rating">4.6</span>
+                <span class="badge bg-primary rounded-2">4.6</span>
                 <span class="fw-bold small">Very Good</span>
-                <span class="text-muted extra-small">(112 reviews)</span>
+                <span class="text-muted fs-8">(112 reviews)</span>
               </div>
               <h6 class="fw-bold mb-1">Desert Dome Camp</h6>
               <p class="text-muted small mb-2">Merzouga, Morocco</p>
-              <span class="badge-deal mb-3 d-inline-block">Getaway Deal</span>
+              <span class="badge rounded-2 mb-3 d-inline-block deal-badge">Getaway Deal</span>
             </div>
             <div class="text-end pt-2 border-top">
               <span class="text-decoration-line-through text-muted small me-1">$180</span>
@@ -737,12 +710,12 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-  <!-- Value Props Section -->
+  <!-- travel more spend less -->
+  <div id="save-more" class="anchor"></div>
   <section class="container my-5">
     <h2 class="fw-bold mb-4">Travel more, spend less</h2>
     <div class="row g-3">
@@ -773,222 +746,219 @@
     </div>
   </section>
 
-  <!-- Top Sights Section -->
+  <!-- top sights -->
+  <div id="sights" class="anchor"></div>
   <section class="container my-5">
     <h2 class="fw-bold mb-4">Top Sights to See</h2>
     <div class="row g-3 mb-3">
       <div class="col-md-6">
-        <div class="sight-card sight-card-lg">
-          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Sassnitz" loading="lazy">
-          <div class="sight-card-overlay"></div>
-          <div class="sight-card-label">Sassnitz 🇩🇪</div>
+        <div class="zoom-wrap position-relative overflow-hidden rounded-4 sight-lg">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" class="w-100 h-100 object-fit-cover" alt="Sassnitz">
+          <div class="scrim-down position-absolute top-0 start-0 w-100 h-100 pe-none"></div>
+          <div class="position-absolute top-0 start-0 p-3 text-white fw-bold fs-5">Sassnitz 🇩🇪</div>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="sight-card sight-card-lg">
-          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80" alt="Binz" loading="lazy">
-          <div class="sight-card-overlay"></div>
-          <div class="sight-card-label">Binz 🇩🇪</div>
+        <div class="zoom-wrap position-relative overflow-hidden rounded-4 sight-lg">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80" class="w-100 h-100 object-fit-cover" alt="Binz">
+          <div class="scrim-down position-absolute top-0 start-0 w-100 h-100 pe-none"></div>
+          <div class="position-absolute top-0 start-0 p-3 text-white fw-bold fs-5">Binz 🇩🇪</div>
         </div>
       </div>
     </div>
     <div class="row g-3">
       <div class="col-md-4">
-        <div class="sight-card sight-card-sm">
-          <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=600&q=80" alt="Sagard" loading="lazy">
-          <div class="sight-card-overlay"></div>
-          <div class="sight-card-label">Sagard 🇩🇪</div>
+        <div class="zoom-wrap position-relative overflow-hidden rounded-4 sight-md">
+          <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=600&q=80" class="w-100 h-100 object-fit-cover" alt="Sagard">
+          <div class="scrim-down position-absolute top-0 start-0 w-100 h-100 pe-none"></div>
+          <div class="position-absolute top-0 start-0 p-3 text-white fw-bold fs-5">Sagard 🇩🇪</div>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="sight-card sight-card-sm">
-          <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=600&q=80" alt="Bergen" loading="lazy">
-          <div class="sight-card-overlay"></div>
-          <div class="sight-card-label">Bergen auf Rügen 🇩🇪</div>
+        <div class="zoom-wrap position-relative overflow-hidden rounded-4 sight-md">
+          <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=600&q=80" class="w-100 h-100 object-fit-cover" alt="Bergen">
+          <div class="scrim-down position-absolute top-0 start-0 w-100 h-100 pe-none"></div>
+          <div class="position-absolute top-0 start-0 p-3 text-white fw-bold fs-5">Bergen auf Rügen 🇩🇪</div>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="sight-card sight-card-sm">
-          <img src="https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&w=600&q=80" alt="Freedom" loading="lazy">
-          <div class="sight-card-overlay"></div>
-          <div class="sight-card-label">Putbus 🇩🇪</div>
+        <div class="zoom-wrap position-relative overflow-hidden rounded-4 sight-md">
+          <img src="https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&w=600&q=80" class="w-100 h-100 object-fit-cover" alt="Freedom">
+          <div class="scrim-down position-absolute top-0 start-0 w-100 h-100 pe-none"></div>
+          <div class="position-absolute top-0 start-0 p-3 text-white fw-bold fs-5">Putbus 🇩🇪</div>
         </div>
       </div>
     </div>
   </section>
 
-
- <!-- Things to Do Section -->
+  <!-- things to do -->
+  <div id="things-to-do" class="anchor"></div>
   <section class="container my-5">
   <h2 class="fw-bold mb-4">Top Things to Do in Barcelona</h2>
-  
-  <!-- Filter Buttons -->
+
   <div class="d-flex gap-2 mb-4 overflow-auto pb-2" id="things-filter-btns">
-    <button class="btn btn-dark rounded-pill px-3 city-filter-btn active" data-category="all"><i class="bi bi-building me-1"></i> Explore</button>
-    <button class="btn btn-outline-secondary rounded-pill px-3 city-filter-btn" data-category="beach"><i class="bi bi-water me-1"></i> Beach</button>
-    <button class="btn btn-outline-secondary rounded-pill px-3 city-filter-btn" data-category="museum"><i class="bi bi-bank me-1"></i> Museum</button>
-    <button class="btn btn-outline-secondary rounded-pill px-3 city-filter-btn" data-category="show"><i class="bi bi-masks me-1"></i> Show</button>
-    <button class="btn btn-outline-secondary rounded-pill px-3 city-filter-btn" data-category="food"><i class="bi bi-cup-hot me-1"></i> Food</button>
-    <button class="btn btn-outline-secondary rounded-pill px-3 city-filter-btn" data-category="nightlife"><i class="bi bi-stars me-1"></i> Night Life</button>
+    <button class="btn btn-dark rounded-pill px-3 city-filter-btn active" onclick="filterThings('all', this)"><i class="fa-solid fa-building me-1"></i> Explore</button>
+    <button class="btn btn-outline-secondary rounded-pill px-3 city-filter-btn" onclick="filterThings('beach', this)"><i class="fa-solid fa-water me-1"></i> Beach</button>
+    <button class="btn btn-outline-secondary rounded-pill px-3 city-filter-btn" onclick="filterThings('museum', this)"><i class="fa-solid fa-landmark me-1"></i> Museum</button>
+    <button class="btn btn-outline-secondary rounded-pill px-3 city-filter-btn" onclick="filterThings('show', this)"><i class="fa-solid fa-masks-theater me-1"></i> Show</button>
+    <button class="btn btn-outline-secondary rounded-pill px-3 city-filter-btn" onclick="filterThings('food', this)"><i class="fa-solid fa-mug-hot me-1"></i> Food</button>
+    <button class="btn btn-outline-secondary rounded-pill px-3 city-filter-btn" onclick="filterThings('nightlife', this)"><i class="fa-solid fa-wand-magic-sparkles me-1"></i> Night Life</button>
   </div>
 
-  <!-- Items  -->
   <div class="row g-3" id="things-grid">
-    <!-- EXPLORE / ALL -->
-    <div class="col-6 col-sm-4 col-md-2 text-center thing-item" data-category="all explore museum">
-      <img src="https://images.unsplash.com/photo-1583422409516-2895a77efded?w=400&q=80" loading="lazy" class="img-fluid rounded-4 mb-2 city-thumb" alt="Sagrada Familia">
+
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item cat-explore cat-museum">
+      <img src="https://images.unsplash.com/photo-1583422409516-2895a77efded?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Sagrada Familia">
       <small class="fw-semibold d-block">Sagrada Familia</small>
     </div>
 
-    <div class="col-6 col-sm-4 col-md-2 text-center thing-item" data-category="all explore">
-      <img src="https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?w=400&q=80" loading="lazy" class="img-fluid rounded-4 mb-2 city-thumb" alt="Park Güell">
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item cat-explore">
+      <img src="https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Park Güell">
       <small class="fw-semibold d-block">Park Güell</small>
     </div>
 
-    <div class="col-6 col-sm-4 col-md-2 text-center thing-item" data-category="all explore museum">
-      <img src="https://images.unsplash.com/photo-1563784462041-5f97ac9523dd?w=400&q=80" loading="lazy" class="img-fluid rounded-4 mb-2 city-thumb" alt="Casa Milà">
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item cat-explore cat-museum">
+      <img src="https://images.unsplash.com/photo-1563784462041-5f97ac9523dd?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Casa Milà">
       <small class="fw-semibold d-block">Casa Milà</small>
     </div>
 
-    <div class="col-6 col-sm-4 col-md-2 text-center thing-item" data-category="all explore">
-      <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=400&q=80" loading="lazy" class="img-fluid rounded-4 mb-2 city-thumb" alt="Sacred Heart">
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item cat-explore">
+      <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Sacred Heart">
       <small class="fw-semibold d-block">Sacred Heart Temple</small>
     </div>
 
-    <div class="col-6 col-sm-4 col-md-2 text-center thing-item" data-category="all explore">
-      <img src="https://images.unsplash.com/photo-1511527661048-7fe73d85e9a4?w=400&q=80" loading="lazy" class="img-fluid rounded-4 mb-2 city-thumb" alt="Arc de Triomf">
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item cat-explore">
+      <img src="https://images.unsplash.com/photo-1511527661048-7fe73d85e9a4?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Arc de Triomf">
       <small class="fw-semibold d-block">Arc de Triomf</small>
     </div>
 
-    <div class="col-6 col-sm-4 col-md-2 text-center thing-item" data-category="all explore museum">
-      <img src="https://images.unsplash.com/photo-1579282240050-352db0a14c21?w=400&q=80" loading="lazy" class="img-fluid rounded-4 mb-2 city-thumb" alt="Casa Batlló">
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item cat-explore cat-museum">
+      <img src="https://images.unsplash.com/photo-1579282240050-352db0a14c21?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Casa Batlló">
       <small class="fw-semibold d-block">Casa Batlló</small>
     </div>
 
-    <!-- BEACH -->
-    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none" data-category="beach">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80" loading="lazy" class="img-fluid rounded-4 mb-2 city-thumb" alt="Barceloneta Beach">
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-beach">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Barceloneta Beach">
       <small class="fw-semibold d-block">Barceloneta Beach</small>
     </div>
 
-    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none" data-category="beach">
-      <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=400&q=80" loading="lazy" class="img-fluid rounded-4 mb-2 city-thumb" alt="Bogatell Beach">
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-beach">
+      <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Bogatell Beach">
       <small class="fw-semibold d-block">Bogatell Beach</small>
     </div>
 
-    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none" data-category="beach">
-      <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=400&q=80" loading="lazy" class="img-fluid rounded-4 mb-2 city-thumb" alt="Nova Icaria">
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-beach">
+      <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Nova Icaria">
       <small class="fw-semibold d-block">Nova Icaria Beach</small>
     </div>
 
-    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none" data-category="beach">
-      <img src="https://images.unsplash.com/photo-1471922694854-ff1b63b20054?w=400&q=80" loading="lazy" class="img-fluid rounded-4 mb-2 city-thumb" alt="Mar Bella Beach">
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-beach">
+      <img src="https://images.unsplash.com/photo-1471922694854-ff1b63b20054?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Mar Bella Beach">
       <small class="fw-semibold d-block">Mar Bella Beach</small>
     </div>
 
-    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none" data-category="beach">
-      <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=80" loading="lazy" class="img-fluid rounded-4 mb-2 city-thumb" alt="Port Olympic">
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-beach">
+      <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Port Olympic">
       <small class="fw-semibold d-block">Port Olímpic</small>
     </div>
 
-    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none" data-category="beach">
-      <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=400&q=80" loading="lazy" class="img-fluid rounded-4 mb-2 city-thumb" alt="Badalona Beach">
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-beach">
+      <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Badalona Beach">
       <small class="fw-semibold d-block">Badalona Beach</small>
     </div>
 
-    <!-- MUSEUM -->
-    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none" data-category="museum">
-      <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=400&q=80" loading="lazy" class="img-fluid rounded-4 mb-2 city-thumb" alt="Picasso Museum">
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-museum">
+      <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Picasso Museum">
       <small class="fw-semibold d-block">Picasso Museum</small>
     </div>
 
-    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none" data-category="museum">
-      <img src="https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=400&q=80" loading="lazy" class="img-fluid rounded-4 mb-2 city-thumb" alt="MNAC Museum">
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-museum">
+      <img src="https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="MNAC Museum">
       <small class="fw-semibold d-block">MNAC Museum</small>
     </div>
 
-    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none" data-category="museum">
-      <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=400&q=80" loading="lazy" class="img-fluid rounded-4 mb-2 city-thumb" alt="MACBA Museum">
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-museum">
+      <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="MACBA Museum">
       <small class="fw-semibold d-block">MACBA Museum</small>
     </div>
 
-    <!-- SHOW -->
-    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none" data-category="show">
-      <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&q=80" loading="lazy" class="img-fluid rounded-4 mb-2 city-thumb" alt="Flamenco Show">
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-show">
+      <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Flamenco Show">
       <small class="fw-semibold d-block">Flamenco Show</small>
     </div>
 
-    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none" data-category="show">
-      <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=400&q=80" loading="lazy" class="img-fluid rounded-4 mb-2 city-thumb" alt="Palau de la Música">
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-show">
+      <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Palau de la Música">
       <small class="fw-semibold d-block">Palau de la Música</small>
     </div>
 
-    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none" data-category="show">
-      <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=400&q=80" loading="lazy" class="img-fluid rounded-4 mb-2 city-thumb" alt="Liceu Opera">
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-show">
+      <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Liceu Opera">
       <small class="fw-semibold d-block">Gran Teatre del Liceu</small>
     </div>
 
-    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none" data-category="show">
-      <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&q=80" loading="lazy" class="img-fluid rounded-4 mb-2 city-thumb" alt="Magic Fountain Show">
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-show">
+      <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Magic Fountain Show">
       <small class="fw-semibold d-block">Magic Fountain Show</small>
     </div>
 
-    <!-- FOOD -->
-    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none" data-category="food">
-      <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&q=80" loading="lazy" class="img-fluid rounded-4 mb-2 city-thumb" alt="La Boqueria">
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-food">
+      <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="La Boqueria">
       <small class="fw-semibold d-block">La Boqueria Market</small>
     </div>
 
-    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none" data-category="food">
-      <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=400&q=80" loading="lazy" class="img-fluid rounded-4 mb-2 city-thumb" alt="Tapas Bar">
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-food">
+      <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Tapas Bar">
       <small class="fw-semibold d-block">Gothic Tapas Tour</small>
     </div>
 
-    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none" data-category="food">
-      <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&q=80" loading="lazy" class="img-fluid rounded-4 mb-2 city-thumb" alt="Paella Restaurant">
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-food">
+      <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Paella Restaurant">
       <small class="fw-semibold d-block">Seafood Paella</small>
     </div>
 
-    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none" data-category="food">
-      <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?w=400&q=80" loading="lazy" class="img-fluid rounded-4 mb-2 city-thumb" alt="Churros Cafe">
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-food">
+      <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Churros Cafe">
       <small class="fw-semibold d-block">Churros & Chocolate</small>
     </div>
 
-    <!-- NIGHT LIFE -->
-    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none" data-category="nightlife">
-      <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400&q=80" loading="lazy" class="img-fluid rounded-4 mb-2 city-thumb" alt="Opium Club">
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-nightlife">
+      <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Opium Club">
       <small class="fw-semibold d-block">Opium Beach Club</small>
     </div>
 
-    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none" data-category="nightlife">
-      <img src="https://images.unsplash.com/photo-1574096079513-d8259312b785?w=400&q=80" loading="lazy" class="img-fluid rounded-4 mb-2 city-thumb" alt="Rooftop Lounge">
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-nightlife">
+      <img src="https://images.unsplash.com/photo-1574096079513-d8259312b785?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Rooftop Lounge">
       <small class="fw-semibold d-block">Rooftop Lounge</small>
     </div>
 
-    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none" data-category="nightlife">
-      <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=400&q=80" loading="lazy" class="img-fluid rounded-4 mb-2 city-thumb" alt="Cocktail Bar">
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-nightlife">
+      <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Cocktail Bar">
       <small class="fw-semibold d-block">El Born Cocktail Bar</small>
     </div>
 
   </div>
 </section>
 
-  <!-- Explore Tripto in Motion Section -->
+  <!-- video gallery -->
+  <div id="videos" class="anchor"></div>
   <section class="container my-5">
     <h2 class="fw-bold mb-4">Explore Tripto in Motion</h2>
     <div class="row g-3">
 
       <div class="col-lg-8">
-        <div class="video-main-card">
-          <button type="button" class="play-icon play-icon--lg" aria-label="Play video">
-            <i class="bi bi-play-fill"></i>
+        <div class="bg-cover position-relative overflow-hidden rounded-4" style="height: 390px;
+             background-image: linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.45)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80');">
+          <button type="button" class="btn bg-white text-primary border-0 rounded-circle position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center fs-3"
+                  style="width: 64px; height: 64px;" aria-label="Play video">
+            <i class="fa-solid fa-play"></i>
           </button>
-          <div class="video-overlay">
+          <div class="position-absolute bottom-0 start-0 w-100 p-4 text-white">
             <span class="badge bg-light text-dark rounded-pill mb-2 align-self-start">Featured</span>
             <h3 class="fw-bold mb-2">See the stays before you book</h3>
-            <p class="video-subtitle mb-0 small opacity-75">
+            <p class="mb-0 small opacity-75" style="max-width: 450px;">
               Short walkthrough tours of the rooms, the view from the balcony and the
-              street outside — so there are no surprises at check-in.
+              street outside, so there are no surprises at check-in.
             </p>
           </div>
         </div>
@@ -996,49 +966,47 @@
 
       <div class="col-lg-4">
         <div class="d-flex flex-column gap-3 h-100">
-          <div class="video-thumb-card thumb-1">
-            <button type="button" class="play-icon" aria-label="Play Amalfi Coast tour"><i class="bi bi-play-fill"></i></button>
-            <span class="video-thumb-label">Amalfi Coast villas</span>
+          <div class="bg-cover hover-lift position-relative overflow-hidden rounded-4" style="height: 120px;
+               background-image: linear-gradient(transparent, rgba(0,0,0,.7)), url('https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=400&q=80');">
+            <button type="button" class="btn bg-white text-primary border-0 rounded-circle position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center p-0 play-sm"
+                   ><i class="fa-solid fa-play"></i></button>
+            <span class="position-absolute bottom-0 start-0 mb-2 ms-3 text-white fw-semibold fs-8">Amalfi Coast villas</span>
           </div>
-          <div class="video-thumb-card thumb-2">
-            <button type="button" class="play-icon" aria-label="Play city apartments tour"><i class="bi bi-play-fill"></i></button>
-            <span class="video-thumb-label">City apartments</span>
+          <div class="bg-cover hover-lift position-relative overflow-hidden rounded-4" style="height: 120px;
+               background-image: linear-gradient(transparent, rgba(0,0,0,.7)), url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=400&q=80');">
+            <button type="button" class="btn bg-white text-primary border-0 rounded-circle position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center p-0 play-sm"
+                   ><i class="fa-solid fa-play"></i></button>
+            <span class="position-absolute bottom-0 start-0 mb-2 ms-3 text-white fw-semibold fs-8">City apartments</span>
           </div>
-          <div class="video-thumb-card thumb-3">
-            <button type="button" class="play-icon" aria-label="Play cabins and glamping tour"><i class="bi bi-play-fill"></i></button>
-            <span class="video-thumb-label">Cabins &amp; glamping</span>
+          <div class="bg-cover hover-lift position-relative overflow-hidden rounded-4" style="height: 120px;
+               background-image: linear-gradient(transparent, rgba(0,0,0,.7)), url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=400&q=80');">
+            <button type="button" class="btn bg-white text-primary border-0 rounded-circle position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center p-0 play-sm"
+                   ><i class="fa-solid fa-play"></i></button>
+            <span class="position-absolute bottom-0 start-0 mb-2 ms-3 text-white fw-semibold fs-8">Cabins &amp; glamping</span>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- Homes Guests Love Section -->
+  <!-- homes guests love -->
+  <div id="homes" class="anchor"></div>
   <section class="container my-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
       <h2 class="fw-bold m-0">Homes Guests Love</h2>
-      <div class="d-flex gap-2">
-        <button type="button" class="btn btn-outline-secondary rounded-circle carousel-nav-btn homes-prev" aria-label="Previous homes">
-          <i class="bi bi-chevron-left"></i>
-        </button>
-        <button type="button" class="btn btn-outline-secondary rounded-circle carousel-nav-btn homes-next" aria-label="Next homes">
-          <i class="bi bi-chevron-right"></i>
-        </button>
-      </div>
     </div>
 
-    <div class="swiper tripto-swiper homesSwiper">
-      <div class="swiper-wrapper">
-      <div class="swiper-slide">
+    <div class="homes-wrap">
+      <div class="owl-carousel owl-theme homes-carousel">
+      <div class="item">
         <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
-          <button type="button" class="wishlist-btn" aria-label="Save to wishlist" aria-pressed="false"><i class="bi bi-heart"></i></button>
-          <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=600&q=80" loading="lazy" class="card-img-top card-img-height" loading="lazy" alt="Azure Horizon">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Azure Horizon">
           <div class="card-body">
             <div class="d-flex align-items-center gap-2 mb-2">
-              <span class="badge-rating">5.0</span>
+              <span class="badge bg-primary rounded-2">5.0</span>
               <span class="fw-bold small">Excellent</span>
-              <span class="text-muted extra-small">(350 reviews)</span>
+              <span class="text-muted fs-8">(350 reviews)</span>
             </div>
             <h6 class="fw-bold mb-1">Azure Horizon Hotel</h6>
             <p class="text-muted small mb-2">Nice, France</p>
@@ -1048,15 +1016,15 @@
           </div>
         </div>
       </div>
-      <div class="swiper-slide">
+      <div class="item">
         <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
-          <button type="button" class="wishlist-btn" aria-label="Save to wishlist" aria-pressed="false"><i class="bi bi-heart"></i></button>
-          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" loading="lazy" class="card-img-top card-img-height" loading="lazy" alt="Palm Grove">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Palm Grove">
           <div class="card-body">
             <div class="d-flex align-items-center gap-2 mb-2">
-              <span class="badge-rating">5.0</span>
+              <span class="badge bg-primary rounded-2">5.0</span>
               <span class="fw-bold small">Excellent</span>
-              <span class="text-muted extra-small">(200 reviews)</span>
+              <span class="text-muted fs-8">(200 reviews)</span>
             </div>
             <h6 class="fw-bold mb-1">Palm Grove House</h6>
             <p class="text-muted small mb-2">Algarve, Portugal</p>
@@ -1066,15 +1034,15 @@
           </div>
         </div>
       </div>
-      <div class="swiper-slide">
+      <div class="item">
         <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
-          <button type="button" class="wishlist-btn" aria-label="Save to wishlist" aria-pressed="false"><i class="bi bi-heart"></i></button>
-          <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=600&q=80" loading="lazy" class="card-img-top card-img-height" loading="lazy" alt="Casa Tranquila">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Casa Tranquila">
           <div class="card-body">
             <div class="d-flex align-items-center gap-2 mb-2">
-              <span class="badge-rating">4.8</span>
+              <span class="badge bg-primary rounded-2">4.8</span>
               <span class="fw-bold small">Very Good</span>
-              <span class="text-muted extra-small">(160 reviews)</span>
+              <span class="text-muted fs-8">(160 reviews)</span>
             </div>
             <h6 class="fw-bold mb-1">Casa Tranquila Guesthouse</h6>
             <p class="text-muted small mb-2">Tulum, Mexico</p>
@@ -1084,15 +1052,15 @@
           </div>
         </div>
       </div>
-      <div class="swiper-slide">
+      <div class="item">
         <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
-          <button type="button" class="wishlist-btn" aria-label="Save to wishlist" aria-pressed="false"><i class="bi bi-heart"></i></button>
-          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80" loading="lazy" class="card-img-top card-img-height" loading="lazy" alt="Villa San Martino">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Villa San Martino">
           <div class="card-body">
             <div class="d-flex align-items-center gap-2 mb-2">
-              <span class="badge-rating">5.0</span>
+              <span class="badge bg-primary rounded-2">5.0</span>
               <span class="fw-bold small">Excellent</span>
-              <span class="text-muted extra-small">(160 reviews)</span>
+              <span class="text-muted fs-8">(160 reviews)</span>
             </div>
             <h6 class="fw-bold mb-1">Villa San Martino Guesthouse</h6>
             <p class="text-muted small mb-2">Amalfi Coast, Italy</p>
@@ -1102,15 +1070,15 @@
           </div>
         </div>
       </div>
-      <div class="swiper-slide">
+      <div class="item">
         <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
-          <button type="button" class="wishlist-btn" aria-label="Save to wishlist" aria-pressed="false"><i class="bi bi-heart"></i></button>
-          <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=600&q=80" loading="lazy" class="card-img-top card-img-height" loading="lazy" alt="Nordic Fjord Cabin">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Nordic Fjord Cabin">
           <div class="card-body">
             <div class="d-flex align-items-center gap-2 mb-2">
-              <span class="badge-rating">4.9</span>
+              <span class="badge bg-primary rounded-2">4.9</span>
               <span class="fw-bold small">Excellent</span>
-              <span class="text-muted extra-small">(128 reviews)</span>
+              <span class="text-muted fs-8">(128 reviews)</span>
             </div>
             <h6 class="fw-bold mb-1">Nordic Fjord Cabin</h6>
             <p class="text-muted small mb-2">Bergen, Norway</p>
@@ -1120,15 +1088,15 @@
           </div>
         </div>
       </div>
-      <div class="swiper-slide">
+      <div class="item">
         <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
-          <button type="button" class="wishlist-btn" aria-label="Save to wishlist" aria-pressed="false"><i class="bi bi-heart"></i></button>
-          <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=600&q=80" loading="lazy" class="card-img-top card-img-height" loading="lazy" alt="Sunlit City Loft">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Sunlit City Loft">
           <div class="card-body">
             <div class="d-flex align-items-center gap-2 mb-2">
-              <span class="badge-rating">4.7</span>
+              <span class="badge bg-primary rounded-2">4.7</span>
               <span class="fw-bold small">Excellent</span>
-              <span class="text-muted extra-small">(215 reviews)</span>
+              <span class="text-muted fs-8">(215 reviews)</span>
             </div>
             <h6 class="fw-bold mb-1">Sunlit City Loft</h6>
             <p class="text-muted small mb-2">Lisbon, Portugal</p>
@@ -1138,15 +1106,15 @@
           </div>
         </div>
       </div>
-      <div class="swiper-slide">
+      <div class="item">
         <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
-          <button type="button" class="wishlist-btn" aria-label="Save to wishlist" aria-pressed="false"><i class="bi bi-heart"></i></button>
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" loading="lazy" class="card-img-top card-img-height" loading="lazy" alt="Olive Grove Farmhouse">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Olive Grove Farmhouse">
           <div class="card-body">
             <div class="d-flex align-items-center gap-2 mb-2">
-              <span class="badge-rating">4.6</span>
+              <span class="badge bg-primary rounded-2">4.6</span>
               <span class="fw-bold small">Very Good</span>
-              <span class="text-muted extra-small">(98 reviews)</span>
+              <span class="text-muted fs-8">(98 reviews)</span>
             </div>
             <h6 class="fw-bold mb-1">Olive Grove Farmhouse</h6>
             <p class="text-muted small mb-2">Puglia, Italy</p>
@@ -1156,15 +1124,15 @@
           </div>
         </div>
       </div>
-      <div class="swiper-slide">
+      <div class="item">
         <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
-          <button type="button" class="wishlist-btn" aria-label="Save to wishlist" aria-pressed="false"><i class="bi bi-heart"></i></button>
-          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80" loading="lazy" class="card-img-top card-img-height" loading="lazy" alt="Coastal Dune Studio">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Coastal Dune Studio">
           <div class="card-body">
             <div class="d-flex align-items-center gap-2 mb-2">
-              <span class="badge-rating">4.8</span>
+              <span class="badge bg-primary rounded-2">4.8</span>
               <span class="fw-bold small">Excellent</span>
-              <span class="text-muted extra-small">(176 reviews)</span>
+              <span class="text-muted fs-8">(176 reviews)</span>
             </div>
             <h6 class="fw-bold mb-1">Coastal Dune Studio</h6>
             <p class="text-muted small mb-2">Cape Town, South Africa</p>
@@ -1175,29 +1143,33 @@
         </div>
       </div>
     </div>
+    </div>
   </section>
 
-  <!-- Testimonials Section -->
+  <!-- what people say -->
+  <div id="reviews" class="anchor"></div>
   <section class="container my-5">
-    <div class="testimonial-box text-center">
-      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" loading="lazy" class="avatar-float avatar-1" alt="User 1">
-      <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80" loading="lazy" class="avatar-float avatar-2" alt="User 2">
-      <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=150&q=80" loading="lazy" class="avatar-float avatar-3" alt="User 3">
-      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" loading="lazy" class="avatar-float avatar-4" alt="User 4">
-      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=150&q=80" loading="lazy" class="avatar-float avatar-5" alt="User 5">
-      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" loading="lazy" class="avatar-float avatar-6" alt="User 6">
+    <div class="bg-body-secondary rounded-4 position-relative overflow-hidden text-center px-3 py-5">
+      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" class="d-none d-md-block position-absolute rounded-circle object-fit-cover" style="top: 15%; left: 24%; width: 44px; height: 44px; border: 3px solid #14b8a6;" alt="User 1">
+      <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80" class="d-none d-md-block position-absolute rounded-circle object-fit-cover" style="top: 20%; right: 24%; width: 44px; height: 44px; border: 3px solid #f59e0b;" alt="User 2">
+      <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=150&q=80" class="d-none d-md-block position-absolute rounded-circle object-fit-cover" style="bottom: 35%; left: 11%; width: 44px; height: 44px; border: 3px solid #facc15;" alt="User 3">
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" class="d-none d-md-block position-absolute rounded-circle object-fit-cover" style="bottom: 25%; right: 17%; width: 44px; height: 44px; border: 3px solid #06b6d4;" alt="User 4">
+      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=150&q=80" class="d-none d-md-block position-absolute rounded-circle object-fit-cover" style="bottom: 8%; left: 29%; width: 44px; height: 44px; border: 3px solid #f472b6;" alt="User 5">
+      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" class="d-none d-md-block position-absolute rounded-circle object-fit-cover" style="bottom: 12%; right: 36%; width: 44px; height: 44px; border: 3px solid #10b981;" alt="User 6">
 
       <p class="text-muted small mb-4">Let's see what people think of Tripto</p>
+
       <div class="d-flex justify-content-center mb-3">
-        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80" class="avatar-main" alt="Ethan">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80"
+             class="rounded-circle object-fit-cover" style="width: 80px; height: 80px; border: 4px solid #60a5fa;" alt="Ethan">
       </div>
-      
+
       <div class="position-relative d-inline-block">
-        <span class="quote-mark quote-left">“</span>
-        <p class="fs-4 fw-medium text-dark max-w-lg mx-auto mb-3 testimonial-text">
+        <span class="position-absolute text-primary opacity-25 lh-1" style="font-size: 3rem; top: -20px; left: -28px;">“</span>
+        <p class="fs-4 fw-medium text-dark mx-auto mb-3" style="max-width: 600px;">
           This place is exactly like the picture posted on Tripto. Great service, we had a great stay!
         </p>
-        <span class="quote-mark quote-right">”</span>
+        <span class="position-absolute text-primary opacity-25 lh-1" style="font-size: 3rem; bottom: -20px; right: -28px;">”</span>
       </div>
 
       <h6 class="fw-bold mb-0">Ethan Rogrinho</h6>
@@ -1205,19 +1177,19 @@
     </div>
   </section>
 
-  <!-- Footer -->
-<footer class="site-footer text-white pt-5 pb-4 mt-5">
+<!-- footer -->
+<footer class="text-white pt-5 pb-4 mt-5" style="background-color: #111827;">
   <div class="container">
     <div class="row g-4">
-      
+
       <div class="col-lg-4 col-md-6">
-        <a href="#" class="d-inline-block mb-3">
+        <a href="index.html" class="d-inline-block mb-3">
           <img src="Logo (1).png" alt="Tripto Logo" height="36" class="img-fluid">
         </a>
         <p class="text-white small mb-4 pe-lg-4 lh-base" style="max-width: 320px;">
-          We help you find and book the perfect stay from cozy guesthouses to top hotels—with ease, trust, and the best deals.
+          We help you find and book the perfect stay from cozy guesthouses to top hotels, with ease, trust and the best deals.
         </p>
-        <p class="footer-title fw-semibold small mb-2">Download Our App</p>
+        <p class="fw-semibold small mb-2 footer-head">Download Our App</p>
         <div class="d-flex gap-2">
           <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" height="38"></a>
           <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" height="38"></a>
@@ -1225,47 +1197,47 @@
       </div>
 
       <div class="col-lg-2 col-md-6 col-6">
-        <h6 class="footer-title">Explore</h6>
+        <h6 class="fw-bold mb-3 footer-head">Explore</h6>
         <ul class="list-unstyled d-flex flex-column gap-2 small">
-          <li><a href="#" class="footer-link">Trending Destinations</a></li>
-          <li><a href="#" class="footer-link">Summer Hotspots</a></li>
-          <li><a href="#" class="footer-link">Winter Getaways</a></li>
-          <li><a href="#" class="footer-link">Weekend Deals</a></li>
-          <li><a href="#" class="footer-link">Family-Friendly Stays</a></li>
+          <li><a href="#trending" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Trending Destinations</a></li>
+          <li><a href="#trending" onclick="openSeason('summer')" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Summer Hotspots</a></li>
+          <li><a href="#trending" onclick="openSeason('winter')" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Winter Getaways</a></li>
+          <li><a href="#deals" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Weekend Deals</a></li>
+          <li><a href="pages/family-stays.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Family-Friendly Stays</a></li>
         </ul>
       </div>
 
       <div class="col-lg-2 col-md-6 col-6">
-        <h6 class="footer-title">Property Types</h6>
+        <h6 class="fw-bold mb-3 footer-head">Property Types</h6>
         <ul class="list-unstyled d-flex flex-column gap-2 small">
-          <li><a href="#" class="footer-link">Hotels</a></li>
-          <li><a href="#" class="footer-link">Apartments</a></li>
-          <li><a href="#" class="footer-link">Villas</a></li>
-          <li><a href="#" class="footer-link">Cabins</a></li>
-          <li><a href="#" class="footer-link">Glamping</a></li>
-          <li><a href="#" class="footer-link">Domes</a></li>
+          <li><a href="hotel.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Hotels</a></li>
+          <li><a href="house.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Apartments</a></li>
+          <li><a href="pages/villas.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Villas</a></li>
+          <li><a href="pages/cabins.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Cabins</a></li>
+          <li><a href="pages/glamping.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Glamping</a></li>
+          <li><a href="pages/domes.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Domes</a></li>
         </ul>
       </div>
 
       <div class="col-lg-2 col-md-6 col-6">
-        <h6 class="footer-title">Support</h6>
+        <h6 class="fw-bold mb-3 footer-head">Support</h6>
         <ul class="list-unstyled d-flex flex-column gap-2 small">
-          <li><a href="#" class="footer-link">Help Centre</a></li>
-          <li><a href="#" class="footer-link">Live Chat Support</a></li>
-          <li><a href="#" class="footer-link">FAQs</a></li>
-          <li><a href="#" class="footer-link">Contact Us</a></li>
+          <li><a href="helpCenter.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Help Centre</a></li>
+          <li><a href="#" onclick="openChat(); return false;" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Live Chat Support</a></li>
+          <li><a href="pages/faqs.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">FAQs</a></li>
+          <li><a href="pages/contact-us.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Contact Us</a></li>
         </ul>
       </div>
 
       <div class="col-lg-2 col-md-6 col-12">
-        <h6 class="footer-title">Get In Touch</h6>
+        <h6 class="fw-bold mb-3 footer-head">Get In Touch</h6>
         <p class="text-white small mb-2">+1 (800) 123-456</p>
         <p class="text-white small mb-3">support@tripto.com</p>
         <div class="d-flex gap-2">
-          <a href="#" class="social-btn"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="social-btn"><i class="bi bi-youtube"></i></a>
-          <a href="#" class="social-btn"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="btn btn-dark d-flex align-items-center justify-content-center rounded-2 p-0 social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="btn btn-dark d-flex align-items-center justify-content-center rounded-2 p-0 social-btn"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="btn btn-dark d-flex align-items-center justify-content-center rounded-2 p-0 social-btn"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" class="btn btn-dark d-flex align-items-center justify-content-center rounded-2 p-0 social-btn"><i class="fa-brands fa-x-twitter"></i></a>
         </div>
       </div>
 
@@ -1274,8 +1246,8 @@
     <hr class="border-secondary opacity-25 my-4">
 
     <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-      <p class="text-white small mb-0">&copy; 2025 Tripto. All rights reserved.</p>
-      
+      <p class="text-white small mb-0">&copy; 2026 Tripto. All rights reserved.</p>
+
       <div>
         <img src="Payment Options.png" alt="Payment Methods" height="32" class="img-fluid">
       </div>
@@ -1283,23 +1255,21 @@
   </div>
 </footer>
 
-<!-- Login  -->
-<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+<!-- login / signup modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content rounded-4 border-0 shadow-lg overflow-hidden">
-      
-      <!-- Modal Header -->
+
       <div class="modal-header border-bottom px-4 py-3 position-relative justify-content-center">
         <button type="button" class="btn border-0 p-0 position-absolute start-0 ms-3 d-none" id="backToEmailBtn">
-          <i class="bi bi-chevron-left fs-5"></i>
+          <i class="fa-solid fa-chevron-left fs-5"></i>
         </button>
         <h6 class="modal-title fw-bold text-dark m-0" id="loginModalLabel">Log in or sign up</h6>
-        <button type="button" class="btn-close position-absolute end-0 me-3" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close position-absolute end-0 me-3" id="modalCloseBtn" data-bs-dismiss="modal"></button>
       </div>
 
-      <!-- Modal Body -->
       <div class="modal-body p-4">
-        <!-- Email Form -->
+
         <div id="emailStep">
           <h4 class="fw-bold text-center mb-4 text-dark">Welcome to Tripto</h4>
           <form id="emailForm">
@@ -1308,7 +1278,7 @@
               <input type="email" class="form-control form-control-lg fs-6 rounded-3 py-2" id="userEmail" placeholder="Enter your email address" required>
             </div>
 
-            <button type="submit" class="btn btn-tripto w-100 py-2 fw-semibold rounded-3 mb-3" id="continueBtn" disabled>Continue</button>
+            <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold rounded-3 mb-3" id="continueBtn" disabled>Continue</button>
 
             <div class="d-flex align-items-center my-3 text-muted fs-7">
               <div class="border-bottom w-100"></div>
@@ -1326,79 +1296,85 @@
                 </svg> Continue with Google
               </button>
               <button type="button" class="btn btn-outline-secondary rounded-3 py-2 fw-semibold text-dark d-flex align-items-center justify-content-center gap-2">
-                <i class="bi bi-apple fs-5"></i> Continue with Apple
+                <i class="fa-brands fa-apple fs-5"></i> Continue with Apple
               </button>
               <button type="button" class="btn btn-outline-secondary rounded-3 py-2 fw-semibold text-dark d-flex align-items-center justify-content-center gap-2">
-                <i class="bi bi-facebook text-primary fs-5"></i> Continue with Facebook
+                <i class="fa-brands fa-facebook-f text-primary fs-5"></i> Continue with Facebook
               </button>
             </div>
           </form>
         </div>
 
-        <!--Verification Code Form -->
         <div id="verifyStep" class="d-none text-center">
           <p class="text-secondary small mb-4">Enter the verification code we sent to <strong id="displayEmail" class="text-dark"></strong></p>
 
           <form id="verifyForm">
             <div class="d-flex justify-content-center gap-2 mb-3">
-              <input type="text" class="form-control rounded-3 code-input" inputmode="numeric" pattern="[0-9]*" autocomplete="one-time-code" maxlength="1" aria-label="Verification digit">
-              <input type="text" class="form-control rounded-3 code-input" inputmode="numeric" pattern="[0-9]*" autocomplete="one-time-code" maxlength="1" aria-label="Verification digit">
-              <input type="text" class="form-control rounded-3 code-input" inputmode="numeric" pattern="[0-9]*" autocomplete="one-time-code" maxlength="1" aria-label="Verification digit">
-              <input type="text" class="form-control rounded-3 code-input" inputmode="numeric" pattern="[0-9]*" autocomplete="one-time-code" maxlength="1" aria-label="Verification digit">
+              <input type="text" class="form-control rounded-3 text-center fs-5 fw-bold code-input" maxlength="1">
+              <input type="text" class="form-control rounded-3 text-center fs-5 fw-bold code-input" maxlength="1">
+              <input type="text" class="form-control rounded-3 text-center fs-5 fw-bold code-input" maxlength="1">
+              <input type="text" class="form-control rounded-3 text-center fs-5 fw-bold code-input" maxlength="1">
             </div>
 
-            <button type="submit" class="btn btn-tripto w-100 py-2 fw-semibold rounded-3 mb-3 d-flex align-items-center justify-content-center gap-2" id="verifyBtn" disabled>
+            <!-- demo code is 1236, see checkCode() in js/script.js -->
+            <p id="codeError" class="text-danger small mb-3 d-none">
+              <i class="fa-solid fa-circle-exclamation me-1"></i>Wrong code, please try again.
+            </p>
+
+            <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold rounded-3 mb-3 d-flex align-items-center justify-content-center gap-2" id="verifyBtn" disabled>
               <span id="verifyText">Verify email</span>
-              <span id="verifySpinner" class="spinner-border spinner-border-sm d-none" role="status"></span>
+              <span id="verifySpinner" class="spinner-border spinner-border-sm d-none"></span>
             </button>
           </form>
 
-          <p class="text-muted small mb-1" style="font-size: 0.75rem;">
-            <span id="resendWrap">Didn't receive the email? Check your spam folder, or request another code in <span id="timer">24</span> seconds.</span>
+          <p class="text-muted small mb-1 label-tiny">
+            <span id="resendWrap">Didn't receive the email? Check your spam folder, or request another code in <span id="timer">30</span> seconds.</span>
             <button type="button" id="resendBtn" class="btn btn-link btn-sm text-primary p-0 text-decoration-none fw-semibold d-none">Resend code</button>
           </p>
           <button type="button" class="btn btn-link text-primary p-0 text-decoration-none fw-semibold small" id="editEmailBtn">Edit Email</button>
         </div>
+
       </div>
+
     </div>
   </div>
 </div>
 
-
-<!-- AI Trigger Button -->
- <button class="btn btn-tripto ai-fab rounded-circle position-fixed bottom-0 end-0 m-4 shadow-lg d-flex align-items-center justify-content-center"
+<button class="btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4 shadow-lg d-flex align-items-center justify-content-center z-3"
+        style="width: 56px; height: 56px;"
         id="aiAgentBtn"
-        data-bs-toggle="offcanvas"
-        data-bs-target="#aiChatDrawer"
-        aria-label="Open TriptoBot assistant">
-  <i class="bi bi-stars fs-4"></i>
+        onclick="openChat()">
+  <i class="fa-solid fa-wand-magic-sparkles fs-4"></i>
 </button>
 
-<!-- AI Agent  -->
- <div class="offcanvas offcanvas-end ai-drawer border-0 shadow-lg" tabindex="-1" id="aiChatDrawer" aria-labelledby="aiDrawerTitle">
-  <!-- Header -->
-  <div class="offcanvas-header border-bottom py-3 px-3 d-flex align-items-center justify-content-between">
+<!-- TriptoBot chat -->
+<div class="chat-overlay" id="chatOverlay" onclick="closeChat()"></div>
+
+<div class="chat-drawer shadow-lg" id="aiChatDrawer">
+
+  <div class="chat-head border-bottom py-3 px-3 d-flex align-items-center justify-content-between">
     <div class="d-flex align-items-center gap-2">
-      <div class="bg-tripto text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 34px; height: 34px;">
-        <i class="bi bi-stars fs-6"></i>
+      <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center bot-avatar">
+        <i class="fa-solid fa-wand-magic-sparkles fs-6"></i>
       </div>
       <h6 class="m-0 fw-bold" id="aiDrawerTitle">TriptoBot</h6>
     </div>
     <div class="d-flex align-items-center gap-1">
-      <button type="button" id="aiResetBtn" class="btn btn-sm border-0 p-1 text-muted" aria-label="Start a new conversation" title="Start a new conversation">
-        <i class="bi bi-arrow-counterclockwise"></i>
+      <button type="button" id="aiResetBtn" class="btn btn-sm border-0 p-1 text-muted" title="Start a new conversation">
+        <i class="fa-solid fa-rotate-left"></i>
       </button>
-      <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      <button type="button" class="btn-close shadow-none" onclick="closeChat()"></button>
     </div>
   </div>
 
-  <div class="offcanvas-body p-3 d-flex flex-column justify-content-between bg-white">
-    <div class="chat-messages d-flex flex-column gap-3 pe-1" id="chatMessages" style="max-height: calc(100vh - 150px);" role="log" aria-live="polite">
-      <!-- Welcome Header -->
+  <div class="chat-body p-3 d-flex flex-column justify-content-between bg-white">
+
+    <div class="d-flex flex-column gap-3 pe-1 overflow-y-auto" id="chatMessages" style="max-height: calc(100vh - 150px);">
+
       <div id="welcomeHeader">
         <h4 class="fw-bold text-primary mb-1">Hi there!</h4>
         <h5 class="fw-bold text-dark mb-3">Get Started With TriptoBot</h5>
-        
+
         <div class="bg-light p-3 rounded-4 text-secondary mb-3 fs-7">
           Welcome to Tripto. I'm your virtual assistant. How can I help you today? Please choose one of the options below or type your question:
         </div>
@@ -1407,55 +1383,53 @@
           <span class="fw-bold text-dark fs-7">Tripto is here to inspire</span>
         </div>
 
-        <!-- Prompt Cards Grid  -->
         <div class="row g-2 mb-3" id="promptCards">
           <div class="col-6">
-            <div class="card p-3 border rounded-4 cursor-pointer prompt-card h-100 shadow-sm bg-white" data-type="hotels">
+            <div class="card p-3 border rounded-4 cursor-pointer prompt-card h-100 shadow-sm bg-white" onclick="askBot('hotels')">
               <span class="text-primary fw-bold d-flex align-items-center gap-1 mb-1 fs-7">
-                <i class="bi bi-building"></i> Hotels
+                <i class="fa-solid fa-building"></i> Hotels
               </span>
-              <p class="mb-0 text-dark fw-semibold lh-sm prompt-text" style="font-size: 0.78rem;">Can you recommend some hotels in Barcelona?</p>
+              <p class="mb-0 text-dark fw-semibold lh-sm prompt-text">Can you recommend some hotels in Barcelona?</p>
             </div>
           </div>
 
           <div class="col-6">
-            <div class="card p-3 border rounded-4 cursor-pointer prompt-card h-100 shadow-sm bg-white" data-type="apartments">
+            <div class="card p-3 border rounded-4 cursor-pointer prompt-card h-100 shadow-sm bg-white" onclick="askBot('apartments')">
               <span class="text-primary fw-bold d-flex align-items-center gap-1 mb-1 fs-7">
-                <i class="bi bi-house"></i> Apartments
+                <i class="fa-solid fa-house"></i> Apartments
               </span>
-              <p class="mb-0 text-dark fw-semibold lh-sm prompt-text" style="font-size: 0.78rem;">Are there any Apartments near downtown Barcelona?</p>
+              <p class="mb-0 text-dark fw-semibold lh-sm prompt-text">Are there any Apartments near downtown Barcelona?</p>
             </div>
           </div>
 
           <div class="col-6">
-            <div class="card p-3 border rounded-4 cursor-pointer prompt-card h-100 shadow-sm bg-white" data-type="inspiration">
+            <div class="card p-3 border rounded-4 cursor-pointer prompt-card h-100 shadow-sm bg-white" onclick="askBot('inspiration')">
               <span class="text-danger fw-bold d-flex align-items-center gap-1 mb-1 fs-7">
-                <i class="bi bi-stars"></i> Inspiration
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Inspiration
               </span>
-              <p class="mb-0 text-dark fw-semibold lh-sm prompt-text" style="font-size: 0.78rem;">How to prevent motion sickness during travel?</p>
+              <p class="mb-0 text-dark fw-semibold lh-sm prompt-text">How to prevent motion sickness during travel?</p>
             </div>
           </div>
 
           <div class="col-6">
-            <div class="card p-3 border rounded-4 cursor-pointer prompt-card h-100 shadow-sm bg-white" data-type="attractions">
+            <div class="card p-3 border rounded-4 cursor-pointer prompt-card h-100 shadow-sm bg-white" onclick="askBot('attractions')">
               <span class="fw-bold d-flex align-items-center gap-1 mb-1 fs-7" style="color: #8A2BE2;">
-                <i class="bi bi-geo-alt"></i> Attractions
+                <i class="fa-solid fa-location-dot"></i> Attractions
               </span>
-              <p class="mb-0 text-dark fw-semibold lh-sm prompt-text" style="font-size: 0.78rem;">What activities can I enjoy at Barcelona?</p>
+              <p class="mb-0 text-dark fw-semibold lh-sm prompt-text">What activities can I enjoy at Barcelona?</p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Input Footer -->
     <div class="pt-2">
       <form id="aiChatForm">
         <div class="input-group border rounded-pill px-3 py-1 shadow-sm align-items-center bg-white">
-          <i class="bi bi-chat-left-dots text-muted me-2"></i>
-          <input type="text" class="form-control border-0 shadow-none bg-transparent fs-7" id="aiInput" placeholder="Type a message..." autocomplete="off">
-          <button type="submit" class="btn text-tripto border-0 p-0 fs-5 shadow-none ms-1" aria-label="Send message">
-            <i class="bi bi-send-fill"></i>
+          <i class="fa-regular fa-comment-dots text-muted me-2"></i>
+          <input type="text" class="form-control border-0 shadow-none bg-transparent fs-7" id="aiInput" placeholder="Type a message...">
+          <button type="submit" class="btn text-primary border-0 p-0 fs-5 shadow-none ms-1" aria-label="Send message">
+            <i class="fa-solid fa-paper-plane"></i>
           </button>
         </div>
       </form>
@@ -1463,9 +1437,9 @@
   </div>
 </div>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
