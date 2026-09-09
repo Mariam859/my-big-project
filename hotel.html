@@ -1,0 +1,1320 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="hotel.CSS/style.css">
+  </head>
+  <body>
+
+     <nav class="navbar navbar-expand-lg bg-white sticky-top shadow-sm py-2">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a class="navbar-brand d-flex align-items-center m-0 p-0" href="index.html">
+      <img src="Logo.png" alt="Tripto" class="d-block" style="height: 30px;">
+    </a>
+    <div class="d-flex align-items-center gap-3">
+      <div class="d-flex align-items-center gap-1 cursor-pointer">
+        <img src="https://flagcdn.com/w40/eg.png" alt="Egypt" width="20" height="14" class="rounded-1">
+        <span class="fw-semibold small ms-1 text-brand">EGP</span>
+      </div>
+      <a href="helpCenter.html" class="d-flex align-items-center text-decoration-none text-brand">
+        <i class="fa-solid fa-headset fs-5"></i>
+      </a>
+      <button id="loginBtn" class="btn btn-primary rounded-pill px-4 py-2 fw-semibold border-0" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+
+      <div id="accountMenu" class="dropdown d-none">
+        <button class="btn border-0 p-0 d-flex align-items-center gap-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80" alt="Your account"
+               class="rounded-circle object-fit-cover border border-2 border-primary" width="38" height="38">
+          <i class="fa-solid fa-chevron-down text-muted small"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end shadow border-0 rounded-4 p-2 mt-2">
+          <li><span class="dropdown-item-text small text-muted" id="accountEmail">you@example.com</span></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item rounded-3" href="accountContent.html"><i class="fa-solid fa-user me-2"></i>Profile</a></li>
+          <li><a class="dropdown-item rounded-3" href="accountContent.html"><i class="fa-solid fa-suitcase me-2"></i>My bookings</a></li>
+          <li><a class="dropdown-item rounded-3" href="pages/wishlist.html"><i class="fa-regular fa-heart me-2"></i>Wishlist</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item rounded-3 text-danger" href="#" onclick="logout(); return false;"><i class="fa-solid fa-right-from-bracket me-2"></i>Log out</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+ <section class="bg-white">
+  <div class="container my-5 w-100">
+
+    <div class="d-flex justify-content-between align-items-start mb-3">
+  <div>
+    <div class="d-flex align-items-center gap-2 mb-1">
+      <h2 class="fw-bold mb-0">Hotel Arts Barcelona</h2>
+      <div class="text-warning fs-8">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+      </div>
+    </div>
+    <p class="text-secondary small mb-0">Barcelona, Spain</p>
+  </div>
+
+  <div class="d-flex gap-2">
+    <button onclick="toggleHeart(this)" class="btn btn-light rounded-circle p-2 shadow-sm fs-5 d-flex justify-content-center align-items-center icon-btn"><i class="fa-regular fa-heart"></i></button>
+    <button class="btn btn-light rounded-circle p-2 shadow-sm fs-5 d-flex justify-content-center align-items-center icon-btn"><i class="fa-solid fa-share-nodes"></i></button>
+  </div>
+</div>
+
+    <!-- Tabs -->
+    <div>
+      <div class="nav nav-underline mb-4" id="nav-tab" role="tablist">
+        <button class="nav-link active" id="nav-overview-tab" data-bs-toggle="tab" data-bs-target="#nav-overview" type="button" role="tab" aria-controls="nav-overview" aria-selected="true">Overview</button>
+        <button class="nav-link" id="nav-amenities-tab" data-bs-toggle="tab" data-bs-target="#nav-amenities" type="button" role="tab" aria-controls="nav-amenities" aria-selected="false">Amenities</button>
+        <button class="nav-link" id="nav-location-tab" data-bs-toggle="tab" data-bs-target="#nav-location" type="button" role="tab" aria-controls="nav-location" aria-selected="false">Location</button>
+        <button class="nav-link" id="nav-rooms-tab" data-bs-toggle="tab" data-bs-target="#nav-rooms" type="button" role="tab" aria-controls="nav-rooms" aria-selected="false">Rooms</button>
+        <button class="nav-link" id="nav-reviews-tab" data-bs-toggle="tab" data-bs-target="#nav-reviews" type="button" role="tab" aria-controls="nav-reviews" aria-selected="false">Reviews</button>
+      </div> 
+    </div>
+    <hr class="hr-style">
+
+    <div class="tab-content" id="nav-tabContent">
+
+      <!-- 1. Overview Tab -->
+
+      <div class="tab-pane show active" id="nav-overview" role="tabpanel" aria-labelledby="nav-overview-tab" tabindex="0">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="position-relative h-100">
+              <img src="images.REWAA/e25a972666c3752216fef0604df9bce0dfb118c9 (1).png" class="w-100 img-main rounded-4 object-fit-cover">
+              <div class="position-absolute bottom-0 start-0 m-3 p-2 px-3 bg-white rounded-pill shadow-sm d-flex align-items-center gap-2">
+                <img src="images.REWAA/62308e7e432f6172555aebce8991752202b7a644.png" class="badge1 rounded-circle object-fit-cover">
+                <div>
+                  <span class="text-muted d-block host-label">Hotel</span>
+                  <span class="fw-semibold small">Hotel Arts Barcel...</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="col-md-6">
+            <div class="row g-3">
+              <div class="col-6">
+                <img src="images.REWAA/62308e7e432f6172555aebce8991752202b7a644.png" class="w-100 img-sub rounded-4 object-fit-cover">
+              </div>
+              <div class="col-6">
+                <img src="images.REWAA/f1b712e964fa12021e194a2932e9bccc0cc61ec9.png" class="w-100 img-sub rounded-4 object-fit-cover">
+              </div>
+              <div class="col-6">
+                <img src="images.REWAA/bcf1d3a1b7ddf82bf790a0ccc103c139263334cf.png" class="w-100 img-sub rounded-4 object-fit-cover">
+              </div>
+              <div class="col-6 position-relative">
+                <img src="images.REWAA/2a6b95d10cce80dcfd790851cf1c7b50248ffa77.png" class="w-100 img-sub rounded-4 object-fit-cover">
+                <span class="position-absolute bottom-0 end-0 m-3 badge bg-dark bg-opacity-75 px-3 py-2 rounded-3 fw-bold d-flex align-items-center gap-1">
+                  <i class="fa-regular fa-images"></i> 10+ </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 2. Amenities Tab -->
+
+      <div class="tab-pane" id="nav-amenities" role="tabpanel" aria-labelledby="nav-amenities-tab" tabindex="0">
+        <div class="row g-5 pt-3">
+          <!-- Left Column -->
+          <div class="col-lg-7">
+  
+  <!-- Description Section -->
+  <div class="mb-5">
+    <h3 class="fw-bold text-dark mb-3">Description</h3>
+    <p class="text-secondary small mb-3"><span class="fw-bold text-dark">Hotel size</span> 200 rooms , Arranged over 6 floors</p>
+    <ul class="fw-bold text-dark mb-4">Barcelonia elegance with 6-star service
+      <li class="text-secondary small fw-normal ">Simply elegant in all respects, this beautiful Parisian property offers a wonderful location that enhances your stay. Enjoy spacious rooms with great amenities and 6-star service from a superb... </li>
+    </ul>
+    <div class="text-secondary mb-3" id="more-content"></div> 
+    
+    <button type="button" id="show-amenities-btn" onclick="showDescription(this)" class="btn btn-outline-primary rounded-pill px-4 btn-sm fw-medium">Show More</button>
+  </div>
+
+  <!-- Amenities Section -->
+  <div>
+    <h3 class="fw-bold text-dark mb-4">Amenities</h3>
+    <div class="row g-4 mb-4" id="amenities-container">
+      <div class="col-6 d-flex align-items-center gap-3">
+        <i class="fa-solid fa-kitchen-set fs-5"></i>
+        <span class="fw-medium text-dark">Kitchen</span>
+      </div>
+      <div class="col-6 d-flex align-items-center gap-3">
+        <i class="fa-solid fa-wifi fs-5"></i>
+        <span class="fw-medium text-dark">Free Wireless Internet</span>
+      </div>
+      <div class="col-6 d-flex align-items-center gap-3">
+        <i class="fa-solid fa-hands-bubbles fs-5"></i>
+        <span class="fw-medium text-dark">Washing Machine</span>
+      </div>
+      <div class="col-6 d-flex align-items-center gap-3">
+        <i class="fa-solid fa-person-swimming fs-5"></i>
+        <span class="fw-medium text-dark">Pool</span>
+      </div>
+      <div class="col-6 d-flex align-items-center gap-3">
+        <i class="fa-solid fa-tv fs-5"></i>
+        <span class="fw-medium text-dark">Television</span>
+      </div>
+      <div class="col-6 d-flex align-items-center gap-3">
+        <i class="fa-solid fa-burger fs-5"></i>
+        <span class="fw-medium text-dark">Barbecue</span>
+      </div>
+
+      <!-- EXTRA CONTENT -->
+
+      <div class="col-6 d-flex align-items-center gap-3 extra-amenity d-none">
+       <i class="fa-solid fa-snowflake fs-5"></i>
+       <span class="fw-medium text-dark">Air Conditioning</span>
+      </div>
+      <div class="col-6 d-flex align-items-center gap-3 extra-amenity d-none">
+       <i class="fa-solid fa-car fs-5"></i>
+       <span class="fw-medium text-dark">Free Parking</span>
+      </div>
+     <div class="col-6 d-flex align-items-center gap-3 extra-amenity d-none">
+       <i class="fa-solid fa-square-parking fs-5"></i>
+       <span class="fw-medium text-dark">Elevator</span>
+    </div>
+    <div class="col-6 d-flex align-items-center gap-3 extra-amenity d-none">
+       <i class="fa-solid fa-dumbbell fs-5"></i>
+       <span class="fw-medium text-dark">Gym</span>
+     </div>
+    </div>
+    <button type="button" id="show-more-amenities" onclick="showAmenities(this)" class="btn btn-outline-primary rounded-pill px-4 btn-sm fw-medium">Show All 10 Amenities</button>
+  </div>
+
+</div>
+          <!-- Right Column -->
+          <div class="col-lg-5">
+            <div class="card border-0 shadow-lg rounded-4 p-4 booking-card">
+              
+              <div class="border rounded-4 p-3 mb-4">
+                <div class="row g-0 border-bottom pb-3 mb-3">
+                  <div class="col-6 border-end pe-3">
+                    <div class="d-flex align-items-center gap-2 mb-1">
+                      <i class="fa-regular fa-calendar text-secondary"></i>
+                      <span class="small text-secondary fw-medium">Check-in</span>
+                    </div>
+                    <div class="fw-semibold text-dark text-center">08/14/2025</div>
+                  </div>
+                  <div class="col-6 ps-3">
+                    <div class="d-flex align-items-center gap-2 mb-1">
+                      <i class="fa-regular fa-calendar text-secondary"></i>
+                      <span class="small text-secondary fw-medium">Check-out</span>
+                    </div>
+                    <div class="fw-semibold text-dark text-center">08/19/2025</div>
+                  </div>
+                </div>
+                <div>
+                  <div class="fw-semibold text-dark mb-1">Rooms and Guests</div>
+                  <div class="text-secondary small">1 rooms, 2adults</div>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <h6 class="fw-semibold text-dark mb-3">Prices:</h6>
+                <div class="d-flex justify-content-between mb-2">
+                  <span class="text-secondary">From $300 to $600 </span>
+                </div>
+                
+              </div>
+
+              <button onclick="goToRoomsTab()" class="btn btn-primary w-100 py-3 rounded-3 fw-bold fs-6">Show Rooms</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!--Location -->
+
+<div class="tab-pane" id="nav-location" role="tabpanel" aria-labelledby="nav-location-tab" tabindex="0">
+  <div class="pt-3">
+    <h4 class="fw-bold text-dark mb-3">Location</h4>
+    <div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47895.83648057201!2d2.154007!3d41.390205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a49816718e30e5%3A0x44b0fb3d4f4b965c!2sBarcelona%2C%20Spain!5e0!3m2!1sen!2seg!4v1700000000000!5m2!1sen!2seg" ></iframe>
+    </div>
+  </div>
+</div>
+
+
+<!-- rooms -->
+
+ <div class="tab-pane fade" id="nav-rooms" role="tabpanel" aria-labelledby="nav-rooms-tab" tabindex="0">
+  <div class="pt-3">
+    <h3 class="fw-bold text-dark mb-3">Rooms</h3>
+
+    <div class="d-flex gap-2 mb-4">
+      <button onclick="handleFilter('all')" class="btn btn-dark rounded-pill px-4 btn-sm fw-medium">All Rooms</button>
+      <button onclick="handleFilter('1')" class="btn btn-outline-secondary text-dark rounded-pill px-4 btn-sm fw-medium">1 Bed</button>
+      <button onclick="handleFilter('2')" class="btn btn-outline-secondary text-dark rounded-pill px-4 btn-sm fw-medium">2 Beds</button>
+      <button onclick="handleFilter('3')" class="btn btn-outline-secondary text-dark rounded-pill px-4 btn-sm fw-medium">3 Beds</button>
+    </div>
+
+    <!-- Rooms Cards -->
+    <div class="d-flex flex-column gap-4">
+
+      <!-- Superior Twin Room -->
+      <div class="card border-0 shadow-sm rounded-4 overflow-hidden room-card bed-2">
+        <div class="row g-0 align-items-center">
+          <div class="col-lg-4">
+            <div id="roomCarousel1" class="carousel slide h-100">
+              <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                  <img src="images.REWAA/0438c6a425e6caa1d74e58e670fee1011e9f07ae.png" class="d-block w-100 room-img">
+                </div>
+                <div class="carousel-item h-100">
+                  <img src="images.REWAA/7ebfe338d051135274988d34b752b30ce561fbc5.jpg" class="d-block w-100 room-img">
+                </div>
+              </div>
+              <button class="carousel-control-prev carousel-btn" type="button" data-bs-target="#roomCarousel1" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </button>
+              <button class="carousel-control-next carousel-btn" type="button" data-bs-target="#roomCarousel1" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="card-body p-4">
+              <div class="row align-items-center">
+                <div class="col-md-8 border-md-end border-secondary-subtle">
+                  <div class="d-flex justify-content-between align-items-start mb-3">
+                    <h5 class="fw-bold text-dark m-0">Superior Twin Room <span class="text-danger extra-small ms-2 fw-normal">2 rooms Left</span></h5>
+                    <div class="text-end">
+                      <span class="text-primary small fw-bold me-1">Excellent</span>
+                      <span class="badge bg-primary-subtle text-primary fw-bold px-2 py-1">5.0</span>
+                      <div class="text-muted extra-small">1,260 reviews</div>
+                    </div>
+                  </div>
+                  <div class="d-flex gap-4 mb-3 text-dark small">
+                    <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-bed fs-5"></i><span class="fw-medium">2 Single bed</span></div>
+                    <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-user-group fs-5"></i><span class="fw-medium">2 Persons</span></div>
+                  </div>
+                  <p class="small text-muted fw-semibold mb-2">Details</p>
+                  <div class="row row-cols-2 g-2 text-secondary small mb-3">
+                    <div class="col"><i class="fa-solid fa-utensils me-2"></i>Breakfast</div>
+                    <div class="col"><i class="fa-solid fa-wifi me-2"></i>Free Wifi</div>
+                    <div class="col"><i class="fa-solid fa-water me-2"></i>Sea View</div>
+                    <div class="col"><i class="fa-solid fa-up-right-and-down-left-from-center me-2"></i>30 m²</div>
+                    <div class="col"><i class="fa-solid fa-ban-smoking me-2"></i>No Smoking</div>
+                    <div class="col"><i class="fa-solid fa-snowflake me-2"></i>Air Conditioner</div>
+                  </div>
+                  <a href="" class="text-primary text-decoration-none small fw-semibold">More details <i class="fa-solid fa-chevron-right ms-1"></i></a>
+                </div>
+                <div class="col-md-4 text-end pt-3 pt-md-0">
+                  <span class="badge bg-success-subtle text-success rounded-pill px-2 py-1 mb-2">10% off</span>
+                  <div class="text-decoration-line-through text-muted small">$350</div>
+                  <div class="fs-4 fw-bold text-dark mb-0">$290</div>
+                  <div class="text-muted extra-small mb-1">x 5 night</div>
+                  <div class="text-muted extra-small mb-3 fw-medium">Total Price : $1450</div>
+                  <a href="Booking Details.html" class="btn btn-primary w-100 rounded-3">Reserve</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Suite -->
+      <div class="card border-0 shadow-sm rounded-4 overflow-hidden room-card bed-2">
+        <div class="row g-0 align-items-center">
+          <div class="col-lg-4">
+            <div id="roomCarousel2" class="carousel slide h-100">
+              <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                  <img src="images.REWAA/8fe78423073d39725559214fae0ba315458451cd.png" class="d-block w-100 room-img" >
+                </div>
+                <div class="carousel-item h-100">
+                  <img src="images.REWAA/1856a280d4f8d8a65c00909456b508c9b4146724.jpg" class="d-block w-100 room-img">
+                </div>
+              </div>
+              <button class="carousel-control-prev carousel-btn" type="button" data-bs-target="#roomCarousel2" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </button>
+              <button class="carousel-control-next carousel-btn" type="button" data-bs-target="#roomCarousel2" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="card-body p-4">
+              <div class="row align-items-center">
+                <div class="col-md-8 border-md-end border-secondary-subtle">
+                  <div class="d-flex justify-content-between align-items-start mb-3">
+                    <h5 class="fw-bold text-dark m-0">Suite</h5>
+                    <div class="text-end">
+                      <span class="text-primary small fw-bold me-1">Excellent</span>
+                      <span class="badge bg-primary-subtle text-primary fw-bold px-2 py-1">5.0</span>
+                      <div class="text-muted extra-small">1,260 reviews</div>
+                    </div>
+                  </div>
+                  <div class="d-flex gap-4 mb-3 text-dark small">
+                    <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-bed fs-5"></i><span class="fw-medium">2 Double bed</span></div>
+                    <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-user-group fs-5"></i><span class="fw-medium">4 Persons</span></div>
+                  </div>
+                  <p class="small text-muted fw-semibold mb-2">Details</p>
+                  <div class="row row-cols-2 g-2 text-secondary small mb-3">
+                    <div class="col"><i class="fa-solid fa-utensils me-2"></i>Breakfast</div>
+                    <div class="col"><i class="fa-solid fa-wifi me-2"></i>Free Wifi</div>
+                    <div class="col"><i class="fa-solid fa-city me-2"></i>City View</div>
+                    <div class="col"><i class="fa-solid fa-up-right-and-down-left-from-center me-2"></i>30 m²</div>
+                    <div class="col"><i class="fa-solid fa-ban-smoking me-2"></i>No Smoking</div>
+                    <div class="col"><i class="fa-solid fa-snowflake me-2"></i>Air Conditioner</div>
+                  </div>
+                  <a href="" class="text-primary text-decoration-none small fw-semibold">More details <i class="fa-solid fa-chevron-right ms-1"></i></a>
+                </div>
+                <div class="col-md-4 text-end pt-3 pt-md-0">
+                  <div class="fs-4 fw-bold text-dark mb-0">$460</div>
+                  <div class="text-muted extra-small mb-1">x 5 night</div>
+                  <div class="text-muted extra-small mb-3 fw-medium">Total Price : $1800</div>
+                  <a href="Booking Details.html" class="btn btn-primary w-100 rounded-3">Reserve</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Spacious Room -->
+      <div class="card border-0 shadow-sm rounded-4 overflow-hidden room-card bed-1">
+        <div class="row g-0 align-items-center">
+          <div class="col-lg-4">
+            <div id="roomCarousel3" class="carousel slide h-100">
+              <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                  <img src="images.REWAA/e25a972666c3752216fef0604df9bce0dfb118c9 (1).png" class="d-block w-100 room-img">
+                </div>
+                <div class="carousel-item h-100">
+                  <img src="images.REWAA/cd14b1f39a85c07cfc2c943ee8458c3c8231c94a.jpg" class="d-block w-100 room-img">
+                </div>
+              </div>
+              <button class="carousel-control-prev carousel-btn" type="button" data-bs-target="#roomCarousel3" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </button>
+              <button class="carousel-control-next carousel-btn" type="button" data-bs-target="#roomCarousel3" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="card-body p-4">
+              <div class="row align-items-center">
+                <div class="col-md-8 border-md-end border-secondary-subtle">
+                  <div class="d-flex justify-content-between align-items-start mb-3">
+                    <h5 class="fw-bold text-dark m-0">Spacious Room <span class="text-danger extra-small ms-2 fw-normal">1 rooms Left</span></h5>
+                    <div class="text-end">
+                      <span class="text-primary small fw-bold me-1">Excellent</span>
+                      <span class="badge bg-primary-subtle text-primary fw-bold px-2 py-1">5.0</span>
+                      <div class="text-muted extra-small">1,260 reviews</div>
+                    </div>
+                  </div>
+                  <div class="d-flex gap-4 mb-3 text-dark small">
+                    <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-bed fs-5"></i><span class="fw-medium">1 King bed</span></div>
+                    <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-user-group fs-5"></i><span class="fw-medium">2 Persons</span></div>
+                  </div>
+                  <p class="small text-muted fw-semibold mb-2">Details</p>
+                  <div class="row row-cols-2 g-2 text-secondary small mb-3">
+                    <div class="col"><i class="fa-solid fa-utensils me-2"></i>Breakfast</div>
+                    <div class="col"><i class="fa-solid fa-wifi me-2"></i>Wi-Fi</div>
+                    <div class="col"><i class="fa-solid fa-water me-2"></i>Sea View</div>
+                    <div class="col"><i class="fa-solid fa-up-right-and-down-left-from-center me-2"></i>40 m²</div>
+                    <div class="col"><i class="fa-solid fa-ban-smoking me-2"></i>No Smoking</div>
+                    <div class="col"><i class="fa-solid fa-snowflake me-2"></i>Air Conditioner</div>
+                  </div>
+                  <a href="" class="text-primary text-decoration-none small fw-semibold">More details <i class="fa-solid fa-chevron-right ms-1"></i></a>
+                </div>
+                <div class="col-md-4 text-end pt-3 pt-md-0">
+                  <span class="badge bg-success-subtle text-success rounded-pill px-2 py-1 mb-2">10% off</span>
+                  <div class="text-decoration-line-through text-muted small">$360</div>
+                  <div class="fs-4 fw-bold text-dark mb-0">$300</div>
+                  <div class="text-muted extra-small mb-1">x 5 night</div>
+                  <div class="text-muted extra-small mb-3 fw-medium">Total Price : $1500</div>
+                  <a href="" class="btn btn-primary w-100 rounded-3">Reserve</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deluxe Double Room -->
+      <div class="card border-0 shadow-sm rounded-4 overflow-hidden room-card bed-2">
+        <div class="row g-0 align-items-center">
+          <div class="col-lg-4">
+            <div id="roomCarousel4" class="carousel slide h-100">
+              <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                  <img src="images.REWAA/bbe0eb2a1656571be408c8765702ebf7219bc820.png" class="d-block w-100 room-img">
+                </div>
+                <div class="carousel-item h-100">
+                  <img src="images.REWAA/d543eb0d62822fa227dc3a0eb2370e0c0c378477.jpg" class="d-block w-100 room-img">
+                </div>
+              </div>
+              <button class="carousel-control-prev carousel-btn" type="button" data-bs-target="#roomCarousel4" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </button>
+              <button class="carousel-control-next carousel-btn" type="button" data-bs-target="#roomCarousel4" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="card-body p-4">
+              <div class="row align-items-center">
+                <div class="col-md-8 border-md-end border-secondary-subtle">
+                  <div class="d-flex justify-content-between align-items-start mb-3">
+                    <h5 class="fw-bold text-dark m-0">Deluxe Double Room</h5>
+                    <div class="text-end">
+                      <span class="text-primary small fw-bold me-1">Excellent</span>
+                      <span class="badge bg-primary-subtle text-primary fw-bold px-2 py-1">5.0</span>
+                      <div class="text-muted extra-small">1,260 reviews</div>
+                    </div>
+                  </div>
+                  <div class="d-flex gap-4 mb-3 text-dark small">
+                    <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-bed fs-5"></i><span class="fw-medium">2 Double bed</span></div>
+                    <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-user-group fs-5"></i><span class="fw-medium">2 Persons</span></div>
+                  </div>
+                  <p class="small text-muted fw-semibold mb-2">Details</p>
+                  <div class="row row-cols-2 g-2 text-secondary small mb-3">
+                    <div class="col"><i class="fa-solid fa-utensils me-2"></i>Breakfast</div>
+                    <div class="col"><i class="fa-solid fa-wifi me-2"></i>Free Wifi</div>
+                    <div class="col"><i class="fa-solid fa-water me-2"></i>Sea View</div>
+                    <div class="col"><i class="fa-solid fa-up-right-and-down-left-from-center me-2"></i>30 m²</div>
+                    <div class="col"><i class="fa-solid fa-ban-smoking me-2"></i>No Smoking</div>
+                    <div class="col"><i class="fa-solid fa-snowflake me-2"></i>Air Conditioner</div>
+                  </div>
+                  <a href="" class="text-primary text-decoration-none small fw-semibold">More details <i class="fa-solid fa-chevron-right ms-1"></i></a>
+                </div>
+                <div class="col-md-4 text-center text-md-end pt-3 pt-md-0">
+                  <div class="text-secondary small fw-medium mb-4">Not Avaiable</div>
+                  <button class="btn btn-secondary bg-light text-muted border-0 w-100 rounded-3 py-2" disabled>Reserve</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Family Room -->
+      <div class="card border-0 shadow-sm rounded-4 overflow-hidden room-card bed-3">
+        <div class="row g-0 align-items-center">
+          <div class="col-lg-4">
+            <div id="roomCarousel5" class="carousel slide h-100">
+              <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                  <img src="images.REWAA/cf80d2dbbc9798961d7548690a1d7a14853d949c.png" class="d-block w-100 room-img">
+                </div>
+                <div class="carousel-item h-100">
+                  <img src="images.REWAA/c646b30690e20fa782bd9640a64b4710c28e4428.jpg" class="d-block w-100 room-img">
+                </div>
+              </div>
+              <button class="carousel-control-prev carousel-btn" type="button" data-bs-target="#roomCarousel5" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </button>
+              <button class="carousel-control-next carousel-btn" type="button" data-bs-target="#roomCarousel5" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="card-body p-4">
+              <div class="row align-items-center">
+                <div class="col-md-8 border-md-end border-secondary-subtle">
+                  <div class="d-flex justify-content-between align-items-start mb-3">
+                    <h5 class="fw-bold text-dark m-0">Family Room</h5>
+                    <div class="text-end">
+                      <span class="text-primary small fw-bold me-1">Excellent</span>
+                      <span class="badge bg-primary-subtle text-primary fw-bold px-2 py-1">5.0</span>
+                      <div class="text-muted extra-small">1,260 reviews</div>
+                    </div>
+                  </div>
+                  <div class="d-flex gap-4 mb-3 text-dark small">
+                    <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-bed fs-5"></i><span class="fw-medium">1 Double bed, 2 Single bed</span></div>
+                    <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-user-group fs-5"></i><span class="fw-medium">3 Persons</span></div>
+                  </div>
+                  <p class="small text-muted fw-semibold mb-2">Details</p>
+                  <div class="row row-cols-2 g-2 text-secondary small mb-3">
+                    <div class="col"><i class="fa-solid fa-utensils me-2"></i>Breakfast</div>
+                    <div class="col"><i class="fa-solid fa-wifi me-2"></i>Wi-Fi</div>
+                    <div class="col"><i class="fa-solid fa-city me-2"></i>City View</div>
+                    <div class="col"><i class="fa-solid fa-up-right-and-down-left-from-center me-2"></i>30 m²</div>
+                    <div class="col"><i class="fa-solid fa-ban-smoking me-2"></i>No Smoking</div>
+                    <div class="col"><i class="fa-solid fa-snowflake me-2"></i>Air Conditioner</div>
+                  </div>
+                  <a href="" class="text-primary text-decoration-none small fw-semibold">More details <i class="fa-solid fa-chevron-right ms-1"></i></a>
+                </div>
+                <div class="col-md-4 text-center text-md-end pt-3 pt-md-0">
+                  <div class="text-secondary small fw-medium mb-4">Not Avaiable</div>
+                  <button class="btn btn-secondary bg-light text-muted border-0 w-100 rounded-3 py-2" disabled>Reserve</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Classic Room -->
+      <div class="card border-0 shadow-sm rounded-4 overflow-hidden room-card bed-1">
+        <div class="row g-0 align-items-center">
+          <div class="col-lg-4">
+            <div id="roomCarousel6" class="carousel slide h-100">
+              <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                  <img src="images.REWAA/e2e58bfe2fe037c2c61c04157c0fe887a76ba802.png" class="d-block w-100 room-img">
+                </div>
+                <div class="carousel-item h-100">
+                  <img src="images.REWAA/cf80d2dbbc9798961d7548690a1d7a14853d949c.png" class="d-block w-100 room-img">
+                </div>
+              </div>
+              <button class="carousel-control-prev carousel-btn" type="button" data-bs-target="#roomCarousel6" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </button>
+              <button class="carousel-control-next carousel-btn" type="button" data-bs-target="#roomCarousel6" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="card-body p-4">
+              <div class="row align-items-center">
+                <div class="col-md-8 border-md-end border-secondary-subtle">
+                  <div class="d-flex justify-content-between align-items-start mb-3">
+                    <h5 class="fw-bold text-dark m-0">Classic Room</h5>
+                    <div class="text-end">
+                      <span class="text-primary small fw-bold me-1">Excellent</span>
+                      <span class="badge bg-primary-subtle text-primary fw-bold px-2 py-1">5.0</span>
+                      <div class="text-muted extra-small">1,260 reviews</div>
+                    </div>
+                  </div>
+                  <div class="d-flex gap-4 mb-3 text-dark small">
+                    <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-bed fs-5"></i><span class="fw-medium">1 Single bed</span></div>
+                    <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-user-group fs-5"></i><span class="fw-medium">1 Person</span></div>
+                  </div>
+                  <p class="small text-muted fw-semibold mb-2">Details</p>
+                  <div class="row row-cols-2 g-2 text-secondary small mb-3">
+                    <div class="col"><i class="fa-solid fa-utensils me-2"></i>Breakfast</div>
+                    <div class="col"><i class="fa-solid fa-wifi me-2"></i>Wi-Fi</div>
+                    <div class="col"><i class="fa-solid fa-city me-2"></i>City View</div>
+                    <div class="col"><i class="fa-solid fa-up-right-and-down-left-from-center me-2"></i>15 m²</div>
+                    <div class="col"><i class="fa-solid fa-ban-smoking me-2"></i>No Smoking</div>
+                    <div class="col"><i class="fa-solid fa-snowflake me-2"></i>Air Conditioner</div>
+                  </div>
+                  <a href="" class="text-primary text-decoration-none small fw-semibold">More details <i class="fa-solid fa-chevron-right ms-1"></i></a>
+                </div>
+                <div class="col-md-4 text-center text-md-end pt-3 pt-md-0">
+                  <div class="text-secondary small fw-medium mb-4">Not Avaiable</div>
+                  <button class="btn btn-secondary bg-light text-muted border-0 w-100 rounded-3 py-2" disabled>Reserve</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+      <!-- 5. Reviews Tab -->
+
+      <div class="tab-pane" id="nav-reviews" role="tabpanel" aria-labelledby="nav-reviews-tab" tabindex="0">
+        <div class="pt-3">
+          <h3 class="fw-bold text-dark mb-1">Reviews</h3>
+          <div class="d-flex align-items-center gap-2 mb-4">
+            <span class="badge bg-primary bg-opacity-10 text-primary fw-bold px-2 py-1 rounded-2">5.0</span>
+            <span class="fw-bold text-primary small">Excellent</span>
+            <span class="text-muted small">1,260 reviews</span>
+          </div>
+
+          <!-- Rating  -->
+          <div class="row g-4 mb-5 align-items-center">
+            <div class="col-md-2 border-end pe-4">
+              <span class="fw-bold text-dark small d-block mb-2">Overall Rating</span>
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <span class="small text-muted rating-num">5</span>
+                <div class="progress w-100 progress-rate"><div class="progress-bar bg-secondary"></div></div>
+              </div>
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <span class="small text-muted rating-num">4</span>
+                <div class="progress w-100 progress-rate"><div class="progress-bar2 bg-secondary"></div></div>
+              </div>
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <span class="small text-muted rating-num">3</span>
+                <div class="progress w-100 progress-rate"></div>
+              </div>
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <span class="small text-muted rating-num">2</span>
+                <div class="progress w-100 progress-rate"></div>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <span class="small text-muted rating-num">1</span>
+                <div class="progress w-100 progress-rate"></div>
+              </div>
+            </div>
+
+            <div class="col-md-10">
+              <div class="row g-3 text-center">
+                <div class="col border-end">
+                  <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+                    <i class="fa-regular fa-building text-dark fs-5"></i>
+                    <span class="fw-semibold text-dark small">Amenities</span>
+                  </div>
+                  <span class="fw-bold text-dark fs-6">5.0</span>
+                </div>
+                <div class="col border-end">
+                  <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+                    <i class="fa-solid fa-spray-can text-dark fs-5"></i>
+                    <span class="fw-semibold text-dark small">Cleanliness</span>
+                  </div>
+                  <span class="fw-bold text-dark fs-6">5.0</span>
+                </div>
+                <div class="col border-end">
+                  <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+                    <i class="fa-regular fa-comments text-dark fs-5"></i>
+                    <span class="fw-semibold text-dark small">Communication</span>
+                  </div>
+                  <span class="fw-bold text-dark fs-6">5.0</span>
+                </div>
+                <div class="col border-end">
+                  <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+                    <i class="fa-regular fa-circle-check text-dark fs-5"></i>
+                    <span class="fw-semibold text-dark small">Location</span>
+                  </div>
+                  <span class="fw-bold text-dark fs-6">5.0</span>
+                </div>
+                <div class="col">
+                  <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+                    <i class="fa-solid fa-dollar-sign text-dark fs-5"></i>
+                    <span class="fw-semibold text-dark small">Value</span>
+                  </div>
+                  <span class="fw-bold text-dark fs-6">5.0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Reviews cards -->
+
+          <div class="row g-3 mb-4">
+            <div class="col-md-4">
+              <div class="border rounded-4 p-4 h-100 bg-white">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="images.REWAA/68f745dba856b6b662be44fe9811d743f5c48004.jpg" class="rounded-circle avatar-img">
+                    <div>
+                      <h6 class="fw-bold mb-0 text-dark">July Kaly</h6>
+                      <small class="text-muted review-date">12 Mar 2025</small>
+                    </div>
+                  </div>
+                  <span class="badge bg-primary bg-opacity-10 text-primary fw-bold">5.0</span>
+                </div>
+                <p class="text-secondary small mb-3">The truth of the stay with Simo was very comfortable, he welcomed us but we did not see him again the rest of the days. The apartment was.. </p>
+                <a href="" class="btn btn-link text-secondary p-0 small fw-medium text-decoration-none">Show More</a>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="border rounded-4 p-4 h-100 bg-white">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="images.REWAA/Avatar Place holder.png" class="rounded-circle avatar-img">
+                    <div>
+                      <h6 class="fw-bold mb-0 text-dark">John Wick</h6>
+                      <small class="text-muted review-date">12 Mar 2025</small>
+                    </div>
+                  </div>
+                  <span class="badge bg-primary bg-opacity-10 text-primary fw-bold">5.0</span>
+                </div>
+                <p class="text-secondary small mb-3">Léonor is very responsive, and the accommodation perfectly matches our expectations. Highly recommended</p>
+                <a href="" class="btn btn-link text-secondary p-0 small fw-medium text-decoration-none">Show More</a>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="border rounded-4 p-4 h-100 bg-white">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="images.REWAA/1627f3a870e9b56d751d07f53392d7a84aa55817.jpg" class="rounded-circle avatar-img">
+                    <div>
+                      <h6 class="fw-bold mb-0 text-dark">July Kaly</h6>
+                      <small class="text-muted review-date">12 Mar 2025</small>
+                    </div>
+                  </div>
+                  <span class="badge bg-primary bg-opacity-10 text-primary fw-bold">5.0</span>
+                </div>
+                <p class="text-secondary small mb-3">Simo is very attentive and kind, the apartment was nice, the bed comfortable and you were slightly close to a metro station.</p>
+                <a href="" class="btn btn-link text-secondary p-0 small fw-medium text-decoration-none">Show More</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Extra 3 Reviews -->
+
+    <div class="row g-3 mb-4 d-none" id="extra-reviews">
+      <div class="col-md-4">
+        <div class="border rounded-4 p-4 h-100 bg-white">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="d-flex align-items-center gap-3">
+              <img src="images.REWAA/Avatar Place holder.png" class="rounded-circle avatar-img">
+              <div>
+                <h6 class="fw-bold mb-0 text-dark">Sarah Smith</h6>
+                <small class="text-muted review-date">15 Mar 2025</small>
+              </div>
+            </div>
+            <span class="badge bg-primary bg-opacity-10 text-primary fw-bold">5.0</span>
+          </div>
+          <p class="text-secondary small mb-3">Great host, the place was sparkling clean and close to everything we needed during our trip!</p>
+          <a href="" class="btn btn-link text-secondary p-0 small fw-medium text-decoration-none">Show More</a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="border rounded-4 p-4 h-100 bg-white">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="d-flex align-items-center gap-3">
+              <img src="images.REWAA/68f745dba856b6b662be44fe9811d743f5c48004.jpg" class="rounded-circle avatar-img">
+              <div>
+                <h6 class="fw-bold mb-0 text-dark">Alex Turner</h6>
+                <small class="text-muted review-date">18 Mar 2025</small>
+              </div>
+            </div>
+            <span class="badge bg-primary bg-opacity-10 text-primary fw-bold">5.0</span>
+          </div>
+          <p class="text-secondary small mb-3">Amazing experience! The location is perfect and communication was super smooth throughout our stay.</p>
+          <a href="" class="btn btn-link text-secondary p-0 small fw-medium text-decoration-none">Show More</a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="border rounded-4 p-4 h-100 bg-white">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="d-flex align-items-center gap-3">
+              <img src="images.REWAA/1627f3a870e9b56d751d07f53392d7a84aa55817.jpg" class="rounded-circle avatar-img">
+              <div>
+                <h6 class="fw-bold mb-0 text-dark">Emily Watson</h6>
+                <small class="text-muted review-date">20 Mar 2025</small>
+              </div>
+            </div>
+            <span class="badge bg-primary bg-opacity-10 text-primary fw-bold">5.0</span>
+          </div>
+          <p class="text-secondary small mb-3">Very comfortable stay! Beautiful apartment with all the necessary amenities. Would definitely return.</p>
+          <a href="" class="btn btn-link text-secondary p-0 small fw-medium text-decoration-none">Show More</a>
+        </div>
+      </div>
+    </div>
+
+
+          <button id="reviews-btn" onclick="showMoreReviews(this)" class="btn btn-outline-primary rounded-pill px-4 py-2 small fw-semibold">Show All Reviews</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- policies -->
+
+<section>
+<div class="container">
+<div class="mb-5">
+  <h4 class="fw-bold text-dark mb-1">Policies</h4>
+  <p class="text-secondary small mb-4">
+    <span class="fw-semibold text-dark opacity-75">Lazur Hotel Apartments</span> takes special requests - add in the next step!
+  </p>
+
+  <div class="border rounded-4 bg-white overflow-hidden shadow-sm text-align-center policies-card">
+    
+    <div class="row g-0 p-3 align-items-center">
+      <div class="col-md-4 d-flex align-items-center gap-3">
+        <i class="fa-regular fa-clock text-dark fs-5"></i>
+        <span class="fw-bold text-dark">Check-in</span>
+      </div>
+      <div class="col-md-8 text-secondary small">
+        <div class="fw-semibold text-dark">From 15:00 to 18:00</div>
+        <div>You'll need to let the property know in advance what time you'll arrive.</div>
+      </div>
+    </div>
+
+    <hr class="policy-hr ">
+
+    <div class="row g-0 p-3 align-items-center">
+      <div class="col-md-4 d-flex align-items-center gap-3">
+        <i class="fa-regular fa-clock text-dark fs-5"></i>
+        <span class="fw-bold text-dark">Check-out</span>
+      </div>
+      <div class="col-md-8 text-secondary small">
+        <div class="fw-semibold text-dark">From 8:00 to 11:00</div>
+      </div>
+    </div>
+
+    <hr class="policy-hr">
+
+    <div class="row g-0 p-3 align-items-center">
+      <div class="col-md-4 d-flex align-items-center gap-3">
+        <i class="fa-regular fa-file-lines text-dark fs-5"></i>
+        <span class="fw-bold text-dark">Cancellation/prepayment</span>
+      </div>
+      <div class="col-md-8 text-secondary small">
+       <span> Cancellation and prepayment policies vary according to accommodation type. Please check what condition may apply to each option when making your selection.</span>
+      </div>
+    </div>
+
+    <hr class="policy-hr">
+
+    <div class="row g-0 p-3 align-items-center">
+      <div class="col-md-4 d-flex align-items-center gap-3">
+        <i class="fa-solid fa-people-roof text-dark fs-5"></i>
+        <span class="fw-bold text-dark">Children and beds</span>
+      </div>
+      <div class="col-md-8 text-secondary small">
+       <span> Child policies: children of any age are welcome. To see correct prices and occupancy information, please add the number of children in your group and their ages to your search. Cot and extra bed policies: Cots and extra beds are not available at this property.</span>
+      </div>
+    </div>
+
+    <hr class="policy-hr">
+
+    <div class="row g-0 p-3 align-items-center">
+      <div class="col-md-4 d-flex align-items-center gap-3">
+        <i class="fa-regular fa-user text-dark fs-5"></i>
+        <span class="fw-bold text-dark">No age restriction</span>
+      </div>
+      <div class="col-md-8 text-secondary small">
+        <span> of all ages are welcome. </span>
+      </div>
+    </div>
+
+    <hr class="policy-hr">
+
+    <div class="row g-0 p-3 align-items-center">
+      <div class="col-md-4 d-flex align-items-center gap-3">
+        <i class="fa-regular fa-moon text-dark fs-5"></i>
+        <span class="fw-bold text-dark">Quiet hours</span>
+      </div>
+      <div class="col-md-8 text-secondary small">
+       <span> Guests must be quiet between 22:00 and 10:00.</span>
+      </div>
+    </div>
+
+    <hr class="policy-hr">
+
+    <div class="row g-0 p-3 align-items-center">
+      <div class="col-md-4 d-flex align-items-center gap-3">
+        <i class="fa-solid fa-ban-smoking text-dark fs-5"></i>
+        <span class="fw-bold text-dark">Smoking</span>
+      </div>
+      <div class="col-md-8 text-secondary small">
+        <span> not allowed.</span>
+      </div>
+    </div>
+
+    <hr class="policy-hr">
+
+    <div class="row g-0 p-3 align-items-center">
+      <div class="col-md-4 d-flex align-items-center gap-3">
+        <i class="fa-solid fa-paw text-dark fs-5"></i>
+        <span class="fw-bold text-dark">Pets</span>
+      </div>
+      <div class="col-md-8 text-secondary small">
+        <span>Pets are not allowed. </span>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+</section>
+
+
+<!-- 4 cards -->
+
+<section class="bg-body-secondary bg-opacity-75">
+  <div class="container py-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h3 class="fw-bold text-dark m-0 text-end">12 Most Popular Things to Do Nearby</h3>
+      <div id="custom-owl-nav" class="d-flex gap-2"></div>
+    </div>
+
+    <!-- Carousel -->
+    <div class="owl-carousel owl-theme custom-carousel">
+      
+      <!-- Card 1 -->
+      <div class="item">
+        <div class="card border-0 bg-transparent h-100 text-end">
+          <div class="hotel-img-wrap position-relative overflow-hidden rounded-4 mb-3">
+            <img src="images.REWAA/e1bf8e088ad55a490de74fafa8abbcc7aeb5b553.jpg" class="w-100 h-100 object-fit-cover">
+            <span class="badge-tag badge-explore position-absolute top-0 end-0 m-3 rounded-pill px-3 py-2 d-inline-flex align-items-center gap-1 shadow">
+              <i class="fa-solid fa-compass"></i> Explore 
+            </span>
+            <span class="badge-tag badge-distance position-absolute top-0 start-0 m-3 rounded-pill px-3 py-2 shadow"> 600 m away </span>
+          </div>
+          <div class="card-body p-0">
+            <h6 class="fw-bold text-dark mb-2">Sagrada Familia Tour</h6>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="text-secondary small">Per Person</span>
+              <div>
+                <span class="text-decoration-line-through text-muted small ms-1">$50</span>
+                <span class="fw-bold text-dark fs-6">$42</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="item">
+        <div class="card border-0 bg-transparent h-100 text-end">
+          <div class="hotel-img-wrap position-relative overflow-hidden rounded-4 mb-3">
+            <img src="images.REWAA/217410a3483fde8a073c9ee7cfac310fef9d061b.jpg" class="w-100 h-100 object-fit-cover">
+            <span class="badge-tag badge-show position-absolute top-0 end-0 m-3 rounded-pill px-3 py-2 d-inline-flex align-items-center gap-1 shadow">
+              <i class="fa-solid fa-masks-theater"></i> Show 
+            </span>
+            <span class="badge-tag badge-distance position-absolute top-0 start-0 m-3 rounded-pill px-3 py-2 shadow"> 800 m away </span>
+          </div>
+          <div class="card-body p-0">
+            <h6 class="fw-bold text-dark mb-2">Flamenco Show</h6>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="text-secondary small">Per Person</span>
+              <span class="fw-bold text-dark fs-6">$35</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="item">
+        <div class="card border-0 bg-transparent h-100 text-end">
+          <div class="hotel-img-wrap position-relative overflow-hidden rounded-4 mb-3">
+            <img src="images.REWAA/d43f71758d9af793c69260245b12acca304ec5c7.jpg" class="w-100 h-100 object-fit-cover">
+            <span class="badge-tag badge-explore position-absolute top-0 end-0 m-3 rounded-pill px-3 py-2 d-inline-flex align-items-center gap-1 shadow">
+              <i class="fa-solid fa-landmark"></i> Museum 
+            </span>
+            <span class="badge-tag badge-distance position-absolute top-0 start-0 m-3 rounded-pill px-3 py-2 shadow"> 1.3 km away </span>
+          </div>
+          <div class="card-body p-0">
+            <h6 class="fw-bold text-dark mb-2">Palau de la Música Tour</h6>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="text-secondary small">Per Person</span>
+              <div>
+                <span class="text-decoration-line-through text-muted small ms-1">$59</span>
+                <span class="fw-bold text-dark fs-6">$45</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="item">
+        <div class="card border-0 bg-transparent h-100 text-end">
+          <div class="hotel-img-wrap position-relative overflow-hidden rounded-4 mb-3">
+            <img src="images.REWAA/4523f82569f86600d34203e95d1dd63662be2493.jpg" class="w-100 h-100 object-fit-cover">
+            <span class="badge-tag badge-food position-absolute top-0 end-0 m-3 rounded-pill px-3 py-2 d-inline-flex align-items-center gap-1 shadow">
+              <i class="fa-solid fa-utensils"></i> Food 
+            </span>
+            <span class="badge-tag badge-distance position-absolute top-0 start-0 m-3 rounded-pill px-3 py-2 shadow"> 500 m away </span>
+          </div>
+          <div class="card-body p-0">
+            <h6 class="fw-bold text-dark mb-2">Tapas & Wine Tasting</h6>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="text-secondary small">Per Person</span>
+              <span class="fw-bold text-dark fs-6">$39</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- apartments -->
+ 
+  <section class="apartments-section py-5">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h3 class="fw-bold text-dark m-0">Similar Hotels in Barcelona</h3>
+      <div class="d-flex gap-2">
+        <button class="slider-btn rounded-circle d-flex align-items-center justify-content-center border-0 bg-white shadow-sm" aria-label="Previous">
+          <i class="fa-solid fa-chevron-left text-secondary small"></i>
+        </button>
+        <button class="slider-btn rounded-circle d-flex align-items-center justify-content-center border-0 bg-white shadow-sm" aria-label="Next">
+          <i class="fa-solid fa-chevron-right text-secondary small"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      
+      <!-- Apartment Card 1 -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card apartment-card h-100 border-0 rounded-4 overflow-hidden shadow">
+          <div class="apartment-img-wrap overflow-hidden">
+            <img src="images.REWAA/7ebfe338d051135274988d34b752b30ce561fbc5.jpg" class="w-100 h-100 object-fit-cover">
+          </div>
+          <div class="card-body p-3 d-flex flex-column">
+            <h6 class="fw-bold text-dark mb-1">Hotel Arts Barcelona</h6>
+            <p class="text-secondary small mb-3">
+              <i class="fa-solid fa-location-dot me-1"></i> Barcelona, Spain
+            </p>
+
+            <div class="note-box rounded-3 p-2 mb-3">
+              <p class="small text-dark m-0">Travellers love the sea views here</p>
+            </div>
+
+            <ul class="list-unstyled text-secondary small d-flex flex-column gap-2 mb-4">
+              <li><i class="fa-solid fa-umbrella-beach"></i> Beach Access</li>
+              <li><i class="fa-solid fa-wifi me-2"></i> Free Wi-Fi</li>
+              <li> <i class="fa-solid fa-utensils"></i> Restaurant</li>
+            </ul>
+
+            <div class="mt-auto pt-3 border-top">
+              <div class="d-flex justify-content-between align-items-end">
+                <div class="d-flex align-items-center gap-1">
+                  <span class="rating-badge rounded-1 px-1 fw-bold text-primary small">4.5</span>
+                  <span class="fw-bold text-dark small ms-1">Very Good</span>
+                  <span class="text-muted extra-small">320 reviews</span>
+                </div>
+              </div>
+              <div class="text-end mt-2">
+                <span class="text-secondary extra-small d-block">$410 nightly</span>
+                <div>
+                  <span class="text-decoration-line-through text-muted small me-1">$1,380</span>
+                  <span class="fw-bold text-dark fs-6">$1,230 total</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Apartment Card 2 -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card apartment-card h-100 border-0 rounded-4 overflow-hidden shadow">
+          <div class="apartment-img-wrap overflow-hidden">
+            <img src="images.REWAA/c646b30690e20fa782bd9640a64b4710c28e4428.jpg" class="w-100 h-100 object-fit-cover">
+          </div>
+          <div class="card-body p-3 d-flex flex-column">
+            <h6 class="fw-bold text-dark mb-1">Majestic Hotel & Spa</h6>
+            <p class="text-secondary small mb-3">
+              <i class="fa-solid fa-location-dot me-1"></i> Barcelona, Spain
+            </p>
+
+            <div class="note-box rounded-3 p-2 mb-3">
+              <p class="small text-dark m-0">Near Spanish Steps</p>
+            </div>
+
+            <ul class="list-unstyled text-secondary small d-flex flex-column gap-2 mb-4">
+              <li><i class="fa-solid fa-spa"></i> Spa & Wellness</li>
+              <li><i class="fa-solid fa-square-parking"></i> Free Parking</li>
+              <li><i class="fa-solid fa-snowflake me-2"></i> Air Conditioner</li>
+            </ul>
+
+            <div class="mt-auto pt-3 border-top">
+              <div class="d-flex justify-content-between align-items-end">
+                <div class="d-flex align-items-center gap-1">
+                  <span class="rating-badge rounded-1 px-1 fw-bold text-primary small">4.2</span>
+                  <span class="fw-bold text-dark small ms-1">very Good</span>
+                  <span class="text-muted extra-small">290 reviews</span>
+                </div>
+              </div>
+              <div class="text-end mt-2">
+                <span class="text-secondary extra-small d-block">$395 nightly</span>
+                <div>
+                  <span class="text-decoration-line-through text-muted small me-1">$1,320</span>
+                  <span class="fw-bold text-dark fs-6">$1,185 total</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Apartment Card 3 -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card apartment-card h-100 border-0 rounded-4 overflow-hidden shadow">
+          <div class="apartment-img-wrap overflow-hidden">
+            <img src="images.REWAA/d543eb0d62822fa227dc3a0eb2370e0c0c378477.jpg" class="w-100 h-100 object-fit-cover">
+          </div>
+          <div class="card-body p-3 d-flex flex-column">
+            <h6 class="fw-bold text-dark mb-1">W Barcelona</h6>
+            <p class="text-secondary small mb-3">
+              <i class="fa-solid fa-location-dot me-1"></i> Barcelona, Spain
+            </p>
+
+            <div class="note-box rounded-3 p-2 mb-3">
+              <p class="small text-dark m-0">Travellers love the rooftop bar</p>
+            </div>
+
+            <ul class="list-unstyled text-secondary small d-flex flex-column gap-2 mb-4">
+              <li><i class="fa-solid fa-umbrella-beach"></i> Private Beach Area</li>
+              <li><i class="fa-solid fa-dumbbell"></i> Gym Access</li>
+              <li><i class="fa-solid fa-wifi me-2"></i> Free Wi-Fi</li>
+            </ul>
+
+            <div class="mt-auto pt-3 border-top">
+              <div class="d-flex justify-content-between align-items-end">
+                <div class="d-flex align-items-center gap-1">
+                  <span class="rating-badge rounded-1 px-1 fw-bold text-primary small">5.0</span>
+                  <span class="fw-bold text-dark small ms-1">Excellent</span>
+                  <span class="text-muted extra-small">410 reviews</span>
+                </div>
+              </div>
+              <div class="text-end mt-2">
+                <span class="text-secondary extra-small d-block">$460 nightly</span>
+                <div>
+                  <span class="text-decoration-line-through text-muted small me-1">$1,500</span>
+                  <span class="fw-bold text-dark fs-6">$1,380 total</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Apartment Card 4 -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card apartment-card h-100 border-0 rounded-4 overflow-hidden shadow">
+          <div class="apartment-img-wrap overflow-hidden">
+            <img src="images.REWAA/887d4ac9ded889f132883e0ee744836bdb870444.jpg" class="w-100 h-100 object-fit-cover">
+          </div>
+          <div class="card-body p-3 d-flex flex-column">
+            <h6 class="fw-bold text-dark mb-1">Hotel Regina Barcelona</h6>
+            <p class="text-secondary small mb-3">
+              <i class="fa-solid fa-location-dot me-1"></i> Paris, France
+            </p>
+
+            <div class="note-box rounded-3 p-2 mb-3">
+              <p class="small text-dark m-0">Near Plaça de Catalunya</p>
+            </div>
+
+            <ul class="list-unstyled text-secondary small d-flex flex-column gap-2 mb-4">
+              <li><i class="fa-solid fa-train"></i> Easy Metro Access</li>
+              <li><i class="fa-solid fa-utensils"></i> Restaurant </li>
+              <li><i class="fa-solid fa-snowflake me-2"></i> Air Conditioner</li>
+            </ul>
+
+            <div class="mt-auto pt-3 border-top">
+              <div class="d-flex justify-content-between align-items-end">
+                <div class="d-flex align-items-center gap-1">
+                  <span class="rating-badge rounded-1 px-1 fw-bold text-primary small">3.9</span>
+                  <span class="fw-bold text-dark small ms-1">Good</span>
+                  <span class="text-muted extra-small">150 reviews</span>
+                </div>
+              </div>
+              <div class="text-end mt-2">
+                <span class="text-secondary extra-small d-block">$295 nightly</span>
+                <div>
+                  <span class="text-decoration-line-through text-muted small me-1">$945</span>
+                  <span class="fw-bold text-dark fs-6">$855 total</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<footer class="text-white pt-5 pb-4 mt-5" style="background-color: #111827;">
+  <div class="container">
+    <div class="row g-4">
+
+      <div class="col-lg-4 col-md-6">
+        <a href="index.html" class="d-inline-block mb-3">
+          <img src="Logo (1).png" alt="Tripto Logo" height="36" class="img-fluid">
+        </a>
+        <p class="text-white small mb-4 pe-lg-4 lh-base" style="max-width: 320px;">
+          We help you find and book the perfect stay from cozy guesthouses to top hotels, with ease, trust and the best deals.
+        </p>
+        <p class="fw-semibold small mb-2 footer-head">Download Our App</p>
+        <div class="d-flex gap-2">
+          <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" height="38"></a>
+          <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" height="38"></a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-6 col-6">
+        <h6 class="fw-bold mb-3 footer-head">Explore</h6>
+        <ul class="list-unstyled d-flex flex-column gap-2 small">
+          <li><a href="#trending" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Trending Destinations</a></li>
+          <li><a href="#trending" onclick="openSeason('summer')" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Summer Hotspots</a></li>
+          <li><a href="#trending" onclick="openSeason('winter')" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Winter Getaways</a></li>
+          <li><a href="#deals" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Weekend Deals</a></li>
+          <li><a href="pages/family-stays.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Family-Friendly Stays</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-6 col-6">
+        <h6 class="fw-bold mb-3 footer-head">Property Types</h6>
+        <ul class="list-unstyled d-flex flex-column gap-2 small">
+          <li><a href="hotel.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Hotels</a></li>
+          <li><a href="house.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Apartments</a></li>
+          <li><a href="pages/villas.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Villas</a></li>
+          <li><a href="pages/cabins.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Cabins</a></li>
+          <li><a href="pages/glamping.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Glamping</a></li>
+          <li><a href="pages/domes.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Domes</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-6 col-6">
+        <h6 class="fw-bold mb-3 footer-head">Support</h6>
+        <ul class="list-unstyled d-flex flex-column gap-2 small">
+          <li><a href="helpCenter.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Help Centre</a></li>
+          <li><a href="#" onclick="openChat(); return false;" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Live Chat Support</a></li>
+          <li><a href="pages/faqs.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">FAQs</a></li>
+          <li><a href="pages/contact-us.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-6 col-12">
+        <h6 class="fw-bold mb-3 footer-head">Get In Touch</h6>
+        <p class="text-white small mb-2">+1 (800) 123-456</p>
+        <p class="text-white small mb-3">support@tripto.com</p>
+        <div class="d-flex gap-2">
+          <a href="#" class="btn btn-dark d-flex align-items-center justify-content-center rounded-2 p-0 social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="btn btn-dark d-flex align-items-center justify-content-center rounded-2 p-0 social-btn"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="btn btn-dark d-flex align-items-center justify-content-center rounded-2 p-0 social-btn"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" class="btn btn-dark d-flex align-items-center justify-content-center rounded-2 p-0 social-btn"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary opacity-25 my-4">
+
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+      <p class="text-white small mb-0">&copy; 2026 Tripto. All rights reserved.</p>
+
+      <div>
+        <img src="Payment Options.png" alt="Payment Methods" height="32" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="hotel.JS/script.js"></script>
+  </body>
+</html>

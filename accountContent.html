@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="hotel.CSS/style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-white sticky-top shadow-sm py-2">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a class="navbar-brand d-flex align-items-center m-0 p-0" href="index.html">
+      <img src="Logo.png" alt="Tripto" class="d-block" style="height: 30px;">
+    </a>
+    <div class="d-flex align-items-center gap-3">
+      <div class="d-flex align-items-center gap-1 cursor-pointer">
+        <img src="https://flagcdn.com/w40/eg.png" alt="Egypt" width="20" height="14" class="rounded-1">
+        <span class="fw-semibold small ms-1 text-brand">EGP</span>
+      </div>
+      <a href="helpCenter.html" class="d-flex align-items-center text-decoration-none text-brand">
+        <i class="fa-solid fa-headset fs-5"></i>
+      </a>
+      <button id="loginBtn" class="btn btn-primary rounded-pill px-4 py-2 fw-semibold border-0" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+
+      <div id="accountMenu" class="dropdown d-none">
+        <button class="btn border-0 p-0 d-flex align-items-center gap-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80" alt="Your account"
+               class="rounded-circle object-fit-cover border border-2 border-primary" width="38" height="38">
+          <i class="fa-solid fa-chevron-down text-muted small"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end shadow border-0 rounded-4 p-2 mt-2">
+          <li><span class="dropdown-item-text small text-muted" id="accountEmail">you@example.com</span></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item rounded-3" href="accountContent.html"><i class="fa-solid fa-user me-2"></i>Profile</a></li>
+          <li><a class="dropdown-item rounded-3" href="accountContent.html"><i class="fa-solid fa-suitcase me-2"></i>My bookings</a></li>
+          <li><a class="dropdown-item rounded-3" href="pages/wishlist.html"><i class="fa-regular fa-heart me-2"></i>Wishlist</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item rounded-3 text-danger" href="#" onclick="logout(); return false;"><i class="fa-solid fa-right-from-bracket me-2"></i>Log out</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+    <section class="container py-5">
+      
+      <div class="mb-4 fs-5 text-secondary">
+        <a href="#" class="text-decoration-none text-dark fw-bold">Account</a>
+        <i class="fa-solid fa-chevron-right fs-6 mx-2 text-primary"></i>
+        <span class="fw-semibold text-dark">International travel documents</span>
+      </div>
+
+  
+      <div class="text-dark fs-6">
+        <h2 class="fw-bold mb-3">International travel documents</h2>
+        <p class="text-secondary mb-3">If you're traveling internationally, you may need travel documents such as a passport, travel visa, ETA, or ESTA. If you don't have the right documents, many countries will deny you entry. To help you avoid any added fees or delays, we recommend you obtain your travel documents well in advance of your trip.</p>
+        <p class="text-secondary mb-4">To help you out, we've gathered a list of some common documents you may need. However, you'll still need to check with the embassy or consulate of the country you're traveling to for a complete list of requirements.</p>
+        <h5 class="fw-bold mb-3">All international travel</h5>
+
+        <div class="mb-4">
+          <h6 class="fw-bold mb-1">Passports</h6>
+          <p class="text-secondary mb-0">A passport is a government-issued ID in the form of a passbook (valid for all international travel).</p>
+        </div>
+
+        <div class="mb-4">
+          <h6 class="fw-bold mb-1">Visas</h6>
+          <p class="text-secondary mb-0">A travel visa lets you enter and depart a specific country. You may need to get separate visas for each individual port or connection on your itinerary. Some countries don't require one at all, but it's important to always check in advance. Travel to the United States</p>
+        </div>
+
+        <div class="mb-4">
+          <h6 class="fw-bold mb-1">ESTA</h6>
+          <p class="text-secondary mb-0">If you wish to enter the United States under the Visa Waiver Program, you must apply for authorization to travel using the Electronic System for Travel Authorization (ESTA). You should apply at least 72 hours (about 3 days) before departure. You can apply online and get details at the US Department of Homeland Security.</p>
+        </div>
+
+        <div class="mb-4">
+          <h6 class="fw-bold mb-1">EVUS</h6>
+          <p class="text-secondary mb-0">If you're a citizen or national of the People's Republic of China (PRC), have a 10-year US visitor visa (class B1, B2, or B1/B2), and are planning to travel to the United States, you're required to enroll in the Electronic Visa Update System (EVUS). Once you're done, enrollment should be valid for multiple trips over a period of 2 years or until your passport or visa expires. To learn more, visit the EVUS enrollment website.</p>
+        </div>
+
+        <div class="mb-4">
+          <h6 class="fw-bold mb-1">Travel to the United Kingdom</h6>
+          <p class="text-secondary mb-2">Some visa-exempt non-citizens may be required to have an Electronic Travel Authorization (ETA) to travel to the UK.</p>
+          <ul class="text-secondary ps-4 mb-2">
+            <li class="mb-1">If you are from Qatar, Bahrain, Jordan, Kuwait, Oman, Saudi Arabia or the United Arab Emirates, you'll need an ETA to travel and can apply now.</li>
+            <li class="mb-1">For all other countries (other than EU or EEA countries and Switzerland), you'll need an ETA to travel from January 8, 2025 and can apply now.</li>
+            <li class="mb-1">For EU or EEA countries and Switzerland, you'll need an ETA to travel from April 2, 2025 and can apply from March.</li>
+          </ul>
+          <p class="text-secondary mb-1">You can apply through the UK ETA app or online at GOV.UK, and it usually takes about 3 business days to get a decision.</p>
+          <p class="text-secondary mb-0">For more information, go to Electronic Travel Authorization (ETA) at GOV.UK. You can also check if you need a UK visa here.</p>
+        </div>
+
+        <div class="mb-4">
+          <h6 class="fw-bold mb-1">Travel to Australia or Canada</h6>
+          <p class="text-secondary mb-0">An Electronic Travel Authority or Authorization (ETA) is required for non-citizens to travel to Australia and for visa-exempt non-citizens to travel to Canada. Once you're approved, it's electronically linked to your passport, so you won't need to carry an extra document. Head over to Australia Electronic Travel Authority or Canada Electronic Travel Authorization to get more information and apply.</p>
+        </div>
+
+        <div class="mb-4">
+          <h6 class="fw-bold mb-1">Travel to New Zealand</h6>
+          <p class="text-secondary mb-0">A New Zealand Electronic Travel Authority (NZeTA) is required for visa-exempt non-citizens to enter New Zealand. You'll also likely have to pay an International Visitor Conservation and Tourism Levy (IVL) before you leave.</p>
+        </div>
+
+        <div class="mb-5">
+          <h6 class="fw-bold mb-1">Traveling with minors</h6>
+          <p class="text-secondary mb-2">If you're traveling with minors, you may need to provide notarized documentation and letters of permission if both parents are not present. You should confirm this with the embassy or consulate of the country you're visiting.</p>
+          <p class="text-secondary mb-0">South Africa requires minors to provide their birth certificate in addition to their passport. For more information, review South Africa's regulations for traveling with children.</p>
+        </div>
+
+      </div>
+
+      <hr class="text-secondary-subtle my-4">
+
+      <div class="d-flex align-items-center gap-3">
+        <span class="small text-secondary fw-semibold">Was this topic helpful?</span>
+        <button class="btn btn-light btn-sm rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;" type="button">
+          <i class="fa-regular fa-thumbs-up text-secondary fs-6"></i>
+        </button>
+        <button class="btn btn-light btn-sm rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;" type="button">
+          <i class="fa-regular fa-thumbs-down text-secondary fs-6"></i>
+        </button>
+      </div>
+
+    </section>
+
+
+   <footer class="text-white pt-5 pb-4 mt-5" style="background-color: #111827;">
+  <div class="container">
+    <div class="row g-4">
+
+      <div class="col-lg-4 col-md-6">
+        <a href="index.html" class="d-inline-block mb-3">
+          <img src="Logo (1).png" alt="Tripto Logo" height="36" class="img-fluid">
+        </a>
+        <p class="text-white small mb-4 pe-lg-4 lh-base" style="max-width: 320px;">
+          We help you find and book the perfect stay from cozy guesthouses to top hotels, with ease, trust and the best deals.
+        </p>
+        <p class="fw-semibold small mb-2 footer-head">Download Our App</p>
+        <div class="d-flex gap-2">
+          <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" height="38"></a>
+          <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" height="38"></a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-6 col-6">
+        <h6 class="fw-bold mb-3 footer-head">Explore</h6>
+        <ul class="list-unstyled d-flex flex-column gap-2 small">
+          <li><a href="#trending" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Trending Destinations</a></li>
+          <li><a href="#trending" onclick="openSeason('summer')" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Summer Hotspots</a></li>
+          <li><a href="#trending" onclick="openSeason('winter')" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Winter Getaways</a></li>
+          <li><a href="#deals" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Weekend Deals</a></li>
+          <li><a href="pages/family-stays.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Family-Friendly Stays</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-6 col-6">
+        <h6 class="fw-bold mb-3 footer-head">Property Types</h6>
+        <ul class="list-unstyled d-flex flex-column gap-2 small">
+          <li><a href="hotel.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Hotels</a></li>
+          <li><a href="house.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Apartments</a></li>
+          <li><a href="pages/villas.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Villas</a></li>
+          <li><a href="pages/cabins.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Cabins</a></li>
+          <li><a href="pages/glamping.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Glamping</a></li>
+          <li><a href="pages/domes.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Domes</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-6 col-6">
+        <h6 class="fw-bold mb-3 footer-head">Support</h6>
+        <ul class="list-unstyled d-flex flex-column gap-2 small">
+          <li><a href="helpCenter.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Help Centre</a></li>
+          <li><a href="#" onclick="openChat(); return false;" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Live Chat Support</a></li>
+          <li><a href="pages/faqs.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">FAQs</a></li>
+          <li><a href="pages/contact-us.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-6 col-12">
+        <h6 class="fw-bold mb-3 footer-head">Get In Touch</h6>
+        <p class="text-white small mb-2">+1 (800) 123-456</p>
+        <p class="text-white small mb-3">support@tripto.com</p>
+        <div class="d-flex gap-2">
+          <a href="#" class="btn btn-dark d-flex align-items-center justify-content-center rounded-2 p-0 social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="btn btn-dark d-flex align-items-center justify-content-center rounded-2 p-0 social-btn"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="btn btn-dark d-flex align-items-center justify-content-center rounded-2 p-0 social-btn"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" class="btn btn-dark d-flex align-items-center justify-content-center rounded-2 p-0 social-btn"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary opacity-25 my-4">
+
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+      <p class="text-white small mb-0">&copy; 2026 Tripto. All rights reserved.</p>
+
+      <div>
+        <img src="Payment Options.png" alt="Payment Methods" height="32" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
