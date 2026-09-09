@@ -98,10 +98,18 @@ $(document).ready(function () {
       '<span class="custom-nav-btn"><i class="fa-solid fa-chevron-left"></i></span>'
     ],
     responsive: {
-      0: { items: 1 },
-      576: { items: 2 },
-      768: { items: 3 },
-      992: { items: 4 }
+      0: {
+         items: 1 
+        },
+      576: {
+         items: 2 
+        },
+      768: {
+         items: 3 
+        },
+      992: {
+         items: 4 
+        }
     }
   }
 )
