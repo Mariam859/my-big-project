@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tripto - Booking Hotel, apartments, villas and unique stays worldwide.">
+  <title>Tripto - Booking Hotel</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg bg-white sticky-top shadow-sm py-2">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a class="navbar-brand d-flex align-items-center m-0 p-0" href="index.html">
+      <img src="Logo.png" alt="Tripto" class="d-block" style="height: 30px;">
+    </a>
+    <div class="d-flex align-items-center gap-3">
+      <div class="d-flex align-items-center gap-1 cursor-pointer">
+        <img src="https://flagcdn.com/w40/eg.png" alt="Egypt" width="20" height="14" class="rounded-1">
+        <span class="fw-semibold small ms-1 text-brand">EGP</span>
+      </div>
+      <a href="helpCenter.html" class="d-flex align-items-center text-decoration-none text-brand">
+        <i class="fa-solid fa-headset fs-5"></i>
+      </a>
+      <button id="loginBtn" class="btn btn-primary rounded-pill px-4 py-2 fw-semibold border-0" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+
+      <div id="accountMenu" class="dropdown d-none">
+        <button class="btn border-0 p-0 d-flex align-items-center gap-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80" alt="Your account"
+               class="rounded-circle object-fit-cover border border-2 border-primary" width="38" height="38">
+          <i class="fa-solid fa-chevron-down text-muted small"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end shadow border-0 rounded-4 p-2 mt-2">
+          <li><span class="dropdown-item-text small text-muted" id="accountEmail">you@example.com</span></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item rounded-3" href="accountContent.html"><i class="fa-solid fa-user me-2"></i>Profile</a></li>
+          <li><a class="dropdown-item rounded-3" href="accountContent.html"><i class="fa-solid fa-suitcase me-2"></i>My bookings</a></li>
+          <li><a class="dropdown-item rounded-3" href="pages/wishlist.html"><i class="fa-regular fa-heart me-2"></i>Wishlist</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item rounded-3 text-danger" href="#" onclick="logout(); return false;"><i class="fa-solid fa-right-from-bracket me-2"></i>Log out</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- hero  -->
+<div class="container pt-2" id="home">
+  <section class="bg-cover rounded-4 text-center text-white position-relative d-flex flex-column align-items-center justify-content-center px-3"
+           style="min-height: 420px; padding-bottom: 90px;
+                  background-image: linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80');">
+    <h1 class="hero-title fw-semibold text-white mb-2">Your Trip Starts Here</h1>
+    <p class="hero-subtitle fw-semibold text-white mb-4">Find unique stays across hotels, villas, and more.</p>
+  </section>
+
+  <div class="container position-relative z-3 px-0" style="margin-top: -110px; max-width: 960px;">
+
+    <div class="text-center position-relative z-2" style="margin-bottom: -18px;">
+      <div class="glass d-inline-flex gap-1 flex-wrap justify-content-center align-items-center p-1 rounded-pill shadow-sm">
+
+        <button type="button" class="btn glass-tab active rounded-pill px-3 py-1 fs-7 d-flex align-items-center gap-1 border-0">
+          <i class="fa-solid fa-building"></i> Hotel
+        </button>
+        <button type="button" class="btn glass-tab rounded-pill px-3 py-1 fs-7 d-flex align-items-center gap-1 border-0">
+          <i class="fa-solid fa-house"></i> House
+        </button>
+        <button type="button" class="btn glass-tab rounded-pill px-3 py-1 fs-7 d-flex align-items-center gap-1 border-0">
+          <i class="fa-solid fa-desktop"></i> Guest House
+        </button>
+        <button type="button" class="btn glass-tab rounded-pill px-3 py-1 fs-7 d-flex align-items-center gap-1 border-0">
+          <i class="fa-solid fa-tree"></i> Cabins
+        </button>
+        <button type="button" class="btn glass-tab rounded-pill px-3 py-1 fs-7 d-flex align-items-center gap-1 border-0">
+          <i class="fa-solid fa-campground"></i> Glamping
+        </button>
+        <button type="button" class="btn glass-tab rounded-pill px-3 py-1 fs-7 d-flex align-items-center gap-1 border-0">
+          <i class="fa-solid fa-igloo"></i> Domes
+        </button>
+      </div>
+    </div>
+
+    <form id="searchForm" class="bg-white shadow-lg rounded-4 p-3 p-md-4 position-relative z-1">
+      <div class="row g-3 align-items-center">
+
+        <div class="col-12 col-md-3 border-end position-relative">
+          <div class="p-1 search-field cursor-pointer" id="locationSelectBtn">
+            <label class="form-label mb-0 text-muted fw-bold d-block fs-8" for="locationInput">Location</label>
+            <div class="d-flex align-items-center justify-content-between">
+              <input type="text" class="form-control border-0 p-0 shadow-none fw-semibold bg-transparent" id="locationInput" placeholder="Where to?" style="font-size: 0.9rem;" readonly>
+              <button class="btn btn-sm text-muted p-0 border-0 d-none" id="clearLocationBtn" type="button">
+                <i class="fa-solid fa-circle-xmark"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="shadow-lg border-0 rounded-4 p-3 mt-2 position-absolute start-0 bg-white overflow-auto"
+               id="locationDropdown" style="display: none; width: 320px; max-width: calc(100vw - 3rem); max-height: 420px; z-index: 1050;">
+
+            <div class="mb-3">
+              <small class="text-muted fw-bold d-block mb-2 label-tiny">Recent searches</small>
+              <div class="d-flex align-items-center gap-3 p-2 rounded-3 dropdown-item-custom cursor-pointer" onclick="pickCity(this)">
+                <div class="bg-light rounded-3 p-2 text-primary d-flex align-items-center justify-content-center city-icon">
+                  <i class="fa-solid fa-building fs-5"></i>
+                </div>
+                <div>
+                  <small class="text-muted d-block lh-1 fs-8">Jul 14- 18 , 2 Guests</small>
+                  <strong class="text-dark fs-7">Barcelona, Spain</strong>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <small class="text-muted fw-bold d-block mb-2 label-tiny">Suggested destination</small>
+
+              <div class="d-flex align-items-center gap-3 p-2 rounded-3 dropdown-item-custom cursor-pointer mb-1" onclick="pickCity(this)">
+                <div class="bg-light rounded-3 p-2 text-primary d-flex align-items-center justify-content-center city-icon">
+                  <i class="fa-solid fa-location-dot fs-5"></i>
+                </div>
+                <div>
+                  <small class="text-muted d-block lh-1 fs-8">Find what's around you</small>
+                  <strong class="text-dark fs-7">Nearby</strong>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center gap-3 p-2 rounded-3 dropdown-item-custom cursor-pointer mb-1" onclick="pickCity(this)">
+                <div class="bg-light rounded-3 p-2 text-primary d-flex align-items-center justify-content-center city-icon">
+                  <i class="fa-solid fa-building fs-5"></i>
+                </div>
+                <div>
+                  <small class="text-muted d-block lh-1 fs-8">Best people you have ever seen</small>
+                  <strong class="text-dark fs-7">Tehran, Iran</strong>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center gap-3 p-2 rounded-3 dropdown-item-custom cursor-pointer mb-1" onclick="pickCity(this)">
+                <div class="bg-light rounded-3 p-2 text-primary d-flex align-items-center justify-content-center city-icon">
+                  <i class="fa-solid fa-heart fs-5"></i>
+                </div>
+                <div>
+                  <small class="text-muted d-block lh-1 fs-8">Best romantic place</small>
+                  <strong class="text-dark fs-7">Paris, France</strong>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center gap-3 p-2 rounded-3 dropdown-item-custom cursor-pointer" onclick="pickCity(this)">
+                <div class="bg-light rounded-3 p-2 text-primary d-flex align-items-center justify-content-center city-icon">
+                  <i class="fa-solid fa-sun fs-5"></i>
+                </div>
+                <div>
+                  <small class="text-muted d-block lh-1 fs-8">Summer Picks</small>
+                  <strong class="text-dark fs-7">London, United Kingdom</strong>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-2 border-end">
+          <label for="checkInInput" class="form-label fw-bold text-dark small mb-0 d-block cursor-pointer">Check In</label>
+          <input type="date" id="checkInInput" class="form-control border-0 p-0 shadow-none text-muted small bg-transparent date-input">
+        </div>
+
+        <div class="col-6 col-md-2 border-end">
+          <label for="checkOutInput" class="form-label fw-bold text-dark small mb-0 d-block cursor-pointer">Check Out</label>
+          <input type="date" id="checkOutInput" class="form-control border-0 p-0 shadow-none text-muted small bg-transparent date-input">
+        </div>
+
+        <div class="col-12 col-md-3 border-end position-relative">
+          <div class="p-1 search-field cursor-pointer" id="guestsSelectBtn">
+            <label class="form-label fw-bold text-dark small mb-0 d-block">Rooms and Guests</label>
+            <p class="text-muted text-nowrap mb-0 fs-8" id="guestsSummary">1 room, 1 adult, 0 children</p>
+          </div>
+
+          <div class="shadow-lg border-0 rounded-4 p-3 mt-2 position-absolute start-0 bg-white"
+               id="guestsDropdown" style="display: none; width: 280px; max-width: calc(100vw - 3rem); z-index: 1050;">
+
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <div>
+                <strong class="d-block fs-7 text-dark">Rooms</strong>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle lh-1 d-inline-flex align-items-center justify-content-center count-btn" onclick="changeCount('rooms', -1)">&minus;</button>
+                <span id="roomsCount" class="fw-bold px-1">1</span>
+                <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle lh-1 d-inline-flex align-items-center justify-content-center count-btn" onclick="changeCount('rooms', 1)">+</button>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <div>
+                <strong class="d-block fs-7 text-dark">Adults</strong>
+                <small class="text-muted d-block fs-8">Ages 13 or above</small>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle lh-1 d-inline-flex align-items-center justify-content-center count-btn" onclick="changeCount('adults', -1)">&minus;</button>
+                <span id="adultsCount" class="fw-bold px-1">1</span>
+                <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle lh-1 d-inline-flex align-items-center justify-content-center count-btn" onclick="changeCount('adults', 1)">+</button>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between">
+              <div>
+                <strong class="d-block fs-7 text-dark">Children</strong>
+                <small class="text-muted d-block fs-8">Ages 0 to 12</small>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle lh-1 d-inline-flex align-items-center justify-content-center count-btn" onclick="changeCount('children', -1)">&minus;</button>
+                <span id="childrenCount" class="fw-bold px-1">0</span>
+                <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle lh-1 d-inline-flex align-items-center justify-content-center count-btn" onclick="changeCount('children', 1)">+</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-12 col-md-2">
+          <button type="submit" class="btn btn-primary w-100 rounded-3 py-2 d-flex align-items-center justify-content-center gap-2 fw-semibold">
+            <i class="fa-solid fa-magnifying-glass"></i> Search
+          </button>
+        </div>
+      </div>
+
+      <p id="searchFeedback" class="small mb-0 mt-3 d-none"></p>
+    </form>
+  </div>
+</div>
+
+  <!-- why tripto -->
+  <div id="why-tripto" class="anchor"></div>
+<section class="container my-5 py-4 position-relative z-0">
+  <h2 class="text-center fw-bold mb-5 fs-2">Why Travellers Trust Tripto</h2>
+
+  <div class="row g-4 text-center justify-content-between align-items-start position-relative">
+
+    <div class="position-absolute d-none d-lg-block pe-none" style="top: 20px; left: 23%; width: 20%;">
+      <svg width="100%" height="70" viewBox="0 0 300 70" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 10 55 C 100 75, 200 5, 290 15" stroke="#0057FF" stroke-width="1.8" stroke-dasharray="4 4"/>
+        <circle cx="10" cy="55" r="3.5" fill="#0057FF" />
+        <circle cx="290" cy="15" r="3.5" fill="#0057FF" />
+      </svg>
+    </div>
+
+    <div class="position-absolute d-none d-lg-block pe-none" style="top: 20px; left: 57%; width: 20%;">
+      <svg width="100%" height="70" viewBox="0 0 300 70" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 10 55 C 100 75, 200 5, 290 15" stroke="#0057FF" stroke-width="1.8" stroke-dasharray="4 4"/>
+        <circle cx="10" cy="55" r="3.5" fill="#0057FF" />
+        <circle cx="290" cy="15" r="3.5" fill="#0057FF" />
+      </svg>
+    </div>
+
+    <div class="col-12 col-md-4 d-flex flex-column align-items-center">
+      <div class="rounded-4 d-flex align-items-center justify-content-center mb-3 trust-box">
+        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center trust-dot">
+          <i class="fa-solid fa-dollar-sign fs-4"></i>
+        </div>
+      </div>
+      <h5 class="fw-bold text-dark">No hidden fees</h5>
+      <p class="text-muted small px-3">Transparent pricing with no hidden fees.</p>
+    </div>
+
+    <div class="col-12 col-md-4 d-flex flex-column align-items-center">
+      <div class="rounded-4 d-flex align-items-center justify-content-center mb-3 trust-box">
+        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center trust-dot">
+          <i class="fa-solid fa-shield-halved fs-4"></i>
+        </div>
+      </div>
+      <h5 class="fw-bold text-dark">Instant booking</h5>
+      <p class="text-muted small px-3">Get confirmation right after you reserve.</p>
+    </div>
+
+    <div class="col-12 col-md-4 d-flex flex-column align-items-center">
+      <div class="rounded-4 d-flex align-items-center justify-content-center mb-3 trust-box">
+        <i class="fa-solid fa-file-lines text-primary fs-1"></i>
+      </div>
+      <h5 class="fw-bold text-dark">Flexibility</h5>
+      <p class="text-muted small px-3">Flexible options with free cancellation on many listings.</p>
+    </div>
+  </div>
+</section>
+
+  <!-- trending destinations -->
+  <div id="trending" class="anchor"></div>
+  <section class="container my-5">
+  <h2 class="fw-bold mb-4">Trending Destinations</h2>
+
+  <ul class="nav nav-pills gap-2 mb-4 overflow-auto flex-nowrap pb-2 border-0" id="trendingTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link season-btn active btn border border-dark rounded-pill px-4" id="spring-tab" data-bs-toggle="pill" data-bs-target="#spring" type="button" role="tab">
+        <i class="fa-solid fa-wand-magic-sparkles me-1"></i> Spring Picks
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link season-btn btn border border-dark rounded-pill px-4" id="summer-tab" data-bs-toggle="pill" data-bs-target="#summer" type="button" role="tab">
+        <i class="fa-solid fa-sun me-1"></i> Summer Hotspot
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link season-btn btn border border-dark rounded-pill px-4" id="autumn-tab" data-bs-toggle="pill" data-bs-target="#autumn" type="button" role="tab">
+        <i class="fa-solid fa-leaf me-1"></i> Autumn Escape
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link season-btn btn border border-dark rounded-pill px-4" id="winter-tab" data-bs-toggle="pill" data-bs-target="#winter" type="button" role="tab">
+        <i class="fa-solid fa-snowflake me-1"></i> Winter Getaway
+      </button>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="trendingTabsContent">
+    <div class="tab-pane fade show active" id="spring" role="tabpanel">
+      <div class="row g-4">
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80" alt="Paris">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Paris, France</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$128</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Romantic escapes, art, and cafés.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=600&q=80" alt="Santorini">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Santorini, Greece</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$225</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Sunsets, sea views, and serenity.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80" alt="Bali">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Bali, Indonesia</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$26</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Beaches, nature, and calm vibes.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80" alt="Kyoto">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Kyoto, Japan</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$190</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Cherry blossoms and temples.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="summer" role="tabpanel">
+      <div class="row g-4">
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Maldives">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Maldives</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$310</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Crystal waters and overwater bungalows.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&q=80" alt="Mykonos">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Mykonos, Greece</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$280</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Vibrant nightlife and white beaches.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=600&q=80" alt="Phuket">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Phuket, Thailand</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$45</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Tropical islands and beach parties.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=600&q=80" alt="Amalfi Coast">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Amalfi Coast, Italy</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$240</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Stunning cliffside villages and seafood.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="autumn" role="tabpanel">
+      <div class="row g-4">
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Vermont">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Vermont, USA</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$150</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Golden forests and scenic drives.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=600&q=80" alt="Bavaria">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Bavaria, Germany</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$135</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Fairytale castles and autumn colors.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=600&q=80" alt="Prague">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Prague, Czechia</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$110</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Historic bridges and cozy cafes.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&w=600&q=80" alt="Edinburgh">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Edinburgh, Scotland</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$160</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Gothic architecture and cozy pubs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="winter" role="tabpanel">
+      <div class="row g-4">
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=600&q=80" alt="Zermatt">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Zermatt, Switzerland</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$350</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Skiing and Matterhorn mountain views.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=600&q=80" alt="Banff">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Banff, Canada</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$210</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Snowy peaks and frozen blue lakes.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?auto=format&fit=crop&w=600&q=80" alt="Tromsø">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Tromsø, Norway</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$230</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Northern lights and arctic adventures.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card hover-lift zoom-wrap border-0 shadow-sm rounded-4 overflow-hidden position-relative dest-card">
+            <img loading="lazy" class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80" alt="Rovaniemi">
+            <div class="scrim-up position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end p-3">
+              <h5 class="fw-bold mb-1 text-white">Rovaniemi, Finland</h5>
+              <p class="small mb-1 text-white">From <span class="fw-bold price-gold">$270</span>/night</p>
+              <p class="small mb-0 text-white dest-note">Santa Claus village and glass igloos.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- weekend deals -->
+  <div id="deals" class="anchor"></div>
+  <section class="container my-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="fw-bold m-0">Deals for the Weekend</h2>
+  </div>
+
+  <div class="deals-wrap">
+    <div class="owl-carousel owl-theme deals-carousel">
+
+      <div class="item">
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Villa">
+          <div class="card-body d-flex flex-column justify-content-between p-3">
+            <div>
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="badge bg-primary rounded-2">4.0</span>
+                <span class="fw-bold small">Very Good</span>
+                <span class="text-muted fs-8">(160 reviews)</span>
+              </div>
+              <h6 class="fw-bold mb-1">Seaside Serenity Villa</h6>
+              <p class="text-muted small mb-2">Amalfi Coast, Italy</p>
+              <span class="badge rounded-2 mb-3 d-inline-block deal-badge">Getaway Deal</span>
+            </div>
+            <div class="text-end pt-2 border-top">
+              <span class="text-decoration-line-through text-muted small me-1">$250</span>
+              <span class="fw-bold text-dark fs-6">$175</span> <span class="text-muted small">/ night</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Bungalow">
+          <div class="card-body d-flex flex-column justify-content-between p-3">
+            <div>
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="badge bg-primary rounded-2">3.8</span>
+                <span class="fw-bold small">Good</span>
+                <span class="text-muted fs-8">(210 reviews)</span>
+              </div>
+              <h6 class="fw-bold mb-1">Tropical Bungalow</h6>
+              <p class="text-muted small mb-2">Phuket, Thailand</p>
+              <span class="badge rounded-2 mb-3 d-inline-block deal-badge">Getaway Deal</span>
+            </div>
+            <div class="text-end pt-2 border-top">
+              <span class="text-decoration-line-through text-muted small me-1">$210</span>
+              <span class="fw-bold text-dark fs-6">$160</span> <span class="text-muted small">/ night</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Suites">
+          <div class="card-body d-flex flex-column justify-content-between p-3">
+            <div>
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="badge bg-primary rounded-2">4.9</span>
+                <span class="fw-bold small">Very Good</span>
+                <span class="text-muted fs-8">(185 reviews)</span>
+              </div>
+              <h6 class="fw-bold mb-1">Santorini Sunset Suites</h6>
+              <p class="text-muted small mb-2">Santorini, Greece</p>
+              <span class="badge rounded-2 mb-3 d-inline-block deal-badge">Getaway Deal</span>
+            </div>
+            <div class="text-end pt-2 border-top">
+              <span class="text-decoration-line-through text-muted small me-1">$300</span>
+              <span class="fw-bold text-dark fs-6">$255</span> <span class="text-muted small">/ night</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Resort">
+          <div class="card-body d-flex flex-column justify-content-between p-3">
+            <div>
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="badge bg-primary rounded-2">4.6</span>
+                <span class="fw-bold small">Very Good</span>
+                <span class="text-muted fs-8">(142 reviews)</span>
+              </div>
+              <h6 class="fw-bold mb-1">Marbella Resort</h6>
+              <p class="text-muted small mb-2">Marbella, Spain</p>
+              <span class="badge rounded-2 mb-3 d-inline-block deal-badge">Getaway Deal</span>
+            </div>
+            <div class="text-end pt-2 border-top">
+              <span class="text-decoration-line-through text-muted small me-1">$280</span>
+              <span class="fw-bold text-dark fs-6">$190</span> <span class="text-muted small">/ night</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Cliffside Retreat">
+          <div class="card-body d-flex flex-column justify-content-between p-3">
+            <div>
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="badge bg-primary rounded-2">4.7</span>
+                <span class="fw-bold small">Excellent</span>
+                <span class="text-muted fs-8">(198 reviews)</span>
+              </div>
+              <h6 class="fw-bold mb-1">Cliffside Retreat</h6>
+              <p class="text-muted small mb-2">Santorini, Greece</p>
+              <span class="badge rounded-2 mb-3 d-inline-block deal-badge">Getaway Deal</span>
+            </div>
+            <div class="text-end pt-2 border-top">
+              <span class="text-decoration-line-through text-muted small me-1">$240</span>
+              <span class="fw-bold text-dark fs-6">$168</span> <span class="text-muted small">/ night</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Alpine Chalet">
+          <div class="card-body d-flex flex-column justify-content-between p-3">
+            <div>
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="badge bg-primary rounded-2">4.5</span>
+                <span class="fw-bold small">Very Good</span>
+                <span class="text-muted fs-8">(134 reviews)</span>
+              </div>
+              <h6 class="fw-bold mb-1">Alpine Timber Chalet</h6>
+              <p class="text-muted small mb-2">Zermatt, Switzerland</p>
+              <span class="badge rounded-2 mb-3 d-inline-block deal-badge">Getaway Deal</span>
+            </div>
+            <div class="text-end pt-2 border-top">
+              <span class="text-decoration-line-through text-muted small me-1">$320</span>
+              <span class="fw-bold text-dark fs-6">$224</span> <span class="text-muted small">/ night</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Harbour View Hotel">
+          <div class="card-body d-flex flex-column justify-content-between p-3">
+            <div>
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="badge bg-primary rounded-2">4.8</span>
+                <span class="fw-bold small">Excellent</span>
+                <span class="text-muted fs-8">(276 reviews)</span>
+              </div>
+              <h6 class="fw-bold mb-1">Harbour View Hotel</h6>
+              <p class="text-muted small mb-2">Lisbon, Portugal</p>
+              <span class="badge rounded-2 mb-3 d-inline-block deal-badge">Getaway Deal</span>
+            </div>
+            <div class="text-end pt-2 border-top">
+              <span class="text-decoration-line-through text-muted small me-1">$210</span>
+              <span class="fw-bold text-dark fs-6">$149</span> <span class="text-muted small">/ night</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Desert Dome Camp">
+          <div class="card-body d-flex flex-column justify-content-between p-3">
+            <div>
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="badge bg-primary rounded-2">4.6</span>
+                <span class="fw-bold small">Very Good</span>
+                <span class="text-muted fs-8">(112 reviews)</span>
+              </div>
+              <h6 class="fw-bold mb-1">Desert Dome Camp</h6>
+              <p class="text-muted small mb-2">Merzouga, Morocco</p>
+              <span class="badge rounded-2 mb-3 d-inline-block deal-badge">Getaway Deal</span>
+            </div>
+            <div class="text-end pt-2 border-top">
+              <span class="text-decoration-line-through text-muted small me-1">$180</span>
+              <span class="fw-bold text-dark fs-6">$126</span> <span class="text-muted small">/ night</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- travel more spend less -->
+  <div id="save-more" class="anchor"></div>
+  <section class="container my-5">
+    <h2 class="fw-bold mb-4">Travel more, spend less</h2>
+    <div class="row g-3">
+      <div class="col-md-3">
+        <div class="border border-primary-subtle rounded-4 p-4 h-100 bg-white">
+          <h6 class="fw-bold text-dark mb-2">10% discounts on stays</h6>
+          <p class="text-muted small mb-0">Enjoy discounts at participating properties worldwide</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="border border-primary-subtle rounded-4 p-4 h-100 bg-white">
+          <h6 class="fw-bold text-dark mb-2">Travel off season</h6>
+          <p class="text-muted small mb-0">Avoid peak times and enjoy lower prices and fewer crowds</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="border border-primary-subtle rounded-4 p-4 h-100 bg-white">
+          <h6 class="fw-bold text-dark mb-2">Exclusive deals</h6>
+          <p class="text-muted small mb-0">Enjoy discounts at participating properties worldwide</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="border border-primary-subtle rounded-4 p-4 h-100 bg-white">
+          <h6 class="fw-bold text-dark mb-2">Weekend Special</h6>
+          <p class="text-muted small mb-0">Enjoy 12% off weekend stays</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- top sights -->
+  <div id="sights" class="anchor"></div>
+  <section class="container my-5">
+    <h2 class="fw-bold mb-4">Top Sights to See</h2>
+    <div class="row g-3 mb-3">
+      <div class="col-md-6">
+        <div class="zoom-wrap position-relative overflow-hidden rounded-4 sight-lg">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" class="w-100 h-100 object-fit-cover" alt="Sassnitz">
+          <div class="scrim-down position-absolute top-0 start-0 w-100 h-100 pe-none"></div>
+          <div class="position-absolute top-0 start-0 p-3 text-white fw-bold fs-5">Sassnitz 🇩🇪</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="zoom-wrap position-relative overflow-hidden rounded-4 sight-lg">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80" class="w-100 h-100 object-fit-cover" alt="Binz">
+          <div class="scrim-down position-absolute top-0 start-0 w-100 h-100 pe-none"></div>
+          <div class="position-absolute top-0 start-0 p-3 text-white fw-bold fs-5">Binz 🇩🇪</div>
+        </div>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="zoom-wrap position-relative overflow-hidden rounded-4 sight-md">
+          <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=600&q=80" class="w-100 h-100 object-fit-cover" alt="Sagard">
+          <div class="scrim-down position-absolute top-0 start-0 w-100 h-100 pe-none"></div>
+          <div class="position-absolute top-0 start-0 p-3 text-white fw-bold fs-5">Sagard 🇩🇪</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="zoom-wrap position-relative overflow-hidden rounded-4 sight-md">
+          <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=600&q=80" class="w-100 h-100 object-fit-cover" alt="Bergen">
+          <div class="scrim-down position-absolute top-0 start-0 w-100 h-100 pe-none"></div>
+          <div class="position-absolute top-0 start-0 p-3 text-white fw-bold fs-5">Bergen auf Rügen 🇩🇪</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="zoom-wrap position-relative overflow-hidden rounded-4 sight-md">
+          <img src="https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&w=600&q=80" class="w-100 h-100 object-fit-cover" alt="Freedom">
+          <div class="scrim-down position-absolute top-0 start-0 w-100 h-100 pe-none"></div>
+          <div class="position-absolute top-0 start-0 p-3 text-white fw-bold fs-5">Putbus 🇩🇪</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- things to do -->
+  <div id="things-to-do" class="anchor"></div>
+  <section class="container my-5">
+  <h2 class="fw-bold mb-4">Top Things to Do in Barcelona</h2>
+
+  <div class="d-flex gap-2 mb-4 overflow-auto pb-2" id="things-filter-btns">
+    <button class="btn btn-dark rounded-pill px-3 city-filter-btn active" onclick="filterThings('all', this)"><i class="fa-solid fa-building me-1"></i> Explore</button>
+    <button class="btn btn-outline-secondary rounded-pill px-3 city-filter-btn" onclick="filterThings('beach', this)"><i class="fa-solid fa-water me-1"></i> Beach</button>
+    <button class="btn btn-outline-secondary rounded-pill px-3 city-filter-btn" onclick="filterThings('museum', this)"><i class="fa-solid fa-landmark me-1"></i> Museum</button>
+    <button class="btn btn-outline-secondary rounded-pill px-3 city-filter-btn" onclick="filterThings('show', this)"><i class="fa-solid fa-masks-theater me-1"></i> Show</button>
+    <button class="btn btn-outline-secondary rounded-pill px-3 city-filter-btn" onclick="filterThings('food', this)"><i class="fa-solid fa-mug-hot me-1"></i> Food</button>
+    <button class="btn btn-outline-secondary rounded-pill px-3 city-filter-btn" onclick="filterThings('nightlife', this)"><i class="fa-solid fa-wand-magic-sparkles me-1"></i> Night Life</button>
+  </div>
+
+  <div class="row g-3" id="things-grid">
+
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item cat-explore cat-museum">
+      <img src="https://images.unsplash.com/photo-1583422409516-2895a77efded?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Sagrada Familia">
+      <small class="fw-semibold d-block">Sagrada Familia</small>
+    </div>
+
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item cat-explore">
+      <img src="https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Park Güell">
+      <small class="fw-semibold d-block">Park Güell</small>
+    </div>
+
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item cat-explore cat-museum">
+      <img src="https://images.unsplash.com/photo-1563784462041-5f97ac9523dd?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Casa Milà">
+      <small class="fw-semibold d-block">Casa Milà</small>
+    </div>
+
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item cat-explore">
+      <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Sacred Heart">
+      <small class="fw-semibold d-block">Sacred Heart Temple</small>
+    </div>
+
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item cat-explore">
+      <img src="https://images.unsplash.com/photo-1511527661048-7fe73d85e9a4?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Arc de Triomf">
+      <small class="fw-semibold d-block">Arc de Triomf</small>
+    </div>
+
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item cat-explore cat-museum">
+      <img src="https://images.unsplash.com/photo-1579282240050-352db0a14c21?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Casa Batlló">
+      <small class="fw-semibold d-block">Casa Batlló</small>
+    </div>
+
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-beach">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Barceloneta Beach">
+      <small class="fw-semibold d-block">Barceloneta Beach</small>
+    </div>
+
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-beach">
+      <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Bogatell Beach">
+      <small class="fw-semibold d-block">Bogatell Beach</small>
+    </div>
+
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-beach">
+      <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Nova Icaria">
+      <small class="fw-semibold d-block">Nova Icaria Beach</small>
+    </div>
+
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-beach">
+      <img src="https://images.unsplash.com/photo-1471922694854-ff1b63b20054?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Mar Bella Beach">
+      <small class="fw-semibold d-block">Mar Bella Beach</small>
+    </div>
+
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-beach">
+      <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Port Olympic">
+      <small class="fw-semibold d-block">Port Olímpic</small>
+    </div>
+
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-beach">
+      <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Badalona Beach">
+      <small class="fw-semibold d-block">Badalona Beach</small>
+    </div>
+
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-museum">
+      <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Picasso Museum">
+      <small class="fw-semibold d-block">Picasso Museum</small>
+    </div>
+
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-museum">
+      <img src="https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="MNAC Museum">
+      <small class="fw-semibold d-block">MNAC Museum</small>
+    </div>
+
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-museum">
+      <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="MACBA Museum">
+      <small class="fw-semibold d-block">MACBA Museum</small>
+    </div>
+
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-show">
+      <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Flamenco Show">
+      <small class="fw-semibold d-block">Flamenco Show</small>
+    </div>
+
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-show">
+      <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Palau de la Música">
+      <small class="fw-semibold d-block">Palau de la Música</small>
+    </div>
+
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-show">
+      <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Liceu Opera">
+      <small class="fw-semibold d-block">Gran Teatre del Liceu</small>
+    </div>
+
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-show">
+      <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Magic Fountain Show">
+      <small class="fw-semibold d-block">Magic Fountain Show</small>
+    </div>
+
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-food">
+      <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="La Boqueria">
+      <small class="fw-semibold d-block">La Boqueria Market</small>
+    </div>
+
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-food">
+      <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Tapas Bar">
+      <small class="fw-semibold d-block">Gothic Tapas Tour</small>
+    </div>
+
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-food">
+      <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Paella Restaurant">
+      <small class="fw-semibold d-block">Seafood Paella</small>
+    </div>
+
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-food">
+      <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Churros Cafe">
+      <small class="fw-semibold d-block">Churros & Chocolate</small>
+    </div>
+
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-nightlife">
+      <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Opium Club">
+      <small class="fw-semibold d-block">Opium Beach Club</small>
+    </div>
+
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-nightlife">
+      <img src="https://images.unsplash.com/photo-1574096079513-d8259312b785?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Rooftop Lounge">
+      <small class="fw-semibold d-block">Rooftop Lounge</small>
+    </div>
+
+    <div class="col-6 col-sm-4 col-md-2 text-center thing-item d-none cat-nightlife">
+      <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=400&q=80" class="w-100 object-fit-cover rounded-4 mb-2 thing-photo" alt="Cocktail Bar">
+      <small class="fw-semibold d-block">El Born Cocktail Bar</small>
+    </div>
+
+  </div>
+</section>
+
+  <!-- video gallery -->
+  <div id="videos" class="anchor"></div>
+  <section class="container my-5">
+    <h2 class="fw-bold mb-4">Explore Tripto in Motion</h2>
+    <div class="row g-3">
+
+      <div class="col-lg-8">
+        <div class="bg-cover position-relative overflow-hidden rounded-4" style="height: 390px;
+             background-image: linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.45)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80');">
+          <button type="button" class="btn bg-white text-primary border-0 rounded-circle position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center fs-3"
+                  style="width: 64px; height: 64px;" aria-label="Play video">
+            <i class="fa-solid fa-play"></i>
+          </button>
+          <div class="position-absolute bottom-0 start-0 w-100 p-4 text-white">
+            <span class="badge bg-light text-dark rounded-pill mb-2 align-self-start">Featured</span>
+            <h3 class="fw-bold mb-2">See the stays before you book</h3>
+            <p class="mb-0 small opacity-75" style="max-width: 450px;">
+              Short walkthrough tours of the rooms, the view from the balcony and the
+              street outside, so there are no surprises at check-in.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="d-flex flex-column gap-3 h-100">
+          <div class="bg-cover hover-lift position-relative overflow-hidden rounded-4" style="height: 120px;
+               background-image: linear-gradient(transparent, rgba(0,0,0,.7)), url('https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=400&q=80');">
+            <button type="button" class="btn bg-white text-primary border-0 rounded-circle position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center p-0 play-sm"
+                   ><i class="fa-solid fa-play"></i></button>
+            <span class="position-absolute bottom-0 start-0 mb-2 ms-3 text-white fw-semibold fs-8">Amalfi Coast villas</span>
+          </div>
+          <div class="bg-cover hover-lift position-relative overflow-hidden rounded-4" style="height: 120px;
+               background-image: linear-gradient(transparent, rgba(0,0,0,.7)), url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=400&q=80');">
+            <button type="button" class="btn bg-white text-primary border-0 rounded-circle position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center p-0 play-sm"
+                   ><i class="fa-solid fa-play"></i></button>
+            <span class="position-absolute bottom-0 start-0 mb-2 ms-3 text-white fw-semibold fs-8">City apartments</span>
+          </div>
+          <div class="bg-cover hover-lift position-relative overflow-hidden rounded-4" style="height: 120px;
+               background-image: linear-gradient(transparent, rgba(0,0,0,.7)), url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=400&q=80');">
+            <button type="button" class="btn bg-white text-primary border-0 rounded-circle position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center p-0 play-sm"
+                   ><i class="fa-solid fa-play"></i></button>
+            <span class="position-absolute bottom-0 start-0 mb-2 ms-3 text-white fw-semibold fs-8">Cabins &amp; glamping</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- homes guests love -->
+  <div id="homes" class="anchor"></div>
+  <section class="container my-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="fw-bold m-0">Homes Guests Love</h2>
+    </div>
+
+    <div class="homes-wrap">
+      <div class="owl-carousel owl-theme homes-carousel">
+      <div class="item">
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Azure Horizon">
+          <div class="card-body">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span class="badge bg-primary rounded-2">5.0</span>
+              <span class="fw-bold small">Excellent</span>
+              <span class="text-muted fs-8">(350 reviews)</span>
+            </div>
+            <h6 class="fw-bold mb-1">Azure Horizon Hotel</h6>
+            <p class="text-muted small mb-2">Nice, France</p>
+            <div class="text-end">
+              <span class="text-muted small">per night </span><span class="fw-bold text-dark">$165</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Palm Grove">
+          <div class="card-body">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span class="badge bg-primary rounded-2">5.0</span>
+              <span class="fw-bold small">Excellent</span>
+              <span class="text-muted fs-8">(200 reviews)</span>
+            </div>
+            <h6 class="fw-bold mb-1">Palm Grove House</h6>
+            <p class="text-muted small mb-2">Algarve, Portugal</p>
+            <div class="text-end">
+              <span class="text-muted small">per night </span><span class="fw-bold text-dark">$175</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Casa Tranquila">
+          <div class="card-body">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span class="badge bg-primary rounded-2">4.8</span>
+              <span class="fw-bold small">Very Good</span>
+              <span class="text-muted fs-8">(160 reviews)</span>
+            </div>
+            <h6 class="fw-bold mb-1">Casa Tranquila Guesthouse</h6>
+            <p class="text-muted small mb-2">Tulum, Mexico</p>
+            <div class="text-end">
+              <span class="text-muted small">per night </span><span class="fw-bold text-dark">$145</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Villa San Martino">
+          <div class="card-body">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span class="badge bg-primary rounded-2">5.0</span>
+              <span class="fw-bold small">Excellent</span>
+              <span class="text-muted fs-8">(160 reviews)</span>
+            </div>
+            <h6 class="fw-bold mb-1">Villa San Martino Guesthouse</h6>
+            <p class="text-muted small mb-2">Amalfi Coast, Italy</p>
+            <div class="text-end">
+              <span class="text-muted small">per night </span><span class="fw-bold text-dark">$190</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Nordic Fjord Cabin">
+          <div class="card-body">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span class="badge bg-primary rounded-2">4.9</span>
+              <span class="fw-bold small">Excellent</span>
+              <span class="text-muted fs-8">(128 reviews)</span>
+            </div>
+            <h6 class="fw-bold mb-1">Nordic Fjord Cabin</h6>
+            <p class="text-muted small mb-2">Bergen, Norway</p>
+            <div class="text-end">
+              <span class="text-muted small">per night </span><span class="fw-bold text-dark">$155</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Sunlit City Loft">
+          <div class="card-body">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span class="badge bg-primary rounded-2">4.7</span>
+              <span class="fw-bold small">Excellent</span>
+              <span class="text-muted fs-8">(215 reviews)</span>
+            </div>
+            <h6 class="fw-bold mb-1">Sunlit City Loft</h6>
+            <p class="text-muted small mb-2">Lisbon, Portugal</p>
+            <div class="text-end">
+              <span class="text-muted small">per night </span><span class="fw-bold text-dark">$132</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Olive Grove Farmhouse">
+          <div class="card-body">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span class="badge bg-primary rounded-2">4.6</span>
+              <span class="fw-bold small">Very Good</span>
+              <span class="text-muted fs-8">(98 reviews)</span>
+            </div>
+            <h6 class="fw-bold mb-1">Olive Grove Farmhouse</h6>
+            <p class="text-muted small mb-2">Puglia, Italy</p>
+            <div class="text-end">
+              <span class="text-muted small">per night </span><span class="fw-bold text-dark">$120</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative h-100">
+          <button type="button" class="wishlist-btn btn bg-white border-0 rounded-circle shadow-sm p-0 position-absolute top-0 end-0 m-2 z-2 d-flex align-items-center justify-content-center"><i class="fa-regular fa-heart"></i></button>
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80" class="card-img-top w-100 object-fit-cover card-photo" alt="Coastal Dune Studio">
+          <div class="card-body">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span class="badge bg-primary rounded-2">4.8</span>
+              <span class="fw-bold small">Excellent</span>
+              <span class="text-muted fs-8">(176 reviews)</span>
+            </div>
+            <h6 class="fw-bold mb-1">Coastal Dune Studio</h6>
+            <p class="text-muted small mb-2">Cape Town, South Africa</p>
+            <div class="text-end">
+              <span class="text-muted small">per night </span><span class="fw-bold text-dark">$168</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- what people say -->
+  <div id="reviews" class="anchor"></div>
+  <section class="container my-5">
+    <div class="bg-body-secondary rounded-4 position-relative overflow-hidden text-center px-3 py-5">
+      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" class="d-none d-md-block position-absolute rounded-circle object-fit-cover" style="top: 15%; left: 24%; width: 44px; height: 44px; border: 3px solid #14b8a6;" alt="User 1">
+      <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80" class="d-none d-md-block position-absolute rounded-circle object-fit-cover" style="top: 20%; right: 24%; width: 44px; height: 44px; border: 3px solid #f59e0b;" alt="User 2">
+      <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=150&q=80" class="d-none d-md-block position-absolute rounded-circle object-fit-cover" style="bottom: 35%; left: 11%; width: 44px; height: 44px; border: 3px solid #facc15;" alt="User 3">
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" class="d-none d-md-block position-absolute rounded-circle object-fit-cover" style="bottom: 25%; right: 17%; width: 44px; height: 44px; border: 3px solid #06b6d4;" alt="User 4">
+      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=150&q=80" class="d-none d-md-block position-absolute rounded-circle object-fit-cover" style="bottom: 8%; left: 29%; width: 44px; height: 44px; border: 3px solid #f472b6;" alt="User 5">
+      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" class="d-none d-md-block position-absolute rounded-circle object-fit-cover" style="bottom: 12%; right: 36%; width: 44px; height: 44px; border: 3px solid #10b981;" alt="User 6">
+
+      <p class="text-muted small mb-4">Let's see what people think of Tripto</p>
+      <div class="d-flex justify-content-center mb-3">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80"
+             class="rounded-circle object-fit-cover" style="width: 80px; height: 80px; border: 4px solid #60a5fa;" alt="Ethan">
+      </div>
+
+      <div class="position-relative d-inline-block">
+        <span class="position-absolute text-primary opacity-25 lh-1" style="font-size: 3rem; top: -20px; left: -28px;">“</span>
+        <p class="fs-4 fw-medium text-dark mx-auto mb-3" style="max-width: 600px;">
+          This place is exactly like the picture posted on Tripto. Great service, we had a great stay!
+        </p>
+        <span class="position-absolute text-primary opacity-25 lh-1" style="font-size: 3rem; bottom: -20px; right: -28px;">”</span>
+      </div>
+
+      <h6 class="fw-bold mb-0">Ethan Rogrinho</h6>
+      <small class="text-muted">🇲🇾 Malaysia</small>
+    </div>
+  </section>
+
+<!-- footer -->
+<footer class="text-white pt-5 pb-4 mt-5" style="background-color: #111827;">
+  <div class="container">
+    <div class="row g-4">
+
+      <div class="col-lg-4 col-md-6">
+        <a href="index.html" class="d-inline-block mb-3">
+          <img src="Logo (1).png" alt="Tripto Logo" height="36" class="img-fluid">
+        </a>
+        <p class="text-white small mb-4 pe-lg-4 lh-base" style="max-width: 320px;">
+          We help you find and book the perfect stay from cozy guesthouses to top hotels, with ease, trust and the best deals.
+        </p>
+        <p class="fw-semibold small mb-2 footer-head">Download Our App</p>
+        <div class="d-flex gap-2">
+          <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" height="38"></a>
+          <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" height="38"></a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-6 col-6">
+        <h6 class="fw-bold mb-3 footer-head">Explore</h6>
+        <ul class="list-unstyled d-flex flex-column gap-2 small">
+          <li><a href="#trending" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Trending Destinations</a></li>
+          <li><a href="#trending" onclick="openSeason('summer')" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Summer Hotspots</a></li>
+          <li><a href="#trending" onclick="openSeason('winter')" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Winter Getaways</a></li>
+          <li><a href="#deals" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Weekend Deals</a></li>
+          <li><a href="pages/family-stays.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Family-Friendly Stays</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-6 col-6">
+        <h6 class="fw-bold mb-3 footer-head">Property Types</h6>
+        <ul class="list-unstyled d-flex flex-column gap-2 small">
+          <li><a href="hotel.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Hotels</a></li>
+          <li><a href="house.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Apartments</a></li>
+          <li><a href="pages/villas.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Villas</a></li>
+          <li><a href="pages/cabins.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Cabins</a></li>
+          <li><a href="pages/glamping.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Glamping</a></li>
+          <li><a href="pages/domes.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Domes</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-6 col-6">
+        <h6 class="fw-bold mb-3 footer-head">Support</h6>
+        <ul class="list-unstyled d-flex flex-column gap-2 small">
+          <li><a href="helpCenter.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Help Centre</a></li>
+          <li><a href="#" onclick="openChat(); return false;" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Live Chat Support</a></li>
+          <li><a href="pages/faqs.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">FAQs</a></li>
+          <li><a href="pages/contact-us.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-6 col-12">
+        <h6 class="fw-bold mb-3 footer-head">Get In Touch</h6>
+        <p class="text-white small mb-2">+1 (800) 123-456</p>
+        <p class="text-white small mb-3">support@tripto.com</p>
+        <div class="d-flex gap-2">
+          <a href="#" class="btn btn-dark d-flex align-items-center justify-content-center rounded-2 p-0 social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="btn btn-dark d-flex align-items-center justify-content-center rounded-2 p-0 social-btn"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="btn btn-dark d-flex align-items-center justify-content-center rounded-2 p-0 social-btn"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" class="btn btn-dark d-flex align-items-center justify-content-center rounded-2 p-0 social-btn"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="border-secondary opacity-25 my-4">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+      <p class="text-white small mb-0">&copy; 2026 Tripto. All rights reserved.</p>
+
+      <div>
+        <img src="Payment Options.png" alt="Payment Methods" height="32" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- login -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4 border-0 shadow-lg overflow-hidden">
+
+      <div class="modal-header border-bottom px-4 py-3 position-relative justify-content-center">
+        <button type="button" class="btn border-0 p-0 position-absolute start-0 ms-3 d-none" id="backToEmailBtn">
+          <i class="fa-solid fa-chevron-left fs-5"></i>
+        </button>
+        <h6 class="modal-title fw-bold text-dark m-0" id="loginModalLabel">Log in or sign up</h6>
+        <button type="button" class="btn-close position-absolute end-0 me-3" id="modalCloseBtn" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body p-4">
+
+        <div id="emailStep">
+          <h4 class="fw-bold text-center mb-4 text-dark">Welcome to Tripto</h4>
+          <form id="emailForm">
+            <div class="mb-3">
+              <label for="userEmail" class="form-label small fw-semibold text-secondary">Email address</label>
+              <input type="email" class="form-control form-control-lg fs-6 rounded-3 py-2" id="userEmail" placeholder="Enter your email address" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold rounded-3 mb-3" id="continueBtn" disabled>Continue</button>
+
+            <div class="d-flex align-items-center my-3 text-muted fs-7">
+              <div class="border-bottom w-100"></div>
+              <span class="px-2 text-lowercase small">or</span>
+              <div class="border-bottom w-100"></div>
+            </div>
+
+            <div class="d-grid gap-2">
+              <button type="button" class="btn btn-outline-secondary rounded-3 py-2 fw-semibold text-dark d-flex align-items-center justify-content-center gap-2">
+                <svg width="18" height="18" viewBox="0 0 48 48">
+                  <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/>
+                  <path fill="#FF3D00" d="m6.306 14.691 6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/>
+                  <path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/>
+                  <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/>
+                </svg> Continue with Google
+              </button>
+              <button type="button" class="btn btn-outline-secondary rounded-3 py-2 fw-semibold text-dark d-flex align-items-center justify-content-center gap-2">
+                <i class="fa-brands fa-apple fs-5"></i> Continue with Apple
+              </button>
+              <button type="button" class="btn btn-outline-secondary rounded-3 py-2 fw-semibold text-dark d-flex align-items-center justify-content-center gap-2">
+                <i class="fa-brands fa-facebook-f text-primary fs-5"></i> Continue with Facebook
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div id="verifyStep" class="d-none text-center">
+          <p class="text-secondary small mb-4">Enter the verification code we sent to <strong id="displayEmail" class="text-dark"></strong></p>
+
+          <form id="verifyForm">
+            <div class="d-flex justify-content-center gap-2 mb-3">
+              <input type="text" class="form-control rounded-3 text-center fs-5 fw-bold code-input" maxlength="1">
+              <input type="text" class="form-control rounded-3 text-center fs-5 fw-bold code-input" maxlength="1">
+              <input type="text" class="form-control rounded-3 text-center fs-5 fw-bold code-input" maxlength="1">
+              <input type="text" class="form-control rounded-3 text-center fs-5 fw-bold code-input" maxlength="1">
+            </div>
+            
+            <p id="codeError" class="text-danger small mb-3 d-none">
+              <i class="fa-solid fa-circle-exclamation me-1"></i>Wrong code, please try again.
+            </p>
+
+            <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold rounded-3 mb-3 d-flex align-items-center justify-content-center gap-2" id="verifyBtn" disabled>
+              <span id="verifyText">Verify email</span>
+              <span id="verifySpinner" class="spinner-border spinner-border-sm d-none"></span>
+            </button>
+          </form>
+
+          <p class="text-muted small mb-1 label-tiny">
+            <span id="resendWrap">Didn't receive the email? Check your spam folder, or request another code in <span id="timer">30</span> seconds.</span>
+            <button type="button" id="resendBtn" class="btn btn-link btn-sm text-primary p-0 text-decoration-none fw-semibold d-none">Resend code</button>
+          </p>
+          <button type="button" class="btn btn-link text-primary p-0 text-decoration-none fw-semibold small" id="editEmailBtn">Edit Email</button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<button class="btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4 shadow-lg d-flex align-items-center justify-content-center z-3"
+        style="width: 56px; height: 56px;"
+        id="aiAgentBtn"
+        onclick="openChat()">
+  <i class="fa-solid fa-wand-magic-sparkles fs-4"></i>
+</button>
+
+<!-- TriptoBot chat -->
+<div class="chat-overlay" id="chatOverlay" onclick="closeChat()"></div>
+
+<div class="chat-drawer shadow-lg" id="aiChatDrawer">
+
+  <div class="chat-head border-bottom py-3 px-3 d-flex align-items-center justify-content-between">
+    <div class="d-flex align-items-center gap-2">
+      <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center bot-avatar">
+        <i class="fa-solid fa-wand-magic-sparkles fs-6"></i>
+      </div>
+      <h6 class="m-0 fw-bold" id="aiDrawerTitle">TriptoBot</h6>
+    </div>
+    <div class="d-flex align-items-center gap-1">
+      <button type="button" id="aiResetBtn" class="btn btn-sm border-0 p-1 text-muted" title="Start a new conversation">
+        <i class="fa-solid fa-rotate-left"></i>
+      </button>
+      <button type="button" class="btn-close shadow-none" onclick="closeChat()"></button>
+    </div>
+  </div>
+
+  <div class="chat-body p-3 d-flex flex-column justify-content-between bg-white">
+
+    <div class="d-flex flex-column gap-3 pe-1 overflow-y-auto" id="chatMessages" style="max-height: calc(100vh - 150px);">
+
+      <div id="welcomeHeader">
+        <h4 class="fw-bold text-primary mb-1">Hi there!</h4>
+        <h5 class="fw-bold text-dark mb-3">Get Started With TriptoBot</h5>
+
+        <div class="bg-light p-3 rounded-4 text-secondary mb-3 fs-7">
+          Welcome to Tripto. I'm your virtual assistant. How can I help you today? Please choose one of the options below or type your question:
+        </div>
+
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <span class="fw-bold text-dark fs-7">Tripto is here to inspire</span>
+        </div>
+
+        <div class="row g-2 mb-3" id="promptCards">
+          <div class="col-6">
+            <div class="card p-3 border rounded-4 cursor-pointer prompt-card h-100 shadow-sm bg-white" onclick="askBot('hotels')">
+              <span class="text-primary fw-bold d-flex align-items-center gap-1 mb-1 fs-7">
+                <i class="fa-solid fa-building"></i> Hotels
+              </span>
+              <p class="mb-0 text-dark fw-semibold lh-sm prompt-text">Can you recommend some hotels in Barcelona?</p>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="card p-3 border rounded-4 cursor-pointer prompt-card h-100 shadow-sm bg-white" onclick="askBot('apartments')">
+              <span class="text-primary fw-bold d-flex align-items-center gap-1 mb-1 fs-7">
+                <i class="fa-solid fa-house"></i> Apartments
+              </span>
+              <p class="mb-0 text-dark fw-semibold lh-sm prompt-text">Are there any Apartments near downtown Barcelona?</p>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="card p-3 border rounded-4 cursor-pointer prompt-card h-100 shadow-sm bg-white" onclick="askBot('inspiration')">
+              <span class="text-danger fw-bold d-flex align-items-center gap-1 mb-1 fs-7">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Inspiration
+              </span>
+              <p class="mb-0 text-dark fw-semibold lh-sm prompt-text">How to prevent motion sickness during travel?</p>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="card p-3 border rounded-4 cursor-pointer prompt-card h-100 shadow-sm bg-white" onclick="askBot('attractions')">
+              <span class="fw-bold d-flex align-items-center gap-1 mb-1 fs-7" style="color: #8A2BE2;">
+                <i class="fa-solid fa-location-dot"></i> Attractions
+              </span>
+              <p class="mb-0 text-dark fw-semibold lh-sm prompt-text">What activities can I enjoy at Barcelona?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-2">
+      <form id="aiChatForm">
+        <div class="input-group border rounded-pill px-3 py-1 shadow-sm align-items-center bg-white">
+          <i class="fa-regular fa-comment-dots text-muted me-2"></i>
+          <input type="text" class="form-control border-0 shadow-none bg-transparent fs-7" id="aiInput" placeholder="Type a message...">
+          <button type="submit" class="btn text-primary border-0 p-0 fs-5 shadow-none ms-1" aria-label="Send message">
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

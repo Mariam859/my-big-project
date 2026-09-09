@@ -1,0 +1,258 @@
+
+.logo-text {
+  font-weight: 900;
+}
+
+.flag-img {
+  width: 22px;
+  height: 15px;
+}
+
+.profile-img {
+  width: 38px;
+  height: 38px;
+}
+
+.footer-dark {
+  background-color: #121316;
+}
+
+.app-subtext {
+  font-size: 8px;
+}
+
+.social-btn {
+  width: 30px;
+  height: 30px;
+  background-color: #2b2f36;
+  transition: background-color 0.2s ease;
+}
+
+.social-btn:hover {
+  background-color: #0d6efd;
+}
+
+
+
+
+
+.hr-style {
+  margin-top: -26px;
+}
+
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  
+}
+
+.img-main {
+  height: 360px;
+}
+
+.img-sub {
+  height: 172px;
+}
+
+.badge1 {
+  width:70px;
+  height: 60px;
+}
+
+.host-label {
+  font-size: 11px;
+  margin-bottom: -2px;
+}
+
+/* Map Section */
+
+iframe {
+  width: 50%;
+  height: 350px;
+}
+
+
+
+/* Reviews Section */
+.rating-num {
+  width: 10px;
+}
+
+.progress-bar {
+  width: 90%;
+}
+
+.progress-bar2 {
+  width: 70%;
+}
+
+
+.progress-rate {
+  height: 4px;
+}
+
+.avatar-img {
+  width: 42px;
+  height: 42px;
+}
+
+.avatar-letter {
+  width: 42px;
+  height: 42px;
+}
+
+.review-date {
+  font-size: 11px;
+}
+
+/* policies */
+
+.policies-card i {
+  width: 24px;
+  
+}
+
+.policy-hr {
+  margin: 0;
+  border: 0;
+  border-top: 1px solid #e9ecef;
+  opacity: 1;
+}
+
+
+/* section 3*/
+.hotel-img-wrap {
+  height: 220px;
+}
+
+.badge-tag {
+  background-color: #ffffff;
+  opacity: 0.85;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.badge-distance {
+  color: #212529;
+}
+
+.badge-explore {
+  color: #0d6efd;
+}
+
+.badge-show {
+  color: #dc3545;
+}
+
+.badge-food {
+  color: #198754;
+}
+
+.hotel-img-wrap img {
+  transition: transform 0.3s ease;
+}
+
+.card:hover .hotel-img-wrap img {
+  transform: scale(1.04);
+}
+
+#custom-owl-nav button.owl-prev,
+#custom-owl-nav button.owl-next {
+  background: none ;
+  border: none ;
+  outline: none ;
+  padding: 0 ;
+  margin: 0 ;
+  box-shadow: none ;
+}
+
+
+.custom-nav-btn {
+  width: 42px;
+  height: 42px;
+  background-color: #ffffff;
+  border-radius: 50% ;
+  border: none ;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); 
+  display: flex ;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease-in-out;
+}
+
+.custom-nav-btn i {
+  color: #4a5568;
+  font-size: 14px;
+  transition: color 0.25s ease-in-out;
+}
+
+
+.custom-nav-btn:hover {
+  background-color: #0d6efd; 
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3) ;
+}
+
+.custom-nav-btn:hover i {
+  color: #ffffff; 
+}
+
+
+
+
+
+
+
+/* section 4 */
+.apartments-section {
+  width: 100%;
+}
+
+.slider-btn {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #e9ecef;
+  transition: background-color 0.2s ease;
+}
+
+.slider-btn:hover {
+  background-color: #f8f9fa;
+}
+
+.apartment-img-wrap {
+  height: 200px;
+}
+
+.note-box {
+  background-color: #f1f3f5;
+}
+
+.rating-badge {
+  background-color: #e7f1ff;
+  border: 1px solid #b6d4fe;
+}
+
+.extra-small {
+  font-size: 11px;
+}
+
+.apartment-card {
+  transition: transform 0.3s ease;
+}
+
+.apartment-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.apartment-card img {
+  transition: transform 0.3s ease;
+}
+
+.apartment-card:hover img {
+  transform: scale(1.04);
+}
+
+
+
+
+
