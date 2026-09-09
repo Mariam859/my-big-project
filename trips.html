@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Active Reservations</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+
+
+
+
+
+
+
+ <!-- navbar -->
+  <nav class="navbar navbar-expand-lg bg-white sticky-top shadow-sm py-2">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a class="navbar-brand d-flex align-items-center m-0 p-0" href="index.html">
+      <img src="Logo.png" alt="Tripto" class="d-block" style="height: 30px;">
+    </a>
+    <div class="d-flex align-items-center gap-3">
+      <div class="d-flex align-items-center gap-1 cursor-pointer">
+        <img src="https://flagcdn.com/w40/eg.png" alt="Egypt" width="20" height="14" class="rounded-1">
+        <span class="fw-semibold small ms-1 text-brand">EGP</span>
+      </div>
+      <a href="helpCenter.html" class="d-flex align-items-center text-decoration-none text-brand">
+        <i class="fa-solid fa-headset fs-5"></i>
+      </a>
+      <button id="loginBtn" class="btn btn-primary rounded-pill px-4 py-2 fw-semibold border-0" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+
+      <div id="accountMenu" class="dropdown d-none">
+        <button class="btn border-0 p-0 d-flex align-items-center gap-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80" alt="Your account"
+               class="rounded-circle object-fit-cover border border-2 border-primary" width="38" height="38">
+          <i class="fa-solid fa-chevron-down text-muted small"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end shadow border-0 rounded-4 p-2 mt-2">
+          <li><span class="dropdown-item-text small text-muted" id="accountEmail">you@example.com</span></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item rounded-3" href="accountContent.html"><i class="fa-solid fa-user me-2"></i>Profile</a></li>
+          <li><a class="dropdown-item rounded-3" href="accountContent.html"><i class="fa-solid fa-suitcase me-2"></i>My bookings</a></li>
+          <li><a class="dropdown-item rounded-3" href="pages/wishlist.html"><i class="fa-regular fa-heart me-2"></i>Wishlist</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item rounded-3 text-danger" href="#" onclick="logout(); return false;"><i class="fa-solid fa-right-from-bracket me-2"></i>Log out</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+    <div class="container-fluid p-4"> 
+  <div class="row g-3">
+ 
+
+    <div class="col-lg-3">
+    
+        <div class="sidebar bg-white rounded-4 p-4">
+
+  
+            <div class="text-center mb-4">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpjZRTUmg-B0GdfcBl0NLCX83BbiNU0C8ja6fXaFGHKA&s" class="profile-img">
+                <h6 class="mt-2 mb-1">Emmily Morgan</h6>
+                <small class="text-secondary">Customer Operations</small>
+            </div>
+
+            <hr>
+
+            <a href="profile.html" class="side-link active">
+                <i class="bi bi-person-circle"></i>
+                Personal Data
+            </a>
+
+            <a href="payment.html" class="side-link">
+                <i class="bi bi-credit-card"></i>
+                Payment Account
+            </a>
+
+            <a href="trips.html" class="side-link">
+                <i class="bi bi-suitcase"></i>
+                Trips
+                <span class="ms-auto"></span>
+            </a>
+
+            <a href="wishlist.html" class="side-link">
+                <i class="bi bi-heart"></i>
+                Wish Lists
+            </a>
+
+           
+
+            <a href="reviews.html" class="side-link">
+                <i class="bi bi-chat-left-text"></i>
+            reviews
+            </a>
+            <a href="support.html" class="side-link">
+              <i class="bi bi-chat-left-text"></i>
+              support
+          </a>
+            <hr>
+
+           
+
+            <a href="#" class="logout">
+                <i class="bi bi-box-arrow-right"></i>
+                Log out
+            </a>
+
+        </div>
+    </div>
+
+  <div class="col-12 col-md-9">
+    <div class="card-box p-4">
+      <h4>Active Reservations</h4>
+      <p class="text-muted" style="font-size:14px;">View and manage your current bookings here.</p>
+      <hr>
+
+      <div class="d-flex justify-content-between align-items-center py-3 border-bottom">
+        <div class="d-flex align-items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?w=100" width="60" height="60" class="rounded" style="object-fit:cover;">
+          <div>
+            <div class="fw-semibold"><i class="bi bi-building"></i> Golden Tulip Hotel</div>
+            <div class="text-muted" style="font-size:13px;">Check In: 12 Mar 2021 &nbsp; Check out: 24 Mar 2025 &nbsp; Guests: 4 Adults</div>
+          </div>
+        </div>
+        <div class="text-end">
+          <span class="badge badge-soft-green badge-pill-lg">Confirmed</span>
+          <div class="text-muted" style="font-size:12px;">ID 173826</div>
+          <a href="trip-details.html" class="text-primary" style="font-size:13px;">Check Details</a>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center py-3">
+        <div class="d-flex align-items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=100" width="60" height="60" class="rounded" style="object-fit:cover;">
+          <div>
+            <div class="fw-semibold"><i class="bi bi-building"></i> Grand Seaside Hotel</div>
+            <div class="text-muted" style="font-size:13px;">Check In: 12 Mar 2021 &nbsp; Check out: 24 Mar 2025 &nbsp; Guests: 4 Adults</div>
+          </div>
+        </div>
+        <div class="text-end">
+          <span class="badge badge-soft-orange badge-pill-lg">Pending</span>
+          <div class="text-muted" style="font-size:12px;">ID 173826</div>
+          <a href="trip-details.html" class="text-primary" style="font-size:13px;">Check Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+</body>
+
+
+
+
+<!-- footer -->
+<footer class="text-white pt-5 pb-4 mt-5" style="background-color: #111827;">
+  <div class="container">
+    <div class="row g-4">
+
+      <div class="col-lg-4 col-md-6">
+        <a href="index.html" class="d-inline-block mb-3">
+          <img src="Logo (1).png" alt="Tripto Logo" height="36" class="img-fluid">
+        </a>
+        <p class="text-white small mb-4 pe-lg-4 lh-base" style="max-width: 320px;">
+          We help you find and book the perfect stay from cozy guesthouses to top hotels, with ease, trust and the best deals.
+        </p>
+        <p class="fw-semibold small mb-2 footer-head">Download Our App</p>
+        <div class="d-flex gap-2">
+          <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" height="38"></a>
+          <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" height="38"></a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-6 col-6">
+        <h6 class="fw-bold mb-3 footer-head">Explore</h6>
+        <ul class="list-unstyled d-flex flex-column gap-2 small">
+          <li><a href="#trending" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Trending Destinations</a></li>
+          <li><a href="#trending" onclick="openSeason('summer')" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Summer Hotspots</a></li>
+          <li><a href="#trending" onclick="openSeason('winter')" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Winter Getaways</a></li>
+          <li><a href="#deals" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Weekend Deals</a></li>
+          <li><a href="pages/family-stays.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Family-Friendly Stays</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-6 col-6">
+        <h6 class="fw-bold mb-3 footer-head">Property Types</h6>
+        <ul class="list-unstyled d-flex flex-column gap-2 small">
+          <li><a href="hotel.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Hotels</a></li>
+          <li><a href="house.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Apartments</a></li>
+          <li><a href="pages/villas.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Villas</a></li>
+          <li><a href="pages/cabins.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Cabins</a></li>
+          <li><a href="pages/glamping.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Glamping</a></li>
+          <li><a href="pages/domes.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Domes</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-6 col-6">
+        <h6 class="fw-bold mb-3 footer-head">Support</h6>
+        <ul class="list-unstyled d-flex flex-column gap-2 small">
+          <li><a href="helpCenter.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Help Centre</a></li>
+          <li><a href="#" onclick="openChat(); return false;" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Live Chat Support</a></li>
+          <li><a href="pages/faqs.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">FAQs</a></li>
+          <li><a href="pages/contact-us.html" class="link-light link-underline-opacity-0 link-underline-opacity-100-hover">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-6 col-12">
+        <h6 class="fw-bold mb-3 footer-head">Get In Touch</h6>
+        <p class="text-white small mb-2">+1 (800) 123-456</p>
+        <p class="text-white small mb-3">support@tripto.com</p>
+        <div class="d-flex gap-2">
+          <a href="#" class="btn btn-dark d-flex align-items-center justify-content-center rounded-2 p-0 social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="btn btn-dark d-flex align-items-center justify-content-center rounded-2 p-0 social-btn"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="btn btn-dark d-flex align-items-center justify-content-center rounded-2 p-0 social-btn"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" class="btn btn-dark d-flex align-items-center justify-content-center rounded-2 p-0 social-btn"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary opacity-25 my-4">
+
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+      <p class="text-white small mb-0">&copy; 2026 Tripto. All rights reserved.</p>
+
+      <div>
+        <img src="Payment Options.png" alt="Payment Methods" height="32" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+</html>

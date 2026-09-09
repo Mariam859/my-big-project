@@ -1,11 +1,8 @@
-<<<<<<< HEAD
-/* custom styles */
 :root {
   --main-color: #0057FF;
   --hover-color: #0046CC;
   --gold: #FFCC00;
   --light-blue: #E8EFFC;
-
   --bs-primary: #0057FF;
   --bs-primary-rgb: 0, 87, 255;
   --bs-link-color-rgb: 0, 87, 255;
@@ -16,49 +13,39 @@ html {
   scroll-behavior: smooth;
 }
 
-/* navbar */
 .anchor {
   position: relative;
   top: -75px;
 }
 
 .btn-primary {
-  --bs-btn-bg: var(--main-color);
-  --bs-btn-border-color: var(--main-color);
-  --bs-btn-hover-bg: var(--hover-color);
-  --bs-btn-hover-border-color: var(--hover-color);
-  --bs-btn-active-bg: var(--hover-color);
-  --bs-btn-active-border-color: var(--hover-color);
+  --bs-btn-bg: #0057FF;
+  --bs-btn-border-color: #0057FF;
+  --bs-btn-hover-bg: #0046CC;
+  --bs-btn-hover-border-color: #0046CC;
+  --bs-btn-active-bg: #0046CC;
+  --bs-btn-active-border-color: #0046CC;
 }
 
 .fs-7 { font-size: 0.8125rem; }
 .fs-8 { font-size: 0.7rem; }
 .cursor-pointer { cursor: pointer; }
 
-/* hero */
-.hero-title {
-  font-size: 1.75rem;
-}
-
-.hero-subtitle {
-  font-size: 1rem;
-}
+.hero-title    { font-size: clamp(1.75rem, 4.5vw, 2.5rem); }
+.hero-subtitle { font-size: clamp(1rem, 2.4vw, 1.75rem); }
 
 .bg-cover {
   background-position: center;
   background-size: cover;
 }
 
-/* gradient  */
 .scrim-up {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.2) 50%, transparent);
 }
-
 .scrim-down {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.1) 45%, transparent);
 }
 
-/* tabs */
 .glass {
   background-color: rgba(40, 40, 40, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -76,7 +63,14 @@ html {
 
 .glass-tab.active {
   background-color: #fff;
-  color: var(--main-color);
+  color: #000000;
+}
+
+#trendingTabs .season-btn.active,
+.nav-pills .nav-link.active {
+  background-color: #000000 ;
+  color: #ffffff ;
+  border-color: #000000;
 }
 
 /* search box  */
@@ -89,7 +83,6 @@ html {
   background-color: #f8f9fa;
 }
 
-/*  cards */
 .hover-lift {
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -118,15 +111,11 @@ html {
   color: #dc3545;
 }
 
-/*  hearts */
-.wishlist-btn.saved {
-  color: #dc3545;
-}
+.wishlist-btn.saved {color: #dc3545;}
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
-
 
 .deals-wrap,
 .homes-wrap {
@@ -163,7 +152,6 @@ html {
   opacity: 0.35;
 }
 
-/* drawer */
 .chat-overlay {
   display: none;
   position: fixed;
@@ -175,10 +163,7 @@ html {
   z-index: 1040;
 }
 
-.chat-overlay.open {
-  display: block;
-}
-
+.chat-overlay.open { display: block;}
 .chat-drawer {
   position: fixed;
   top: 0;
@@ -192,21 +177,14 @@ html {
   transition: transform 0.35s;
 }
 
-.chat-drawer.open {
-  transform: translateX(0);
-}
+.chat-drawer.open {transform: translateX(0);}
 
-.chat-body {
-  height: calc(100% - 66px);
-  overflow-y: auto;
-}
-
+.chat-body {height: calc(100% - 66px); overflow-y: auto;}
 .dest-card   { height: 380px; }  
 .card-photo  { height: 170px; }   
 .thing-photo { height: 120px; }   
 .sight-md    { height: 180px; }
 .sight-lg    { height: 220px; }
-
 .price-gold  { color: var(--gold); }
 .dest-note   { opacity: 0.85; }
 .deal-badge  { background-color: #1282A2; }
@@ -214,7 +192,6 @@ html {
 .text-brand  { color: var(--main-color); }
 .footer-head { color: #99BDFF; }
 .date-input  { font-size: 0.85rem; cursor: pointer; }
-
 .count-btn  { width: 30px;  height: 30px; }    
 .city-icon  { width: 40px;  height: 40px; }
 .social-btn { width: 32px;  height: 32px; }
@@ -222,105 +199,5 @@ html {
 .trust-dot  { width: 45px;  height: 45px; }
 .bot-avatar { width: 34px;  height: 34px; }
 .trust-box  { width: 100px; height: 100px; background-color: var(--light-blue); }
-
 .code-input  { width: 48px; height: 48px; }
 .prompt-text { font-size: 0.78rem; }
-
-@media (min-width: 768px) {
-  .hero-title { font-size: 2.5rem; }
-  .hero-subtitle { font-size: 1.75rem; }
-=======
-/* ================= MAP ================= */
-
-.map-card{
-    overflow:hidden;
-    border-radius:12px;
-}
-
-.map-card iframe{
-    display:block;
-    border-radius:12px;
-}
-
-
-/* ================= MAP BOX ================= */
-
-.map-box{
-    position:relative;
-    width:100%;
-    height:180px;
-    overflow:hidden;
-    border-radius:12px;
-}
-
-.map-box iframe{
-    width:100%;
-    height:100%;
-    display:block;
-    border:0;
-    pointer-events:none;
-}
-
-.map-button{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%, -50%);
-    white-space:nowrap;
-    border-radius:10px;
-    font-size:14px;
-    z-index:2;
-}
-/* ================= GRID VIEW ================= */
-
-.hotels-container.grid-mode{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-
-.hotels-container.grid-mode .hotel-item{
-    margin-bottom: 0 !important;
-}
-
-
-.hotels-container.grid-mode .card{
-    height:100%;
-}
-
-.hotels-container.grid-mode .col-md-4{
-    width:100%;
-}
-
-
-.hotels-container.grid-mode .col-md-8{
-    width:100%;
-}
-
-.hotels-container.grid-mode img{
-    height:220px !important;
-    min-height:220px !important;
-}
-
-.hotels-container.grid-mode .row{
-    
-    display:block;
-}
-
-
-@media(max-width:992px){
-
-    .hotels-container.grid-mode{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-}
-@media(max-width:576px){
-
-    .hotels-container.grid-mode{
-        grid-template-columns:1fr;
-    }
-
->>>>>>> 2579537bc5b1dee504b88cdfb0f0e365f160ee6b
-}
