@@ -1,0 +1,3089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hotel Booking</title>
+
+<link 
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+rel="stylesheet">
+
+<link 
+rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css">
+
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg bg-white shadow-sm">
+<div class="container d-flex align-items-center">
+
+<!-- Logo -->
+<a class="navbar-brand" href="#">
+<img src="photo/Logo (1).svg"
+alt="logo"
+width="90">
+</a>
+
+<!-- Search -->
+<div class="search-box border rounded-4 d-flex align-items-center p-1 mx-auto">
+<div class="px-3">
+<i class="fa-solid fa-location-dot text-primary"></i>
+<span class="ms-2">
+Barcelona
+</span>
+</div>
+
+<div class="vr"></div>
+<div class="px-3"
+     id="dateSearch"
+     data-bs-toggle="modal"
+     data-bs-target="#dateModal"
+     style="cursor:pointer;">
+    <i class="fa-regular fa-calendar text-primary"></i>
+    <span class="ms-2" id="searchDateText">
+        14 Aug - 19 Aug
+    </span>
+</div>
+
+<div class="vr"></div>
+<div class="px-3"
+     id="guestSearch"
+     data-bs-toggle="modal"
+     data-bs-target="#guestModal"
+     style="cursor:pointer;">
+
+    <i class="fa-solid fa-user text-primary"></i>
+    <span class="ms-2" id="searchGuestText">
+        2 Guests
+    </span>
+
+</div>
+
+<button class="btn btn-primary rounded-3 ms-auto">
+<i class="fa-solid fa-magnifying-glass"></i>
+
+
+</button>
+
+</div>
+
+<!-- Right Side -->
+
+<div class="d-flex align-items-center gap-2 ms-auto">
+    <button class="btn btn-light border rounded-pill"
+            data-bs-toggle="modal"
+            data-bs-target="#languageModal">
+        <img src="https://flagcdn.com/w20/us.png">
+
+        USD
+
+    </button>
+
+    <i class="fa-solid fa-headset text-primary mx-2"></i>
+
+    <img src="photo/Avatar.png"
+         class="rounded-circle"
+         width="40"
+         height="40">
+
+</div>
+
+
+</div>
+
+</div>
+
+</nav>
+<!-- Main Section -->
+
+<section class="py-4">
+<div class="container">
+
+<div class="row g-4">
+
+<!-- LEFT SIDE +MAP + FILTER -->
+
+<div class="col-lg-3">
+
+    <!-- MAP -->
+
+<div class="map-box mb-3">
+
+    <iframe
+        src="https://www.openstreetmap.org/export/embed.html?bbox=2.12%2C41.35%2C2.22%2C41.43&layer=mapnik"
+        width="100%"
+        height="180"
+        style="border:0;"
+        loading="lazy">
+    </iframe>
+
+    <button
+id="showMapBtn"
+class="btn btn-light border map-button"
+type="button">
+
+<i class="fa-solid fa-map-location-dot text-primary me-2"></i>
+Show on Map
+
+</button>
+</div>
+
+    <!-- Filter -->
+
+    <div class="card rounded-4 border p-3">
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+
+            <strong>Filter by:</strong>
+
+            <a href="#" class="text-dark small">
+                Clear
+            </a>
+
+        </div>
+
+        <!-- Type of Place -->
+
+        <div class="border-bottom pb-3 mb-3">
+
+            <button class="btn w-100 text-start fw-semibold"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#typePlace">
+
+                Type of Place
+
+                <i class="fa-solid fa-chevron-up float-end"></i>
+            </button>
+
+            <div id="typePlace" class="collapse show mt-2">
+
+                <div class="btn-group w-100">
+
+                    <button class="btn btn-outline-secondary btn-sm">
+                        Any type
+                    </button>
+
+                    <button class="btn btn-outline-secondary btn-sm">
+                        Room
+                    </button>
+
+                    <button class="btn btn-outline-secondary btn-sm">
+                        Entire home
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Price Range -->
+
+        <div class="border-bottom pb-3 mb-3">
+
+            <button class="btn w-100 text-start fw-semibold"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#priceRange">
+
+                Price Range
+
+                <i class="fa-solid fa-chevron-up float-end"></i>
+
+            </button>
+
+            <div id="priceRange" class="collapse show">
+
+                <small class="text-muted">
+                    Nightly prices including fees and taxes
+                </small>
+
+                <input type="range"
+                       class="form-range mt-2"
+                       min="200"
+                       max="1500"
+                       value="800">
+
+                <div class="d-flex justify-content-between">
+
+                    <small>Minimum</small>
+
+                    <small>Maximum</small>
+
+                </div>
+
+                <div class="d-flex justify-content-between mt-2">
+
+                    <button class="btn btn-outline-secondary btn-sm">
+                        $ 200
+                    </button>
+
+                    <button class="btn btn-outline-secondary btn-sm">
+                        $ 1,500+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Rooms and Beds -->
+
+        <div class="border-bottom pb-3 mb-3">
+
+            <button class="btn w-100 text-start fw-semibold"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#roomsBeds">
+
+                Rooms and Beds
+
+                <i class="fa-solid fa-chevron-up float-end"></i>
+
+            </button>
+            <div id="roomsBeds" class="collapse show">
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+
+                    <span>Bedrooms</span>
+
+                    <div>
+                        <button id="bedroomMinus" class="btn btn-sm btn-outline-secondary rounded-circle">−</button>
+
+<span id="bedroomCount" class="mx-2">1</span>
+
+<button id="bedroomPlus" class="btn btn-sm btn-outline-secondary rounded-circle">+</button>
+                    </div>
+
+                </div>
+
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+
+                    <span>Beds</span>
+
+                    <div>
+                        <button id="bedMinus" class="btn btn-sm btn-outline-secondary rounded-circle">−</button>
+
+<span id="bedCount" class="mx-2">1</span>
+
+<button id="bedPlus" class="btn btn-sm btn-outline-secondary rounded-circle">+</button>
+                    </div>
+
+                </div>
+
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <span>Bathrooms</span>
+
+                    <div>
+                        <button class="btn btn-sm btn-outline-secondary rounded-circle">−</button>
+                        <span class="mx-2">Any</span>
+                        <button class="btn btn-sm btn-outline-secondary rounded-circle">+</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Room Size -->
+
+        <div class="border-bottom pb-3 mb-3">
+
+            <button class="btn w-100 text-start fw-semibold"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#roomSize">
+
+                Room Size
+
+                <i class="fa-solid fa-chevron-up float-end"></i>
+
+            </button>
+
+
+            <div id="roomSize" class="collapse show">
+
+                <div class="form-check">
+
+                    <input class="form-check-input" type="checkbox">
+
+                    <label class="form-check-label">
+                        Small (≤ 25 m²)
+                    </label>
+
+                </div>
+
+
+                <div class="form-check">
+
+                    <input class="form-check-input"
+                           type="checkbox"
+                           checked>
+
+                    <label class="form-check-label">
+                        Medium (26–40 m²)
+                    </label>
+
+                </div>
+
+
+                <div class="form-check">
+
+                    <input class="form-check-input" type="checkbox">
+
+                    <label class="form-check-label">
+                        Large (≥ 41 m²)
+                    </label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Guest Review Score -->
+
+        <div class="border-bottom pb-3 mb-3">
+
+            <button class="btn w-100 text-start fw-semibold"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#reviewScore">
+
+                Guest Review Score
+
+                <i class="fa-solid fa-chevron-up float-end"></i>
+
+            </button>
+
+
+            <div id="reviewScore" class="collapse show">
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" checked>
+                    <label class="form-check-label">
+                        5.0 Excellent
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" checked>
+                    <label class="form-check-label">
+                        4.0+ Very good
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" checked>
+                    <label class="form-check-label">
+                        3.0+ Good
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label">
+                        2.0+ Fair
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label">
+                        < 2.0 Poor
+                    </label>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Property Classification -->
+
+        <div class="border-bottom pb-3 mb-3">
+
+            <button class="btn w-100 text-start fw-semibold"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#classification">
+
+                Property Classification
+
+                <i class="fa-solid fa-chevron-up float-end"></i>
+
+            </button>
+
+
+            <div id="classification" class="collapse show">
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" checked>
+                    <label class="form-check-label text-warning">
+                        ★★★★★
+                        <span class="text-dark">5-star</span>
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" checked>
+                    <label class="form-check-label text-warning">
+                        ★★★★☆
+                        <span class="text-dark">4-star</span>
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" checked>
+                    <label class="form-check-label text-warning">
+                        ★★★☆☆
+                        <span class="text-dark">3-star</span>
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label text-warning">
+                        ★★☆☆☆
+                        <span class="text-dark">2-star</span>
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label text-warning">
+                        ★☆☆☆☆
+                        <span class="text-dark">1-star</span>
+                    </label>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Amenities -->
+
+        <div>
+
+            <button class="btn w-100 text-start fw-semibold"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#amenities">
+
+                Amenities
+
+                <i class="fa-solid fa-chevron-up float-end"></i>
+
+            </button>
+
+
+            <div id="amenities" class="collapse show mt-2">
+
+                <small class="text-muted d-block mb-2">
+                    Popular
+                </small>
+
+                <div class="d-flex flex-wrap gap-2">
+
+                    <button class="btn btn-outline-secondary btn-sm rounded-pill">
+                        ⚙ Air Conditioning
+                    </button>
+
+                    <button class="btn btn-outline-secondary btn-sm rounded-pill">
+                        Wi-Fi
+                    </button>
+
+                    <button class="btn btn-outline-secondary btn-sm rounded-pill">
+                        BBQ Grill
+                    </button>
+
+                    <button class="btn btn-outline-secondary btn-sm rounded-pill">
+                        Washing machine
+                    </button>
+
+                    <button class="btn btn-outline-secondary btn-sm rounded-pill">
+                        TV
+                    </button>
+
+                    <button class="btn btn-outline-secondary btn-sm rounded-pill">
+                        Kitchen
+                    </button>
+
+                    <button 
+                         id="poolFilter"
+                        class="btn btn-outline-secondary btn-sm rounded-pill">
+
+                            Pool
+
+                            </button>
+                            <button 
+                            id="breakfastFilter"
+                           class="btn btn-outline-secondary btn-sm rounded-pill">
+
+                                  Breakfast
+
+                                 </button>
+                    <button class="btn btn-outline-secondary btn-sm rounded-pill">
+                        Hot Tub
+                    </button>
+
+                    <button class="btn btn-outline-secondary btn-sm rounded-pill">
+                        Free Parking
+                    </button>
+
+                    <button class="btn btn-outline-secondary btn-sm rounded-pill">
+                        Gym
+                    </button>
+
+                    <button class="btn btn-outline-secondary btn-sm rounded-pill">
+                        Restaurant
+                    </button>
+
+                    <button class="btn btn-outline-secondary btn-sm rounded-pill">
+                        Bar
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+                        
+ <!-- Hotels Area -->
+
+
+<div class="col-lg-9">
+
+
+<!-- Hotels Header -->
+
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+
+<div>
+
+<h3 class="fw-bold mb-1">
+
+Explore 300+ Places in Barcelona
+
+</h3>
+
+
+<p class="text-muted mb-0">
+
+300+ properties available
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="d-flex align-items-center gap-3">
+
+
+<!-- Sort -->
+
+
+<button class="btn btn-light border rounded-3">
+
+Sort by
+
+<i class="fa-solid fa-chevron-down ms-2"></i>
+
+</button>
+
+
+
+<!-- List / Grid -->
+
+
+<div class="btn-group">
+
+
+<button id="listBtn" 
+class="btn btn-outline-secondary view-active">
+
+
+<i class="fa-solid fa-list"></i>
+
+
+</button>
+
+
+
+
+<button id="gridBtn" 
+class="btn btn-outline-secondary">
+
+
+<i class="fa-solid fa-table-cells"></i>
+
+
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<!-- Hotels Container -->
+
+
+<div class="hotels-container">
+    <!-- Hotel Card 1 -->
+
+
+<div class="hotel-item mb-4">
+
+
+<div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+
+
+<div class="row g-0">
+
+
+<!-- Image -->
+
+<div class="col-md-4 position-relative">
+
+
+<span class="position-absolute top-0 start-0 bg-success text-white px-3 py-2 rounded-bottom-end">
+
+Gateway Deal
+
+</span>
+
+
+
+<button class="btn btn-light rounded-circle position-absolute top-0 end-0 m-3 shadow">
+<i class="fa-regular fa-heart favorite"></i>
+
+</button>
+
+
+
+<img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
+class="w-100 h-100"
+style="object-fit:cover; min-height:280px;">
+
+
+</div>
+
+
+
+
+<!-- Details -->
+
+
+<div class="col-md-8">
+
+
+<div class="card-body">
+
+
+<div class="d-flex justify-content-between">
+
+
+<div>
+
+
+<h4 class="fw-bold mb-2">
+
+Hotel Arts Barcelona
+
+<span class="text-warning">
+
+★★★★★
+
+</span>
+
+</h4>
+
+
+
+
+<p class="text-muted mb-2">
+
+<i class="fa-solid fa-location-dot text-primary"></i>
+
+Barcelona Center
+
+</p>
+
+
+
+
+<p class="text-muted">
+
+1.8 km from centre • Metro access
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<div class="text-end">
+
+
+<h6 class="text-primary fw-bold">
+
+Excellent
+
+</h6>
+
+
+<small class="text-muted">
+
+1260 reviews
+
+</small>
+
+
+<br>
+
+
+<span class="badge bg-primary mt-2">
+
+5.0
+
+</span>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="mt-3">
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2 me-2">
+
+Luxury Hotel
+
+</span>
+
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2 me-2">
+
+Sea View
+
+</span>
+
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2">
+
+40 m²
+
+</span>
+
+
+
+</div>
+
+
+
+
+
+<div class="mt-3">
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2 me-2">
+
+✓ Free cancellation
+
+</span>
+
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2">
+
+🍳 Breakfast included
+
+</span>
+
+
+</div>
+
+
+
+
+
+
+<div class="text-end mt-4">
+
+
+<del class="text-muted">
+
+$1800
+
+</del>
+
+
+
+<strong class="fs-3 ms-2">
+
+$1500
+
+</strong>
+
+
+
+<p class="text-muted mb-0">
+
+5 nights, 2 adults
+
+</p>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+  <!--hotel 2-->
+
+<div class="hotel-item mb-4">
+
+
+<div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+
+
+<div class="row g-0">
+
+
+<div class="col-md-4 position-relative">
+
+
+<span class="position-absolute top-0 start-0 bg-primary text-white px-3 py-2 rounded-bottom-end">
+
+Beachfront
+
+</span>
+
+
+<button class="btn btn-light rounded-circle position-absolute top-0 end-0 m-3 shadow">
+
+<i class="fa-regular fa-heart"></i>
+
+</button>
+
+
+<img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa"
+class="w-100 h-100"
+style="object-fit:cover; min-height:280px;">
+
+
+</div>
+
+
+
+
+<div class="col-md-8">
+
+
+<div class="card-body">
+
+
+<div class="d-flex justify-content-between">
+
+
+
+<div>
+
+
+<h4 class="fw-bold mb-2">
+
+W Barcelona Hotel
+
+<span class="text-warning">
+
+★★★★★
+
+</span>
+
+</h4>
+
+
+
+<p class="text-muted mb-2">
+
+<i class="fa-solid fa-location-dot text-primary"></i>
+
+Barceloneta Beach
+
+</p>
+
+
+
+<p class="text-muted">
+
+2 km from centre • Beach access
+
+</p>
+
+
+
+</div>
+
+
+
+
+<div class="text-end">
+
+
+<h6 class="text-primary fw-bold">
+
+Excellent
+
+</h6>
+
+
+<small class="text-muted">
+
+980 reviews
+
+</small>
+
+
+<br>
+
+
+<span class="badge bg-primary mt-2">
+
+4.9
+
+</span>
+
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="mt-3">
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2 me-2">
+
+Beach View
+
+</span>
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2 me-2">
+
+Pool
+
+</span>
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2">
+
+35 m²
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="mt-3">
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2 me-2">
+
+✓ Free cancellation
+
+</span>
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2">
+
+🍳 Breakfast included
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="text-end mt-4">
+
+
+<del class="text-muted">
+
+$1600
+
+</del>
+
+
+<strong class="fs-3 ms-2">
+
+$1300
+
+</strong>
+
+
+
+<p class="text-muted mb-0">
+
+5 nights, 2 adults
+
+</p>
+
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+<!--hotel 3-->
+<div class="hotel-item mb-4">
+
+
+<div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+
+
+<div class="row g-0">
+
+
+<div class="col-md-4 position-relative">
+
+
+<span class="position-absolute top-0 start-0 bg-warning text-dark px-3 py-2 rounded-bottom-end">
+
+Top Rated
+
+</span>
+
+
+<button class="btn btn-light rounded-circle position-absolute top-0 end-0 m-3 shadow">
+
+<i class="fa-regular fa-heart"></i>
+
+</button>
+
+
+<img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791"
+class="w-100 h-100"
+style="object-fit:cover; min-height:280px;">
+
+
+</div>
+
+
+
+
+<div class="col-md-8">
+
+
+<div class="card-body">
+
+
+<div class="d-flex justify-content-between">
+
+
+<div>
+
+
+<h4 class="fw-bold mb-2">
+
+Majestic Hotel Barcelona
+
+<span class="text-warning">
+
+★★★★★
+
+</span>
+
+</h4>
+
+
+
+<p class="text-muted mb-2">
+
+<i class="fa-solid fa-location-dot text-primary"></i>
+
+Passeig de Gracia
+
+</p>
+
+
+
+<p class="text-muted">
+
+1 km from centre • City view
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="text-end">
+
+
+<h6 class="text-primary fw-bold">
+
+Very Good
+
+</h6>
+
+
+<small class="text-muted">
+
+760 reviews
+
+</small>
+
+
+<br>
+
+
+<span class="badge bg-primary mt-2">
+
+4.7
+
+</span>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="mt-3">
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2 me-2">
+
+Luxury Room
+
+</span>
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2 me-2">
+
+City View
+
+</span>
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2">
+
+38 m²
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="mt-3">
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2 me-2">
+
+✓ Free cancellation
+
+</span>
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2">
+
+Spa
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="text-end mt-4">
+
+
+<del class="text-muted">
+
+$1400
+
+</del>
+
+
+<strong class="fs-3 ms-2">
+
+$1100
+
+</strong>
+
+
+<p class="text-muted mb-0">
+
+5 nights, 2 adults
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+<!--hotel 4-->
+<div class="hotel-item mb-4">
+
+
+<div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+
+
+<div class="row g-0">
+
+
+<div class="col-md-4 position-relative">
+
+
+<span class="position-absolute top-0 start-0 bg-info text-white px-3 py-2 rounded-bottom-end">
+
+Popular Choice
+
+</span>
+
+
+<button class="btn btn-light rounded-circle position-absolute top-0 end-0 m-3 shadow">
+
+<i class="fa-regular fa-heart"></i>
+
+</button>
+
+
+<img src="https://images.unsplash.com/photo-1601918774946-25832a4be0d6"
+class="w-100 h-100"
+style="object-fit:cover; min-height:280px;">
+
+
+</div>
+
+
+
+
+<div class="col-md-8">
+
+
+<div class="card-body">
+
+
+<div class="d-flex justify-content-between">
+
+
+<div>
+
+
+<h4 class="fw-bold mb-2">
+
+NH Collection Barcelona
+
+<span class="text-warning">
+
+★★★★★
+
+</span>
+
+</h4>
+
+
+
+<p class="text-muted mb-2">
+
+<i class="fa-solid fa-location-dot text-primary"></i>
+
+Barcelona City Center
+
+</p>
+
+
+
+<p class="text-muted">
+
+900 m from centre • Metro access
+
+</p>
+
+
+
+</div>
+
+
+
+
+<div class="text-end">
+
+
+<h6 class="text-primary fw-bold">
+
+Excellent
+
+</h6>
+
+
+<small class="text-muted">
+
+1100 reviews
+
+</small>
+
+
+<br>
+
+
+<span class="badge bg-primary mt-2">
+
+4.8
+
+</span>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="mt-3">
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2 me-2">
+
+Modern Hotel
+
+</span>
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2 me-2">
+
+City View
+
+</span>
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2">
+
+32 m²
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="mt-3">
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2 me-2">
+
+✓ Free cancellation
+
+</span>
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2">
+
+🍳 Breakfast included
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="text-end mt-4">
+
+
+<del class="text-muted">
+
+$1200
+
+</del>
+
+
+<strong class="fs-3 ms-2">
+
+$950
+
+</strong>
+
+
+
+<p class="text-muted mb-0">
+
+5 nights, 2 adults
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+<!--hotel 5-->
+<div class="hotel-item mb-4">
+
+
+<div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+
+
+<div class="row g-0">
+
+
+<div class="col-md-4 position-relative">
+
+
+<span class="position-absolute top-0 start-0 bg-danger text-white px-3 py-2 rounded-bottom-end">
+
+Limited Offer
+
+</span>
+
+
+<button class="btn btn-light rounded-circle position-absolute top-0 end-0 m-3 shadow">
+
+<i class="fa-regular fa-heart"></i>
+
+</button>
+
+
+<img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7"
+class="w-100 h-100"
+style="object-fit:cover; min-height:280px;">
+
+
+</div>
+
+
+
+
+<div class="col-md-8">
+
+
+<div class="card-body">
+
+
+<div class="d-flex justify-content-between">
+
+
+<div>
+
+
+<h4 class="fw-bold mb-2">
+
+Hotel Barcelona Princess
+
+<span class="text-warning">
+
+★★★★
+
+</span>
+
+</h4>
+
+
+
+<p class="text-muted mb-2">
+
+<i class="fa-solid fa-location-dot text-primary"></i>
+
+Diagonal Mar
+
+</p>
+
+
+
+<p class="text-muted">
+
+3 km from centre • Near shopping area
+
+</p>
+
+
+
+</div>
+
+
+
+
+<div class="text-end">
+
+
+<h6 class="text-primary fw-bold">
+
+Very Good
+
+</h6>
+
+
+<small class="text-muted">
+
+890 reviews
+
+</small>
+
+
+<br>
+
+
+<span class="badge bg-primary mt-2">
+
+4.6
+
+</span>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="mt-3">
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2 me-2">
+
+Sea View
+
+</span>
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2 me-2">
+
+Pool
+
+</span>
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2">
+
+36 m²
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="mt-3">
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2 me-2">
+
+✓ Free cancellation
+
+</span>
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2">
+
+Parking
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="text-end mt-4">
+
+
+<del class="text-muted">
+
+$1000
+
+</del>
+
+
+<strong class="fs-3 ms-2">
+
+$800
+
+</strong>
+
+
+
+<p class="text-muted mb-0">
+
+5 nights, 2 adults
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div> 
+<!--hotel 6-->
+<div class="hotel-item mb-4">
+
+
+<div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+
+
+<div class="row g-0">
+
+
+
+<div class="col-md-4 position-relative">
+
+
+<span class="position-absolute top-0 start-0 bg-success text-white px-3 py-2 rounded-bottom-end">
+
+Best Value
+
+</span>
+
+
+
+<button class="btn btn-light rounded-circle position-absolute top-0 end-0 m-3 shadow">
+
+<i class="fa-regular fa-heart"></i>
+
+</button>
+
+
+
+<img src="https://images.unsplash.com/photo-1590490360182-c33d57733427"
+class="w-100 h-100"
+style="object-fit:cover; min-height:280px;">
+
+
+</div>
+
+
+
+<div class="col-md-8">
+
+
+<div class="card-body">
+
+
+<div class="d-flex justify-content-between">
+
+
+<div>
+
+
+<h4 class="fw-bold mb-2">
+
+Catalonia Barcelona Hotel
+
+<span class="text-warning">
+
+★★★★
+
+</span>
+
+</h4>
+
+
+<p class="text-muted mb-2">
+
+<i class="fa-solid fa-location-dot text-primary"></i>
+
+Eixample District
+
+</p>
+
+
+<p class="text-muted">
+
+1.5 km from centre • Metro nearby
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="text-end">
+
+
+<h6 class="text-primary fw-bold">
+
+Excellent
+
+</h6>
+
+
+<small class="text-muted">
+
+670 reviews
+
+</small>
+
+
+<br>
+
+
+<span class="badge bg-primary mt-2">
+
+4.8
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="mt-3">
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2 me-2">
+
+Comfort Room
+
+</span>
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2 me-2">
+
+Free WiFi
+
+</span>
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2">
+
+30 m²
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="mt-3">
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2 me-2">
+
+✓ Free cancellation
+
+</span>
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2">
+
+Spa
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="text-end mt-4">
+
+
+<del class="text-muted">
+
+$950
+
+</del>
+
+
+<strong class="fs-3 ms-2">
+
+$750
+
+</strong>
+
+
+<p class="text-muted mb-0">
+
+5 nights, 2 adults
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+<!--hotel 7-->
+<div class="hotel-item mb-4">
+
+
+<div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+
+
+<div class="row g-0">
+
+
+<div class="col-md-4 position-relative">
+
+
+<span class="position-absolute top-0 start-0 bg-warning text-dark px-3 py-2 rounded-bottom-end">
+
+Luxury Stay
+
+</span>
+
+
+
+<button class="btn btn-light rounded-circle position-absolute top-0 end-0 m-3 shadow">
+
+<i class="fa-regular fa-heart"></i>
+
+</button>
+
+
+
+<img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791"
+class="w-100 h-100"
+style="object-fit:cover; min-height:280px;">
+
+
+</div>
+
+
+
+<div class="col-md-8">
+
+
+<div class="card-body">
+
+
+<div class="d-flex justify-content-between">
+
+
+<div>
+
+
+<h4 class="fw-bold mb-2">
+
+Grand Hotel Barcelona
+
+<span class="text-warning">
+
+★★★★★
+
+</span>
+
+</h4>
+
+
+<p class="text-muted mb-2">
+
+<i class="fa-solid fa-location-dot text-primary"></i>
+
+Gothic Quarter
+
+</p>
+
+
+<p class="text-muted">
+
+700 m from centre • Historic area
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="text-end">
+
+
+<h6 class="text-primary fw-bold">
+
+Excellent
+
+</h6>
+
+
+<small class="text-muted">
+
+1500 reviews
+
+</small>
+
+
+<br>
+
+
+<span class="badge bg-primary mt-2">
+
+4.9
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="mt-3">
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2 me-2">
+
+Premium Room
+
+</span>
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2 me-2">
+
+Restaurant
+
+</span>
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2">
+
+42 m²
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="mt-3">
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2 me-2">
+
+✓ Free cancellation
+
+</span>
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2">
+
+Breakfast included
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="text-end mt-4">
+
+
+<del class="text-muted">
+
+$1700
+
+</del>
+
+
+<strong class="fs-3 ms-2">
+
+$1400
+
+</strong>
+
+
+<p class="text-muted mb-0">
+
+5 nights, 2 adults
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+<!--hotel 8-->
+<div class="hotel-item mb-4">
+
+
+<div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+
+
+<div class="row g-0">
+
+
+<div class="col-md-4 position-relative">
+
+
+<span class="position-absolute top-0 start-0 bg-danger text-white px-3 py-2 rounded-bottom-end">
+
+Special Offer
+
+</span>
+
+
+
+<button class="btn btn-light rounded-circle position-absolute top-0 end-0 m-3 shadow">
+
+<i class="fa-regular fa-heart"></i>
+
+</button>
+
+
+
+<img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb"
+class="w-100 h-100"
+style="object-fit:cover; min-height:280px;">
+
+
+</div>
+
+
+
+
+<div class="col-md-8">
+
+
+<div class="card-body">
+
+
+<div class="d-flex justify-content-between">
+
+
+<div>
+
+
+<h4 class="fw-bold mb-2">
+
+Eurostars Barcelona Hotel
+
+<span class="text-warning">
+
+★★★★
+
+</span>
+
+</h4>
+
+
+<p class="text-muted mb-2">
+
+<i class="fa-solid fa-location-dot text-primary"></i>
+
+Diagonal Avenue
+
+</p>
+
+
+<p class="text-muted">
+
+2.2 km from centre • Metro access
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="text-end">
+
+
+<h6 class="text-primary fw-bold">
+
+Very Good
+
+</h6>
+
+
+<small class="text-muted">
+
+540 reviews
+
+</small>
+
+
+<br>
+
+
+<span class="badge bg-primary mt-2">
+
+4.6
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="mt-3">
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2 me-2">
+
+Deluxe Room
+
+</span>
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2 me-2">
+
+Free WiFi
+
+</span>
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2">
+
+34 m²
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="mt-3">
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2 me-2">
+
+✓ Free cancellation
+
+</span>
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2">
+
+Parking
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="text-end mt-4">
+
+
+<del class="text-muted">
+
+$1100
+
+</del>
+
+
+<strong class="fs-3 ms-2">
+
+$850
+
+</strong>
+
+
+<p class="text-muted mb-0">
+
+5 nights, 2 adults
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+<!--hotel 9-->
+<div class="hotel-item mb-4">
+
+
+<div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+
+
+<div class="row g-0">
+
+
+<div class="col-md-4 position-relative">
+
+
+<span class="position-absolute top-0 start-0 bg-primary text-white px-3 py-2 rounded-bottom-end">
+
+Guest Favourite
+
+</span>
+
+
+
+<button class="btn btn-light rounded-circle position-absolute top-0 end-0 m-3 shadow">
+
+<i class="fa-regular fa-heart"></i>
+
+</button>
+
+
+
+<img src="https://images.unsplash.com/photo-1582719508461-905c673771fd"
+class="w-100 h-100"
+style="object-fit:cover; min-height:280px;">
+
+
+</div>
+
+
+<div class="col-md-8">
+
+
+<div class="card-body">
+
+
+<div class="d-flex justify-content-between">
+
+
+<div>
+
+
+<h4 class="fw-bold mb-2">
+
+The Barcelona Edition
+
+<span class="text-warning">
+
+★★★★★
+
+</span>
+
+</h4>
+
+
+<p class="text-muted mb-2">
+
+<i class="fa-solid fa-location-dot text-primary"></i>
+
+El Born District
+
+</p>
+
+
+<p class="text-muted">
+
+500 m from centre • City view
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="text-end">
+
+
+<h6 class="text-primary fw-bold">
+
+Exceptional
+
+</h6>
+
+
+<small class="text-muted">
+
+2100 reviews
+
+</small>
+
+
+<br>
+
+
+<span class="badge bg-primary mt-2">
+
+5.0
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="mt-3">
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2 me-2">
+
+Luxury Suite
+
+</span>
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2 me-2">
+
+Rooftop
+
+</span>
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2">
+
+45 m²
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="mt-3">
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2 me-2">
+
+✓ Free cancellation
+
+</span>
+
+
+<span class="badge rounded-pill bg-light text-dark border p-2">
+
+Breakfast included
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="text-end mt-4">
+
+
+<del class="text-muted">
+
+$2200
+
+</del>
+
+
+<strong class="fs-3 ms-2">
+
+$1800
+
+</strong>
+
+
+<p class="text-muted mb-0">
+
+5 nights, 2 adults
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+</div>
+<!-- hotels-container end -->
+
+
+</div>
+<!-- col-lg-9 end -->
+
+
+</div>
+<!-- row end -->
+
+
+</div>
+<!-- container end -->
+
+
+</section>
+
+
+ <!-- Bootstrap JS -->
+  
+
+<!-- Date Modal -->
+
+<div class="modal fade" id="dateModal">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content rounded-4">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+                    Select your dates
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Check-in
+                        </label>
+
+                        <input type="date"
+                               id="searchCheckIn"
+                               class="form-control">
+
+                    </div>
+
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Check-out
+                        </label>
+
+                        <input type="date"
+                               id="searchCheckOut"
+                               class="form-control">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button type="button"
+                        id="applyDates"
+                        class="btn btn-primary">
+
+                    Apply Dates
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- Guest Modal -->
+
+<div class="modal fade" id="guestModal">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content rounded-4">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title fw-bold">
+                    Guests
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+
+                <!-- Adults -->
+
+                <div class="d-flex justify-content-between align-items-center mb-4">
+
+                    <div>
+                        <h6 class="mb-1 fw-bold">
+                            Adults
+                        </h6>
+
+                        <small class="text-muted">
+                            Age 13+
+                        </small>
+                    </div>
+
+
+                    <div class="d-flex align-items-center gap-3">
+
+                        <button type="button"
+                                class="btn btn-outline-secondary rounded-circle"
+                                id="adultMinus">
+                            −
+                        </button>
+
+                        <span id="adultCount">
+                            2
+                        </span>
+
+                        <button type="button"
+                                class="btn btn-outline-primary rounded-circle"
+                                id="adultPlus">
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Children -->
+
+                <div class="d-flex justify-content-between align-items-center mb-4">
+
+                    <div>
+                        <h6 class="mb-1 fw-bold">
+                            Children
+                        </h6>
+
+                        <small class="text-muted">
+                            Ages 0–12
+                        </small>
+                    </div>
+
+
+                    <div class="d-flex align-items-center gap-3">
+
+                        <button type="button"
+                                class="btn btn-outline-secondary rounded-circle"
+                                id="childMinus">
+                            −
+                        </button>
+
+                        <span id="childCount">
+                            0
+                        </span>
+
+                        <button type="button"
+                                class="btn btn-outline-primary rounded-circle"
+                                id="childPlus">
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Rooms -->
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+                        <h6 class="mb-1 fw-bold">
+                            Rooms
+                        </h6>
+                    </div>
+
+
+                    <div class="d-flex align-items-center gap-3">
+
+                        <button type="button"
+                                class="btn btn-outline-secondary rounded-circle"
+                                id="roomMinus">
+                            −
+                        </button>
+
+                        <span id="roomCount">
+                            1
+                        </span>
+
+                        <button type="button"
+                                class="btn btn-outline-primary rounded-circle"
+                                id="roomPlus">
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button type="button"
+                        id="applyGuests"
+                        class="btn btn-primary px-4">
+                    Apply
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Language & Currency Modal -->
+
+<div class="modal fade" id="languageModal">
+
+<div class="modal-dialog modal-dialog-centered modal-lg">
+
+<div class="modal-content rounded-4">
+
+
+<div class="modal-header">
+
+<div class="d-flex gap-4">
+
+<h6 id="languagesTab"
+class="fw-bold border-bottom border-3 border-primary pb-2"
+onclick="showLanguages()">
+
+Languages
+
+</h6>
+
+
+<h6 id="currencyTab"
+class="text-muted"
+onclick="showCurrency()">
+
+Currency
+
+</h6>
+
+</div>
+
+
+<button class="btn-close" data-bs-dismiss="modal"></button>
+
+</div>
+
+
+
+<div class="modal-body">
+
+
+<!-- Languages -->
+
+<div id="languagesContent">
+
+
+<h5 class="fw-bold mb-4">
+Choose a language
+</h5>
+
+
+<div class="row g-3">
+
+
+<div class="col-md-3">
+<button class="btn btn-outline-primary w-100 text-start">
+<img src="https://flagcdn.com/w20/eg.png">
+العربية
+</button>
+</div>
+
+
+<div class="col-md-3">
+<button class="btn btn-light w-100 text-start">
+<img src="https://flagcdn.com/w20/us.png">
+English (US)
+</button>
+</div>
+
+
+<div class="col-md-3">
+<button class="btn btn-light w-100 text-start">
+<img src="https://flagcdn.com/w20/sa.png">
+العربية (Saudi)
+</button>
+</div>
+
+
+<div class="col-md-3">
+<button class="btn btn-light w-100 text-start">
+<img src="https://flagcdn.com/w20/cn.png">
+Chinese
+</button>
+</div>
+
+
+<div class="col-md-3">
+<button class="btn btn-light w-100 text-start">
+<img src="https://flagcdn.com/w20/gb.png">
+English (UK)
+</button>
+</div>
+
+
+<div class="col-md-3">
+<button class="btn btn-light w-100 text-start">
+<img src="https://flagcdn.com/w20/fr.png">
+Français
+</button>
+</div>
+
+
+<div class="col-md-3">
+<button class="btn btn-light w-100 text-start">
+<img src="https://flagcdn.com/w20/de.png">
+Deutsch
+</button>
+</div>
+
+
+<div class="col-md-3">
+<button class="btn btn-light w-100 text-start">
+<img src="https://flagcdn.com/w20/es.png">
+Español
+</button>
+</div>
+
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- Currency -->
+
+<div id="currencyContent" style="display:none;">
+
+
+<h5 class="fw-bold mb-4">
+Choose your currency
+</h5>
+
+
+<div class="row g-3">
+
+
+<div class="col-md-3">
+<button class="btn btn-outline-primary w-100 text-start">
+<img src="https://flagcdn.com/w20/us.png">
+USD
+</button>
+</div>
+
+
+<div class="col-md-3">
+<button class="btn btn-light w-100 text-start">
+<img src="https://flagcdn.com/w20/eg.png">
+EGP
+</button>
+</div>
+
+
+<div class="col-md-3">
+<button class="btn btn-light w-100 text-start">
+<img src="https://flagcdn.com/w20/eu.png">
+EUR
+</button>
+</div>
+
+
+<div class="col-md-3">
+<button class="btn btn-light w-100 text-start">
+<img src="https://flagcdn.com/w20/sa.png">
+SAR
+</button>
+</div>
+
+
+<div class="col-md-3">
+<button class="btn btn-light w-100 text-start">
+<img src="https://flagcdn.com/w20/ae.png">
+AED
+</button>
+</div>
+
+
+<div class="col-md-3">
+<button class="btn btn-light w-100 text-start">
+<img src="https://flagcdn.com/w20/gb.png">
+GBP
+</button>
+</div>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/search.js"></script>
+</body>
+
+</html>

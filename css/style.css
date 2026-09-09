@@ -1,0 +1,93 @@
+/* ================= MAP ================= */
+
+.map-card{
+    overflow:hidden;
+    border-radius:12px;
+}
+
+.map-card iframe{
+    display:block;
+    border-radius:12px;
+}
+
+
+/* ================= MAP BOX ================= */
+
+.map-box{
+    position:relative;
+    width:100%;
+    height:180px;
+    overflow:hidden;
+    border-radius:12px;
+}
+
+.map-box iframe{
+    width:100%;
+    height:100%;
+    display:block;
+    border:0;
+    pointer-events:none;
+}
+
+.map-button{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    white-space:nowrap;
+    border-radius:10px;
+    font-size:14px;
+    z-index:2;
+}
+/* ================= GRID VIEW ================= */
+
+.hotels-container.grid-mode{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+
+.hotels-container.grid-mode .hotel-item{
+    margin-bottom: 0 !important;
+}
+
+
+.hotels-container.grid-mode .card{
+    height:100%;
+}
+
+.hotels-container.grid-mode .col-md-4{
+    width:100%;
+}
+
+
+.hotels-container.grid-mode .col-md-8{
+    width:100%;
+}
+
+.hotels-container.grid-mode img{
+    height:220px !important;
+    min-height:220px !important;
+}
+
+.hotels-container.grid-mode .row{
+    
+    display:block;
+}
+
+
+@media(max-width:992px){
+
+    .hotels-container.grid-mode{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+@media(max-width:576px){
+
+    .hotels-container.grid-mode{
+        grid-template-columns:1fr;
+    }
+
+}

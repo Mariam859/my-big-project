@@ -1,0 +1,129 @@
+/* ================= GENERAL ================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+/* ================= LOADING PAGE ================= */
+
+.loading-page {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(80, 98, 141, 0.9),
+            rgba(80, 120, 201, 0.94)
+        ),
+        url("../photo/world-map.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* ================= CONTENT ================= */
+
+.loading-content {
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: -20px;
+}
+
+
+/* ================= LOGO ================= */
+
+.loading-logo {
+    width: 250px;
+    max-width: 70%;
+
+    margin-bottom: 45px;
+}
+
+
+/* ================= TEXT ================= */
+
+.loading-content h1 {
+    margin: 0;
+
+    font-size: 32px;
+    font-weight: 400;
+
+    color: #063b91;
+
+    line-height: 1.3;
+}
+
+
+/* ================= LOADER ================= */
+
+.loader {
+    width: 48px;
+    height: 48px;
+
+    margin-top: 32px;
+
+    border: 7px solid rgba(7, 92, 255, 0.10);
+
+    border-top-color: #075cff;
+
+    border-radius: 50%;
+
+    animation: spin 0.9s linear infinite;
+}
+
+
+/* ================= ANIMATION ================= */
+
+@keyframes spin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 576px) {
+
+    .loading-logo {
+        width: 190px;
+        margin-bottom: 35px;
+    }
+
+    .loading-content h1 {
+        font-size: 22px;
+        padding: 0 20px;
+    }
+
+    .loader {
+        width: 42px;
+        height: 42px;
+        border-width: 6px;
+    }
+
+}
